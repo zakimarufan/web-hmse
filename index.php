@@ -1,9 +1,16 @@
-  <html>
+<html>
   <head>
     <title>Web HMSE</title>
 
     <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
     <!-- The fade transition effect is exclusive on Desktop only -->
+
+    <!-- New features:
+        - Events
+        - Announcements
+        - Documentary photos gallery
+
+      -->
 
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 
@@ -101,6 +108,12 @@
                           <a class="nav-link" href="#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link" href="schedule.php">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="announcements.php">Announcements</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
                         </li>
                       </ul>
@@ -108,6 +121,60 @@
                   </div>
                 </nav>
                 <!-- NAVBAR END -->
+
+<!-- WA BUTTON START -->
+                <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+<style>
+
+/* Add WA floating button CSS */
+.floating {
+ position: fixed;
+ width: 60px;
+ height: 60px;
+ bottom: 40px;
+ right: 40px;
+ background-color: #25d366;
+ color: #fff;
+ border-radius: 50px;
+ text-align: center;
+ font-size: 30px;
+ box-shadow: 2px 2px 3px #999;
+ z-index: 99;
+ opacity: 100%;
+ mix-blend-mode: multiply;
+}
+
+.floatingb {
+ position: fixed;
+ width: 60px;
+ height: 60px;
+ bottom: 40px;
+ right: 40px;
+ background-color: #25d366;
+ color: #fff;
+ border-radius: 50px;
+ text-align: center;
+ font-size: 30px;
+ box-shadow: 2px 2px 3px #999;
+ z-index: 100;
+ opacity: 35%;
+ mix-blend-mode: screen;
+}
+
+.fab-icon {
+ margin-top: 16px;
+}
+</style>
+
+<!-- render the button and direct it to wa.me -->
+<i class="floating">
+<i class="fab fa-whatsapp fab-icon"></i>
+</i>
+<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+</a>
+<!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
                 <section id="home" class="jumbotron text-center">
@@ -144,6 +211,30 @@
                   </div>
 
                   <!-- ABOUT VISI MISI -->
+
+                  <div class="row">
+
+                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">TUJUAN HMSE</h5><br>
+                        <!-- <p class="card-text"></p> -->
+                            <div class="flex-container">
+                            <p>
+                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur,
+                              dolore repudiandae. Voluptatem sunt sed, quisquam adipisci in
+                              excepturi laboriosam mollitia possimus rerum dicta architecto omnis!
+                            </p>
+                            </div>
+                            <br>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+<br>
 
                   <div class="row">
                     <div class="col-sm-6">
@@ -232,8 +323,9 @@
                       </div>
                     </div>
                   </div>
+                    </div>
 
-                </div>
+                  <br>
 
                   <!-- <div class="row justify-content-center fs-5 text-center">
                     
@@ -252,12 +344,12 @@
                   <path fill="#ffffff" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                 </svg>
 
-                <!-- PROJECTS -->
+                <!-- ACTIVITIES -->
                 <section id="gallery">
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
-                        <h2>Project</h2>
+                        <h2>Our Activities</h2>
                       </div>
                     </div>
                     <div class="row justify-content-center">
@@ -339,7 +431,7 @@
                     </div>
                   </div>
                 </section>
-                <!-- PROJECTS END -->
+                <!-- ACTIVITIES END -->
               
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 318">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -408,7 +500,7 @@
 
                   <p>
                     Created with <i class="bi bi-heart-fill text-danger"></i> by
-                    Team HMSE
+                    Team HMSE<br>Follow our Instagram: 
                     <a
                       href="https://www.instagram.com/hmse_unipi/"
                       class="text-white fw-bold"
@@ -473,7 +565,11 @@
 
         $(document).ready(function() {
             alreadydisplayed = true;
-            fadein(9, 0.003); //homepage fade in, for other pages use fadein(6, 0.01)
+            if (window.location.hash) { //fast fade in
+              fadein(6, 0.01);
+            } else { //slow fade in
+                fadein(9, 0.003);
+            }
             if (isMobile) {
               document.getElementById("fade-overlay").remove();
               //document.getElementById("horizontal_scrollbar").remove();
