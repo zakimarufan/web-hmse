@@ -83,7 +83,7 @@
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href="#">HMSE</a>
+                    <a class="navbar-brand" href=".">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
