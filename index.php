@@ -1,11 +1,18 @@
-  <html>
+<html>
   <head>
     <title>Web HMSE</title>
 
     <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
     <!-- The fade transition effect is exclusive on Desktop only -->
 
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <!-- New features:
+        - Events
+        - Announcements
+        - Documentary photos gallery
+
+      -->
+
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -101,6 +108,12 @@
                           <a class="nav-link" href="#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link" href="schedule.php">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="announcements.php">Announcements</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
                         </li>
                       </ul>
@@ -108,6 +121,59 @@
                   </div>
                 </nav>
                 <!-- NAVBAR END -->
+
+<!-- WA BUTTON START -->
+                <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+<style>
+
+/* Add WA floating button CSS */
+.floating {
+ position: fixed;
+ width: 60px;
+ height: 60px;
+ bottom: 40px;
+ right: 40px;
+ background-color: #25d366;
+ color: #fff;
+ border-radius: 50px;
+ text-align: center;
+ font-size: 30px;
+ box-shadow: 2px 2px 3px #999;
+ z-index: 99;
+ opacity: 100%;
+ mix-blend-mode: multiply;
+}
+
+.floatingb {
+ position: fixed;
+ width: 60px;
+ height: 60px;
+ bottom: 40px;
+ right: 40px;
+ background-color: #25d366;
+ color: #fff;
+ border-radius: 50px;
+ text-align: center;
+ font-size: 30px;
+ z-index: 100;
+ opacity: 35%;
+ mix-blend-mode: screen;
+}
+
+.fab-icon {
+ margin-top: 16px;
+}
+</style>
+
+<!-- render the button and direct it to wa.me -->
+<i class="floating">
+<i class="fab fa-whatsapp fab-icon"></i>
+</i>
+<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+</a>
+<!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
                 <section id="home" class="jumbotron text-center">
@@ -122,7 +188,7 @@
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1440 320"
+                    viewBox="0 0 1440 316"
                   >
                     <path
                       fill="#ffffff"
@@ -144,6 +210,28 @@
                   </div>
 
                   <!-- ABOUT VISI MISI -->
+
+                  <div class="row">
+
+                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">TUJUAN HMSE</h5><br>
+                        <!-- <p class="card-text"></p> -->
+                            <div class="flex-container">
+                            <p style="text-align: justify; text-justify: inter-word;">Tujuan terbentuknya himpunan mahasiswa software engineering ini untuk membangun sebuah wadah dan untuk mengasah / mengekspos softskill anak anak khususnya untuk ranah software engineering dan umumnya untuk fakultas komputer lainnya, dengan prospek yang membahas tentang perkembangan perangkat lunak, analisisa algoritma dan struktur data serta mengoperasikan pemrograman.
+Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang teknologi rekayasa perangkat lunak dan informasi sangat di butuhkan, himpunan ini menjadikan sebuah ruang untuk meningkatkan keterampilan di dalam bidang komputer.
+                            </p>
+                            </div>
+                            <br>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+<br>
 
                   <div class="row">
                     <div class="col-sm-6">
@@ -190,6 +278,37 @@
                   </div>
 
                   <br>
+
+                  <div class="row">
+
+                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">SEJARAH SINGKAT HMSE</h5><br>
+                        <!-- <p class="card-text"></p> -->
+                            <div class="flex-container">
+                            <p style="text-align: justify; text-justify: inter-word;">
+                            HMSE untuk pertama kalinya disahkan dan dilantik sebagai Himpunan Mahasiswa Software Engineering pertama 
+                            di Universitas Insan Pembangunan Indonesia pada tanggal 07 Januari 2024 di Auditorium Saba Karya.<br><br>
+                            Himpunan Mahasiswa Software Engineering (HMSE) adalah suatu organisasi di tingkat mahasiswa yang terfokus 
+                            pada bidang keilmuan teknologi informasi dan rekayasa perangkat lunak. Organisasi ini bertujuan untuk 
+                            meningkatkan pemahaman dan keterampilan mahasiswa dalam dunia software engineering melalui kegiatan pendidikan, 
+                            pelatihan, serta kegiatan sosial dan kolaboratif.
+                            </p>
+                            </div>
+                            <br>
+                            <div class="flex-container">
+                            <img src="img/phist1.jpg" style="max-width: 48%; border-radius: 5px"></img><img src="img/phist2.jpg" style="max-width: 48%; border-radius: 5px"></img>
+                            </div>
+                            <br>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+<br>
                  
                   <div class="row">
 
@@ -204,9 +323,15 @@
                         text-align: center;
                         flex-basis: 100%;
                       }
+
+                      .container2 {
+        display: flex;
+        align-items: center
+      }
+
                     </style>
 
-                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="desktop-mode-switch">
                     <div class="card border border-4">
                       <div class="card-body">
                         <h5 class="card-title text-center">FILOSOFI LOGO HMSE</h5><br>
@@ -232,8 +357,51 @@
                       </div>
                     </div>
                   </div>
+                    </div>
 
-                </div>
+                    <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="mobile-mode-switch">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">FILOSOFI LOGO HMSE</h5><br>
+                        <!-- <p class="card-text"></p> -->
+                            
+
+                        <table>
+                        <tr>
+                        <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/gear.png" /></td>
+                        <td><p><b>Gear (Semangat Kerja): </b><br>Teknologi yang berkesinambungan, garis bergerak
+                            melambangkan keberlanjutan.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/lamp.png" /></td> <td><p><b>Lampu (Cahaya): </b><br>Menjadikan sumber efisiensi terhadap perkembangan di zaman
+                            era teknologi sekarang.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/code.png" /></td><td><p><b>Kode Script (Menandakan suatu progres): </b><br>Setiap awalan pasti ada akhiran.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/book.png" /></td> <td><p><b>Buku (Sumber pengetahuan): </b><br>Melambangkan pustaka ilmu, merupakan sumber dari
+                            segala ilmu pengetahuan.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/computer.png" /></td> <td><p><b>Komputer </b> (Sebagai makna media pembelajaran) <b><br>Tampilan Coding </b> (Melambangkan
+                            teknologi/komunikasi dengan bahasa mesin dengan segala tabiatnya)</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/grey.png" /></td><td><p><b>Filosofi warna: Abu-abu </b><br>(Menyimpan makna positif yaitu melambangkan kemandirian,
+                             kestabilan, keseriusan, serta tanggung jawab.)</p></td>
+    </tr>
+                    
+    </table>
+
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <h5 class="card-title text-center"><a href="org_struct.php">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></h5><br>
 
                   <!-- <div class="row justify-content-center fs-5 text-center">
                     
@@ -252,12 +420,12 @@
                   <path fill="#ffffff" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                 </svg>
 
-                <!-- PROJECTS -->
+                <!-- ACTIVITIES -->
                 <section id="gallery">
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
-                        <h2>Project</h2>
+                        <h2>Our Activities</h2>
                       </div>
                     </div>
                     <div class="row justify-content-center">
@@ -339,9 +507,9 @@
                     </div>
                   </div>
                 </section>
-                <!-- PROJECTS END -->
+                <!-- ACTIVITIES END -->
               
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 318">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
                 </section>
@@ -408,7 +576,7 @@
 
                   <p>
                     Created with <i class="bi bi-heart-fill text-danger"></i> by
-                    Team HMSE
+                    Team HMSE<br>Follow our Instagram: 
                     <a
                       href="https://www.instagram.com/hmse_unipi/"
                       class="text-white fw-bold"
@@ -473,11 +641,18 @@
 
         $(document).ready(function() {
             alreadydisplayed = true;
-            fadein(9, 0.003); //homepage fade in, for other pages use fadein(6, 0.01)
+            if (window.location.hash) { //fast fade in
+              fadein(6, 0.01);
+            } else { //slow fade in
+                fadein(9, 0.003);
+            }
             if (isMobile) {
               document.getElementById("fade-overlay").remove();
+              document.getElementById("desktop-mode-switch").remove();
               //document.getElementById("horizontal_scrollbar").remove();
               //document.getElementById("vertical_scrollbar").remove();
+            } else {
+              document.getElementById("mobile-mode-switch").remove();
             }
         });
 
