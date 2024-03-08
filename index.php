@@ -13,14 +13,6 @@
       -->
 
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
-    <!-- New features:
-        - Events
-        - Announcements
-        - Documentary photos gallery
-
-      -->
-
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -242,30 +234,6 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 <br>
 
                   <div class="row">
-
-                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
-                    <div class="card border border-4">
-                      <div class="card-body">
-                        <h5 class="card-title text-center">TUJUAN HMSE</h5><br>
-                        <!-- <p class="card-text"></p> -->
-                            <div class="flex-container">
-                            <p>
-                              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur,
-                              dolore repudiandae. Voluptatem sunt sed, quisquam adipisci in
-                              excepturi laboriosam mollitia possimus rerum dicta architecto omnis!
-                            </p>
-                            </div>
-                            <br>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-<br>
-
-                  <div class="row">
                     <div class="col-sm-6">
                       <div class="card border border-4">
                         <div class="card-body">
@@ -391,7 +359,49 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                   </div>
                     </div>
 
+                    <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="mobile-mode-switch">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">FILOSOFI LOGO HMSE</h5><br>
+                        <!-- <p class="card-text"></p> -->
+                            
+
+                        <table>
+                        <tr>
+                        <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/gear.png" /></td>
+                        <td><p><b>Gear (Semangat Kerja): </b><br>Teknologi yang berkesinambungan, garis bergerak
+                            melambangkan keberlanjutan.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/lamp.png" /></td> <td><p><b>Lampu (Cahaya): </b><br>Menjadikan sumber efisiensi terhadap perkembangan di zaman
+                            era teknologi sekarang.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/code.png" /></td><td><p><b>Kode Script (Menandakan suatu progres): </b><br>Setiap awalan pasti ada akhiran.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/book.png" /></td> <td><p><b>Buku (Sumber pengetahuan): </b><br>Melambangkan pustaka ilmu, merupakan sumber dari
+                            segala ilmu pengetahuan.</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/computer.png" /></td> <td><p><b>Komputer </b> (Sebagai makna media pembelajaran) <b><br>Tampilan Coding </b> (Melambangkan
+                            teknologi/komunikasi dengan bahasa mesin dengan segala tabiatnya)</p></td>
+    </tr>
+    <tr>
+    <td><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/grey.png" /></td><td><p><b>Filosofi warna: Abu-abu </b><br>(Menyimpan makna positif yaitu melambangkan kemandirian,
+                             kestabilan, keseriusan, serta tanggung jawab.)</p></td>
+    </tr>
+                    
+    </table>
+
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      </div>
+                    </div>
+                  </div>
+
                   <br>
+
+                  <h5 class="card-title text-center"><a href="org_struct.php">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></h5><br>
 
                   <!-- <div class="row justify-content-center fs-5 text-center">
                     
