@@ -1,4 +1,4 @@
-<html>
+  <html>
   <head>
     <title>Web HMSE</title>
 
@@ -13,7 +13,7 @@
 
       -->
 
-    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -183,7 +183,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1440 316"
+                    viewBox="0 0 1440 320"
                   >
                     <path
                       fill="#ffffff"
@@ -211,7 +211,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- SCHEDULE END -->
 
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 318">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
                 </section>
