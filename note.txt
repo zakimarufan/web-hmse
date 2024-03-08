@@ -1,0 +1,3 @@
+1. Customize URL in htaccess
+2. customize content layout in html and css (framelayout or frameset)
+3. custom 404 error handling
