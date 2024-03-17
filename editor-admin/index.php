@@ -1,19 +1,10 @@
 <html>
   <head>
-    <title>Organization Structure - HMSE</title>
+    <title>Editor Tool - HMSE</title>
 
-    <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
-    <!-- The fade transition effect is exclusive on Desktop only -->
+    <!-- Replace 'http://localhost/web-hmse/' with the root domain name before uploading to the web hosting server via FTP -->
 
-    <!-- Events elements:
-        - Title
-        - Location
-        - Date and Time
-        - Body contents
-
-      -->
-
-    <link rel="icon" type="image/x-icon" href="https://testsite269.000webhostapp.com/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -37,22 +28,22 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://testsite269.000webhostapp.com/scrollbar.css"
+      href="http://localhost/web-hmse/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="https://testsite269.000webhostapp.com/fade-transition.css"
+    href="http://localhost/web-hmse/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="https://testsite269.000webhostapp.com/fade-transition.js"
+      src="http://localhost/web-hmse/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="https://testsite269.000webhostapp.com/style.css" />
+    <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -80,7 +71,7 @@
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href="https://testsite269.000webhostapp.com/">HMSE</a>
+                    <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -97,22 +88,22 @@
                         <li class="nav-item">
                           <a
                             class="nav-link"
-                            href="."
+                            href="http://localhost/web-hmse/"
                             >Home</a
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/#about">About</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/#gallery">Gallery</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link"
-                          aria-current="page" href="https://testsite269.000webhostapp.com/schedule/">Schedule</a>
+                          aria-current="page" href="http://localhost/web-hmse/schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/announcements/">Announcements</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -166,6 +157,31 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 .fab-icon {
  margin-top: 16px;
 }
+
+.tool-title {
+	font-size: 36px;
+  color: black;
+	font-weight: bold;
+  margin-right: 1%;
+  margin-left: 6%;
+  margin-bottom: 6%;
+}
+
+.cmd-btn {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #0A314B;
+  padding: 10px 26px;
+  color: white;
+  border-radius: 500px;
+  border-width: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 </style>
 
 <!-- render the button and direct it to wa.me -->
@@ -177,12 +193,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 <!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
-                <section id="toppage" class="jumbotron text-center">
-
-                  <h1>Struktur Organisasi</h1>
+                <section id="toppage" class="jumbotron text-center" style="padding-top: 0px;">
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
-                    xmlns="https://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1440 316"
                   >
                     <path
@@ -194,22 +208,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 </section>
                 <!-- JUMBOTRON END -->
 
-                <!-- ORGANIZATION STRUCTURE START-->
+                <h1 class="tool-title">Welcome to Editor Tool!</h1>
+
+                <!-- EDITOR START-->
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
                         
-                        
-                        <img src="https://testsite269.000webhostapp.com/img/sk_hmse.png" style="max-width: 100%"></img>
+                      <button class="cmd-btn" id="backp_button">Manage Announcements</button>
+                      <button class="cmd-btn" id="backp_button">Manage Event Schedule</button>
+                      <button class="cmd-btn" id="backp_button">Manage News</button>
+                      <button class="cmd-btn" id="backp_button">Manage Homepage Activities</button>
+                      <button class="cmd-btn" id="backp_button">Manage Users</button>
+                      <button class="cmd-btn" id="backp_button">Upload Images</button>
+                      <button class="cmd-btn" id="backp_button">General Settings</button>
 
 
                       </div>
                     </div>
                   </div>
-                <!-- ORGANIZATION STRUCTURE END -->
+                <!-- EDITOR END -->
 
 
-      <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
                 </section>
@@ -269,7 +290,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
   </div>
 
-  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
     <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
   </svg>
 
@@ -330,7 +351,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="https://testsite269.000webhostapp.com/simplebar.min.js"
+  src="http://localhost/web-hmse/simplebar.min.js"
   ></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -365,7 +386,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             //this == the link that was clicked
             var href = $(this).attr("href");
             if ((href.startsWith('#')) || (href.startsWith('?'))) {
-              var vstr = this.href.substring(this.href.lastIndexOf('p') + 2);
+              var vstr = this.href.substring(this.href.lastIndexOf('/') + 2);
               if (vstr.length > 0){
                 $("html, body, #scrollnav").animate({ scrollTop: document.getElementById(vstr).offsetTop }, 500);
               } else {

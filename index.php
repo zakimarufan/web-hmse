@@ -1,3 +1,17 @@
+<?php
+
+function getAddress() {
+  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+  return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+}
+
+if (str_contains(getAddress(), "index.php")) {
+  $noindex = str_replace('/index.php', '', getAddress());
+  echo "<script>window.location.href='$noindex';</script>";
+}
+
+?>
+
 <html>
   <head>
     <title>Main Page - HMSE</title>

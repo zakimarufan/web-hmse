@@ -271,7 +271,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                   </svg>
                 </section>
                 <!-- JUMBOTRON END -->
-                <a href="." class="subnav" id="backp_button" style="display:none;">← Kembali ke Jadwal Acara</a>
+                <a href="http://localhost/web-hmse/schedule/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Jadwal Acara</a>
                 <div id="vsearch" class="subnav-input">
                 <input type="search" id="vsearch-text" placeholder="Cari..."></input>
                 <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
@@ -560,7 +560,7 @@ function schRegularList($listquery) {
 
       while($row = mysqli_fetch_array($listquery)) {
         $sc_prev_title = $row['schedule_title'];
-        $sc_url_id_pointer = "http://localhost/web-hmse/schedule/index.php/" . $row['sch_url_id_pointer'];
+        $sc_url_id_pointer = "http://localhost/web-hmse/schedule/" . $row['sch_url_id_pointer'];
         $sc_location = $row['schedule_venue_location'];
         $sc_p_startdate = date('D, j M Y', strtotime($row['schedule_venue_datetime_start']));
         $sc_p_enddate = date('D, j M Y', strtotime($row['schedule_venue_datetime_end']));
@@ -579,7 +579,7 @@ function schRegularList($listquery) {
 
 if(isset($_SERVER['PATH_INFO'])) {
     $pathinfo = $_SERVER['PATH_INFO'];
-    $idpointer = substr($pathinfo, 1);
+    $idpointer = str_replace('/', '', substr($pathinfo, 1));
     if ($idpointer == "") { 
       
       schRegularList($conn->execute_query("SELECT schedule_title, body_content, schedule_venue_location, schedule_venue_datetime_start, schedule_venue_datetime_end, sch_url_id_pointer FROM schedule"));
@@ -627,7 +627,7 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 while($row = mysqli_fetch_array($searchlistquery)) {
   $sc_search_prev_title = $row['schedule_title'];
-  $sc_search_url_id_pointer = "http://localhost/web-hmse/schedule/index.php/" . $row['sch_url_id_pointer'];
+  $sc_search_url_id_pointer = "http://localhost/web-hmse/schedule/" . $row['sch_url_id_pointer'];
   $sc_search_location = $row['schedule_venue_location'];
   $sc_s_p_startdate = date('D, j M Y', strtotime($row['schedule_venue_datetime_start']));
   $sc_s_p_enddate = date('D, j M Y', strtotime($row['schedule_venue_datetime_end']));
@@ -649,6 +649,16 @@ while($row = mysqli_fetch_array($searchlistquery)) {
       }
     }
 } else {
+  function getAddress() {
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+    return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+  }
+  
+  if (str_contains(getAddress(), "index.php")) {
+    $noindex = str_replace('/index.php', '', getAddress());
+    echo "<script>window.location.href='$noindex';</script>";
+  }
+
   schRegularList($conn->execute_query("SELECT schedule_title, body_content, schedule_venue_location, schedule_venue_datetime_start, schedule_venue_datetime_end, sch_url_id_pointer FROM schedule"));
 }
 
