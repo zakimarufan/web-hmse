@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Web HMSE</title>
+    <title>Organization Structure - HMSE</title>
 
     <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
     <!-- The fade transition effect is exclusive on Desktop only -->
@@ -13,7 +13,7 @@
 
       -->
 
-    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://testsite269.000webhostapp.com/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -37,22 +37,22 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="./scrollbar.css"
+      href="http://testsite269.000webhostapp.com/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="./fade-transition.css"
+    href="http://testsite269.000webhostapp.com/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="./fade-transition.js"
+      src="http://testsite269.000webhostapp.com/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="http://testsite269.000webhostapp.com/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -80,7 +80,7 @@
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href=".">HMSE</a>
+                    <a class="navbar-brand" href="http://testsite269.000webhostapp.com/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -102,17 +102,17 @@
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#about">About</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#gallery">Gallery</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link"
-                          aria-current="page" href="schedule">Schedule</a>
+                          aria-current="page" href="http://testsite269.000webhostapp.com/schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="announcements">Announcements</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -179,7 +179,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- JUMBOTRON START -->
                 <section id="toppage" class="jumbotron text-center">
 
-                  <h1>404 - Not Found</h1>
+                  <h1>Struktur Organisasi</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -194,22 +194,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 </section>
                 <!-- JUMBOTRON END -->
 
-                <!-- 404 ERROR MESSAGE START-->
-                <section id="schedule">
+                <!-- ORGANIZATION STRUCTURE START-->
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
                         
-                        <h3>Maaf, halaman yang Anda cari tidak dapat ditemukan di server kami.</h3>
-                      <br>
-                        <p><a href=".">Kembali ke halaman utama</a></p>
+                        
+                        <img src="http://testsite269.000webhostapp.com/img/sk_hmse.png" style="max-width: 100%"></img>
 
 
                       </div>
                     </div>
                   </div>
-                </section>
-                <!-- 404 ERROR MESSAGE END -->
+                <!-- ORGANIZATION STRUCTURE END -->
 
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
@@ -333,7 +330,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="./simplebar.min.js"
+  src="http://testsite269.000webhostapp.com/simplebar.min.js"
   ></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

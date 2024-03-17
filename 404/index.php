@@ -1,19 +1,10 @@
 <html>
   <head>
-    <title>Web HMSE</title>
+    <title>404 Not Found - HMSE</title>
 
-    <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
-    <!-- The fade transition effect is exclusive on Desktop only -->
+    <!-- Replace 'http://localhost/web-hmse/' with the root domain name before uploading to the web hosting server via FTP -->
 
-    <!-- Events elements:
-        - Title
-        - Location
-        - Date and Time
-        - Body contents
-
-      -->
-
-    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -37,22 +28,22 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="./scrollbar.css"
+      href="http://localhost/web-hmse/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="./fade-transition.css"
+    href="http://localhost/web-hmse/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="./fade-transition.js"
+      src="http://localhost/web-hmse/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -80,7 +71,7 @@
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href=".">HMSE</a>
+                    <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -97,22 +88,22 @@
                         <li class="nav-item">
                           <a
                             class="nav-link"
-                            href="."
+                            href="http://localhost/web-hmse/"
                             >Home</a
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#about">About</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#gallery">Gallery</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link"
-                          aria-current="page" href="schedule.php">Schedule</a>
+                          aria-current="page" href="http://localhost/web-hmse/schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="announcements.php">Announcements</a>
+                          <a class="nav-link" href="http://localhost/web-hmse/announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -179,7 +170,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- JUMBOTRON START -->
                 <section id="toppage" class="jumbotron text-center">
 
-                  <h1>Struktur Organisasi</h1>
+                  <h1>404 - Not Found</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -194,21 +185,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 </section>
                 <!-- JUMBOTRON END -->
 
-                <!-- ORGANIZATION STRUCTURE START-->
-                <section id="schedule">
+                <!-- 404 ERROR MESSAGE START-->
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
                         
-                        
-                        <img src="img/sk_hmse.png" style="max-width: 100%"></img>
+                        <h3>Maaf, halaman yang Anda cari tidak dapat ditemukan di server ini.</h3>
+                      <br>
+                        <p><a href="http://localhost/web-hmse/">Kembali ke halaman utama</a></p>
 
 
                       </div>
                     </div>
                   </div>
-                </section>
-                <!-- ORGANIZATION STRUCTURE END -->
+                <!-- 404 ERROR MESSAGE END -->
 
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
@@ -332,7 +322,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="./simplebar.min.js"
+  src="http://localhost/web-hmse/simplebar.min.js"
   ></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -367,7 +357,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             //this == the link that was clicked
             var href = $(this).attr("href");
             if ((href.startsWith('#')) || (href.startsWith('?'))) {
-              var vstr = this.href.substring(this.href.lastIndexOf('p') + 2);
+              var vstr = this.href.substring(this.href.lastIndexOf('/') + 2);
               if (vstr.length > 0){
                 $("html, body, #scrollnav").animate({ scrollTop: document.getElementById(vstr).offsetTop }, 500);
               } else {

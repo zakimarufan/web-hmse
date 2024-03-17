@@ -1,19 +1,10 @@
-  <html>
+<html>
   <head>
-    <title>Web HMSE</title>
+    <title>404 Not Found - HMSE</title>
 
-    <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
-    <!-- The fade transition effect is exclusive on Desktop only -->
+    <!-- Replace 'http://testsite269.000webhostapp.com/' with the root domain name before uploading to the web hosting server via FTP -->
 
-    <!-- Events elements:
-        - Title
-        - Location
-        - Date and Time
-        - Body contents
-
-      -->
-
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://testsite269.000webhostapp.com/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -37,22 +28,22 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="./scrollbar.css"
+      href="http://testsite269.000webhostapp.com/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="./fade-transition.css"
+    href="http://testsite269.000webhostapp.com/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="./fade-transition.js"
+      src="http://testsite269.000webhostapp.com/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="http://testsite269.000webhostapp.com/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -80,7 +71,7 @@
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href=".">HMSE</a>
+                    <a class="navbar-brand" href="http://testsite269.000webhostapp.com/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -97,22 +88,22 @@
                         <li class="nav-item">
                           <a
                             class="nav-link"
-                            href="."
+                            href="http://testsite269.000webhostapp.com/"
                             >Home</a
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#about">About</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href=".#gallery">Gallery</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active"
-                          aria-current="page" href="#">Schedule</a>
+                          <a class="nav-link"
+                          aria-current="page" href="http://testsite269.000webhostapp.com/schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="announcements.php">Announcements</a>
+                          <a class="nav-link" href="http://testsite269.000webhostapp.com/announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -179,11 +170,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- JUMBOTRON START -->
                 <section id="toppage" class="jumbotron text-center">
 
-                  <h1>Acara</h1>
+                  <h1>404 - Not Found</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1440 320"
+                    viewBox="0 0 1440 316"
                   >
                     <path
                       fill="#ffffff"
@@ -194,24 +185,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 </section>
                 <!-- JUMBOTRON END -->
 
-                <!-- SCHEDULE START-->
-                <section id="schedule">
+                <!-- 404 ERROR MESSAGE START-->
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
                         
-                        
-                        
+                        <h3>Maaf, halaman yang Anda cari tidak dapat ditemukan di server ini.</h3>
+                      <br>
+                        <p><a href="http://testsite269.000webhostapp.com/">Kembali ke halaman utama</a></p>
 
 
                       </div>
                     </div>
                   </div>
-                </section>
-                <!-- SCHEDULE END -->
+                <!-- 404 ERROR MESSAGE END -->
 
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 318">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
                 </section>
@@ -332,7 +322,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="./simplebar.min.js"
+  src="http://testsite269.000webhostapp.com/simplebar.min.js"
   ></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -367,7 +357,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             //this == the link that was clicked
             var href = $(this).attr("href");
             if ((href.startsWith('#')) || (href.startsWith('?'))) {
-              var vstr = this.href.substring(this.href.lastIndexOf('p') + 2);
+              var vstr = this.href.substring(this.href.lastIndexOf('/') + 2);
               if (vstr.length > 0){
                 $("html, body, #scrollnav").animate({ scrollTop: document.getElementById(vstr).offsetTop }, 500);
               } else {

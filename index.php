@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Web HMSE</title>
+    <title>Main Page - HMSE</title>
 
     <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
     <!-- The fade transition effect is exclusive on Desktop only -->
@@ -108,10 +108,10 @@
                           <a class="nav-link" href="#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="schedule.php">Schedule</a>
+                          <a class="nav-link" href="./schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="announcements.php">Announcements</a>
+                          <a class="nav-link" href="./announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -401,7 +401,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 
                   <br>
 
-                  <h5 class="card-title text-center"><a href="org_struct.php">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></h5><br>
+                  <h5 class="card-title text-center"><a href="./org_struct/">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></h5><br>
 
                   <!-- <div class="row justify-content-center fs-5 text-center">
                     

@@ -2,7 +2,7 @@
 
 <head>
 
-  <title>Web HMSE</title>
+  <title>Announcements - HMSE</title>
 
 
   <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
@@ -16,7 +16,7 @@
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -40,22 +40,22 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="./scrollbar.css"
+    href="http://localhost/web-hmse/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="./fade-transition.css"
+  href="http://localhost/web-hmse/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="./fade-transition.js"
+    src="http://localhost/web-hmse/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
 </head>
 <body id="home">
   <div id="fade-overlay"  style="display: block;"></div>
@@ -83,7 +83,7 @@
                 style="background-color: #0a314b"
               >
                 <div class="container">
-                  <a class="navbar-brand" href=".">HMSE</a>
+                  <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -100,18 +100,18 @@
                       <li class="nav-item">
                         <a
                           class="nav-link"
-                          href="."
+                          href="http://localhost/web-hmse/"
                           >Home</a
                         >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href=".#about">About</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href=".#gallery">Gallery</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="schedule.php">Schedule</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/schedule/">Schedule</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active"
@@ -169,6 +169,84 @@ mix-blend-mode: screen;
 .fab-icon {
 margin-top: 16px;
 }
+
+.anchor-title {
+	font-size: 29px;
+  color: black;
+	font-weight: bold;
+  margin-right: 1%;
+}
+
+.content-title {
+	font-size: 36px;
+  color: black;
+	font-weight: bold;
+  margin-right: 1%;
+}
+
+.preview-body-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body-content{
+  text-align: justify;
+}
+
+.subnav {
+  position: relative;
+  text-transform: uppercase;
+  margin-left: 6%;
+  text-decoration: none;
+  background-color: #0A314B;
+  padding: 10px 26px;
+  color: white;
+  border-radius: 500px;
+}
+
+.subnav-input {
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left: 12%;
+  margin-right: 12%;
+  padding: 6px 22px;
+      display: inline-block;
+  box-shadow: 0px 0px 2px #000;
+  border-radius: 500px;
+}
+
+.subnav-input:focus-within {
+  box-shadow: 0px 0px 5px #135D8F;
+}
+
+.subnav-input input {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-width: 0;
+  padding-right: 30px;
+  width: 100%;
+}
+
+.subnav-input input {
+  outline: none;
+}
+
+.subnav-input svg {
+  position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px; /* Adjust the right distance as needed */
+      width: 16px; /* Adjust width */
+      height: 16px;
+}
+
+.subnav-input svg:hover {
+  cursor: pointer;
+  fill: #135D8F;
+}
+
 </style>
 
 <!-- render the button and direct it to wa.me -->
@@ -182,7 +260,7 @@ margin-top: 16px;
               <!-- JUMBOTRON START -->
               <section id="toppage" class="jumbotron text-center">
 
-                <h1>Pengumuman</h1>
+                <h1 id="permanent-title">Pengumuman</h1>
                 <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -196,17 +274,38 @@ margin-top: 16px;
                 </svg>
               </section>
               <!-- JUMBOTRON END -->
+                <a href="." class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
+                <div id="vsearch" class="subnav-input">
+                <input type="search" id="vsearch-text" placeholder="Cari..."></input>
+                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+ <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
+</svg>
 
-              <!-- ANNOUNCEMENTS START-->
+</div>
+              <!-- ANNOUNCEMENTS LIST START-->
               <section id="announcements">
                 <div class="container">
+
                   <div class="row text-center mb-3">
                     <div class="col">
                       
+                    <div class="flex-container" id="announcement_listing">
+                    
 
-
+</div>
 
                     </div>
+
+                    <div class="flex-container" id="announcement_content" style="display:none;">
+
+<h2 class="content-title" style="text-align: left;" id="vtitle"></h2>
+<p style="color: grey; text-align: left; font-size: 10pt;" id="datetime_author_details"></p>
+<br>
+
+<p id="vbody" class="body-content"></p>
+
+</div>
+
                   </div>
                 </div>                  
               </section>
@@ -334,7 +433,7 @@ margin-top: 16px;
 
 <script
 type="text/javascript"
-src="./simplebar.min.js"
+src="http://localhost/web-hmse/simplebar.min.js"
 ></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -353,9 +452,42 @@ src="./simplebar.min.js"
           }
       });
 
-      
+      function openAnnouncementId(annTitle, annAuthor, annDate, annContent) {
+          document.getElementById("backp_button").style.display = "initial";
+          document.getElementById("permanent-title").style.display = "none";
+          document.getElementById("vsearch").style.display = "none";
+          document.getElementById("announcement_listing").style.display = "none";
+          document.getElementById("announcement_content").style.display = "initial";
+          document.getElementById("toppage").style.paddingTop = "0px";
+          document.getElementById("vtitle").innerHTML = annTitle;
+          document.title = annTitle + " - HMSE";
+          document.getElementById("datetime_author_details").innerHTML = "Date created: " + annDate + "<br>Author: " + annAuthor;
+          document.getElementById("vbody").innerHTML = annContent;
+      }
+
+      function listAnnouncementItems(anchorTitle, date, previewContent, hreflink) {
+        document.getElementById("announcement_listing").innerHTML +=
+        "<div class=\"flex-item\" style=\"text-align: left;\">"
++ "<p style=\"color: grey;\"><span class=\"anchor-title\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
+                  +  anchorTitle
+               + "</a></span>"+date+"</p>"
++ "<p class=\"preview-body-content\">" + previewContent + "</div><br>"
+      }
 
       const scrollnav = document.querySelector("#scrollnav");
+
+      document.getElementById("vsearch").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+      searchtext();
+    }
+});
+
+      function searchtext() {
+        let searchvalue = document.getElementById("vsearch-text").value;
+        if (searchvalue !== '') {
+          window.location.href = window.location.pathname + '/search?q=' + searchvalue.split(' ').join('+');
+    }
+      }
 
       $(window).focus(function() {
           if (!alreadydisplayed) {
@@ -369,7 +501,7 @@ src="./simplebar.min.js"
           //this == the link that was clicked
           var href = $(this).attr("href");
           if ((href.startsWith('#')) || (href.startsWith('?'))) {
-            var vstr = this.href.substring(this.href.lastIndexOf('p') + 2);
+            var vstr = this.href.substring(this.href.lastIndexOf('/') + 2);
             if (vstr.length > 0){
               $("html, body, #scrollnav").animate({ scrollTop: document.getElementById(vstr).offsetTop }, 500);
             } else {
@@ -393,3 +525,88 @@ src="./simplebar.min.js"
 </script>
 
 </html>
+
+<?php
+// Check if there is a string added after the last slash
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "web_hmse";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+function annRegularList($listquery) {
+//list the announcements
+//Truncate the preview body content text to 255 characters
+//Remove the HTML codes from the preview content
+
+while($row = mysqli_fetch_array($listquery)) {
+  $a_prev_title = $row['announcement_title'];
+  $a_url_id_pointer = "http://localhost/web-hmse/announcements/index.php/" . $row['ann_url_id_pointer'];
+  $a_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
+  $a_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
+echo "<script>listAnnouncementItems('$a_prev_title', '$a_p_date', '$a_prev_content', '$a_url_id_pointer');</script>";
+}
+
+}
+
+if(isset($_SERVER['PATH_INFO'])) {
+    $pathinfo = $_SERVER['PATH_INFO'];
+    $idpointer = substr($pathinfo, 1);
+    if ($idpointer == "") {
+
+      annRegularList($conn->execute_query("SELECT announcement_title, announcement_body_content, announcement_date, ann_url_id_pointer FROM announcement"));
+
+      
+      
+    } else {
+
+      $result = $conn->execute_query("SELECT announcement_title, announcement_body_content, announcement_date, announcement_author FROM announcement WHERE ann_url_id_pointer = ? LIMIT 1",  [$idpointer]);
+
+      if ($result->num_rows == 1) { //Check if the article exists
+        while($row = mysqli_fetch_array($result)) {
+          $a_title = $row['announcement_title'];
+          $a_author = $row['announcement_author'];
+          $a_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
+          $a_content = preg_replace("/\r\n|\r|\n|\n\r/", '<br>', $row['announcement_body_content']);
+        echo "<script>openAnnouncementId('$a_title', '$a_author', '$a_date', '$a_content');</script>";
+        }
+      } else {
+        if (str_starts_with($idpointer, 'search')) { //searching for certain announcement
+          //clear the current listings first
+
+          //execute the search query
+
+          $uriquery = $_SERVER['REQUEST_URI'];
+
+          foreach (explode('&', $uriquery) as $chunk) {
+            $a_search_display = preg_replace('/[\s\+]/', ' ', explode("=", $chunk)[1]);
+            $searchlistquery = $conn->execute_query("SELECT * FROM announcement WHERE announcement_title like '%$a_search_display%' OR announcement_body_content like '%$a_search_display%' OR announcement_date like '%$a_search_display%' OR announcement_author like '%$a_search_display%' OR ann_url_id_pointer like '%$a_search_display%'");
+            $search_result_count = $searchlistquery->num_rows;
+            echo "<script>document.title = \"Search results for '$a_search_display' - HMSE\";</script>";
+            echo "<script>document.getElementById(\"permanent-title\").innerHTML = \"Hasil pencarian untuk '$a_search_display'<br>($search_result_count hasil ditemukan)\"</script>";
+            //continue the searching function (show the search result)
+
+while($row = mysqli_fetch_array($searchlistquery)) {
+  $a_search_prev_title = $row['announcement_title'];
+  $a_search_url_id_pointer = "http://localhost/web-hmse/announcements/index.php/" . $row['ann_url_id_pointer'];
+  $a_search_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
+  $a_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
+echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', '$a_search_prev_content', '$a_search_url_id_pointer');</script>";
+}
+        }
+
+        } else { //Redirect to 404 Not Found
+          echo "<script>window.location.replace('http://localhost/web-hmse/404/');</script>";
+        }
+      }
+    }
+} else {
+  annRegularList($conn->execute_query("SELECT announcement_title, announcement_body_content, announcement_date, ann_url_id_pointer FROM announcement"));
+}
+
+?>

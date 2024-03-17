@@ -1,3 +1,6 @@
 1. Customize URL in htaccess
-2. customize content layout in html and css (framelayout or frameset)
-3. custom 404 error handling
+2. customize content layout in html and css (framelayout or frameset) or URL routing
+3. Breadcrumb feature
+4. Database linking for schedule and announcements
+5. WYSIWYG-created document stored in database
+6. Admin login page and dashboard application to create new schedule, announcements, gallery, and FTP file manager
