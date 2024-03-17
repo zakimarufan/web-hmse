@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Mar 2024 pada 05.41
+-- Waktu pembuatan: 17 Mar 2024 pada 16.33
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -53,8 +53,28 @@ CREATE TABLE `dashboard-activities` (
   `activityId` varchar(255) NOT NULL,
   `imgLink` varchar(255) DEFAULT NULL,
   `activityCaption` varchar(255) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
   `hrefLink` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `editor-users`
+--
+
+CREATE TABLE `editor-users` (
+  `user_id` varchar(255) NOT NULL,
+  `user_display_name` varchar(255) DEFAULT NULL,
+  `user_password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `editor-users`
+--
+
+INSERT INTO `editor-users` (`user_id`, `user_display_name`, `user_password`) VALUES
+('admin1', 'Administrator', '53B338502B450A1B730DC4B9C1A55FA8BF21CA2B');
 
 -- --------------------------------------------------------
 
@@ -70,6 +90,14 @@ CREATE TABLE `news` (
   `newsAuthor` varchar(255) DEFAULT NULL,
   `newsMainThumbImg` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `news`
+--
+
+INSERT INTO `news` (`news_url_id_pointer`, `newsTitle`, `newsBodyContent`, `newsDate`, `newsAuthor`, `newsMainThumbImg`) VALUES
+('kegiatan-bootcamp-hmse-2024-sdmkmq22eaifj', 'Kegiatan Bootcamp HMSE 2024', 'Kegiatan ini diselenggarakan pada hari Minggu tanggal 25 Februari 2024 dan 3 Maret 2024 di gedung FB lantai 3.<br>\r\n<img src=\"http://localhost/web-hmse/img/projects/IMG_7738.JPG\" style=\"max-width:67%\"><br>\r\n<img src=\"http://localhost/web-hmse/img/projects/IMG_8805.jpg\" style=\"max-width:67%\"><br>\r\n<img src=\"http://localhost/web-hmse/img/projects/IMG_9638.JPG\" style=\"max-width:67%\"><br>', '2024-03-05 21:03:44', 'I Gusti Nyoman, Muhamad Luthfian, Marliyani Sutraliyana', 'http://localhost/web-hmse/img/projects/IMG_7738.JPG'),
+('peresmian-hmse-13902194', 'HMSE Resmi Dilantik!', 'HMSE untuk pertama kalinya disahkan dan dilantik sebagai Himpunan Mahasiswa Software Engineering pertama di Universitas Insan Pembangunan Indonesia pada tanggal 07 Januari 2024 di Auditorium Saba Karya.\r\n\r\nHimpunan Mahasiswa Software Engineering (HMSE) adalah suatu organisasi di tingkat mahasiswa yang terfokus pada bidang keilmuan teknologi informasi dan rekayasa perangkat lunak. Organisasi ini bertujuan untuk meningkatkan pemahaman dan keterampilan mahasiswa dalam dunia software engineering melalui kegiatan pendidikan, pelatihan, serta kegiatan sosial dan kolaboratif.', '2024-01-07 10:59:21', 'I Gusti Nyoman, Muhamad Luthfian, Marliyani Sutraliyana', 'http://localhost/web-hmse/img/phist1.jpg');
 
 -- --------------------------------------------------------
 
@@ -110,6 +138,12 @@ ALTER TABLE `announcement`
 --
 ALTER TABLE `dashboard-activities`
   ADD PRIMARY KEY (`activityId`);
+
+--
+-- Indeks untuk tabel `editor-users`
+--
+ALTER TABLE `editor-users`
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indeks untuk tabel `news`
