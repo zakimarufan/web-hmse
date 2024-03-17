@@ -116,7 +116,10 @@
                       <li class="nav-item">
                         <a class="nav-link active"
                         aria-current="page" href="#">Announcements</a>
-                      </li>
+                      </li>                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="http://localhost/web-hmse/news/">News</a>
+                        </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                       </li>

@@ -128,6 +128,9 @@ if (str_contains(getAddress(), "index.php")) {
                           <a class="nav-link" href="./announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link" href="./news/">News</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
                         </li>
                       </ul>
@@ -452,7 +455,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                           />
                           <div class="card-body">
                             <p class="card-text" style="text-align:center;">
-                              (3 Maret 2024)<br><b>Kegiatan Bootcamp HMSE 2024</b>
+                              (3 Maret 2024)<br><b><a href="./news/kegiatan-bootcamp-hmse-2024-sdmkmq22eaifj" style="text-decoration:none; color:inherit;">Kegiatan Bootcamp HMSE 2024</a></b>
                             </p>
                           </div>
                         </div>

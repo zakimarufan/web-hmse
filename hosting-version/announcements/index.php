@@ -16,7 +16,7 @@
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="https://testsite269.000webhostapp.com/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -40,22 +40,22 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="https://testsite269.000webhostapp.com/scrollbar.css"
+    href="http://localhost/web-hmse/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="https://testsite269.000webhostapp.com/fade-transition.css"
+  href="http://localhost/web-hmse/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="https://testsite269.000webhostapp.com/fade-transition.js"
+    src="http://localhost/web-hmse/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="https://testsite269.000webhostapp.com/style.css" />
+  <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
 </head>
 <body id="home">
   <div id="fade-overlay"  style="display: block;"></div>
@@ -83,7 +83,7 @@
                 style="background-color: #0a314b"
               >
                 <div class="container">
-                  <a class="navbar-brand" href="https://testsite269.000webhostapp.com/">HMSE</a>
+                  <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -100,23 +100,26 @@
                       <li class="nav-item">
                         <a
                           class="nav-link"
-                          href="https://testsite269.000webhostapp.com/"
+                          href="http://localhost/web-hmse/"
                           >Home</a
                         >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/#about">About</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/#gallery">Gallery</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/schedule/">Schedule</a>
+                        <a class="nav-link" href="http://localhost/web-hmse/schedule/">Schedule</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active"
                         aria-current="page" href="#">Announcements</a>
-                      </li>
+                      </li>                      
+                      <li class="nav-item">
+                          <a class="nav-link" href="http://localhost/web-hmse/news/">News</a>
+                        </li>
                       <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                       </li>
@@ -263,7 +266,7 @@ margin-top: 16px;
                 <h1 id="permanent-title">Pengumuman</h1>
                 <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                 <svg
-                  xmlns="https://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1440 316"
                 >
                   <path
@@ -274,10 +277,10 @@ margin-top: 16px;
                 </svg>
               </section>
               <!-- JUMBOTRON END -->
-                <a href="https://testsite269.000webhostapp.com/announcements/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
+                <a href="http://localhost/web-hmse/announcements/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
                 <div id="vsearch" class="subnav-input">
                 <input type="search" id="vsearch-text" placeholder="Cari..."></input>
-                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="https://www.w3.org/2000/svg">
+                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
  <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
 </svg>
 
@@ -312,7 +315,7 @@ margin-top: 16px;
               <!-- ANNOUNCEMENTS END -->
 
               
-    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
       <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
     </svg>
               </section>
@@ -372,7 +375,7 @@ margin-top: 16px;
   </div>
 </div>
 
-<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
   <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
 </svg>
 
@@ -433,7 +436,7 @@ margin-top: 16px;
 
 <script
 type="text/javascript"
-src="https://testsite269.000webhostapp.com/simplebar.min.js"
+src="http://localhost/web-hmse/simplebar.min.js"
 ></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -485,7 +488,7 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = 'https://testsite269.000webhostapp.com/announcements/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'http://localhost/web-hmse/announcements/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -529,9 +532,9 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
 <?php
 // Check if there is a string added after the last slash
 $servername = "localhost";
-$username = "id21707820_testsite269";
-$password = "hmse-2024A";
-$dbname = "id21707820_web_hmse";
+$username = "root";
+$password = "";
+$dbname = "web_hmse";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -546,7 +549,7 @@ function annRegularList($listquery) {
 
 while($row = mysqli_fetch_array($listquery)) {
   $a_prev_title = $row['announcement_title'];
-  $a_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/" . $row['ann_url_id_pointer'];
+  $a_url_id_pointer = "http://localhost/web-hmse/announcements/" . $row['ann_url_id_pointer'];
   $a_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
   $a_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
 echo "<script>listAnnouncementItems('$a_prev_title', '$a_p_date', '$a_prev_content', '$a_url_id_pointer');</script>";
@@ -593,7 +596,7 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 while($row = mysqli_fetch_array($searchlistquery)) {
   $a_search_prev_title = $row['announcement_title'];
-  $a_search_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/" . $row['ann_url_id_pointer'];
+  $a_search_url_id_pointer = "http://localhost/web-hmse/announcements/" . $row['ann_url_id_pointer'];
   $a_search_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
   $a_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
 echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', '$a_search_prev_content', '$a_search_url_id_pointer');</script>";
@@ -601,13 +604,13 @@ echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', 
         }
 
         } else { //Redirect to 404 Not Found
-          echo "<script>window.location.replace('https://testsite269.000webhostapp.com/404/');</script>";
+          echo "<script>window.location.replace('http://localhost/web-hmse/404/');</script>";
         }
       }
     }
 } else {
   function getAddress() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
     return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   }
   
