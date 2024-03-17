@@ -274,7 +274,7 @@ margin-top: 16px;
                 </svg>
               </section>
               <!-- JUMBOTRON END -->
-                <a href="." class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
+                <a href="https://testsite269.000webhostapp.com/announcements/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
                 <div id="vsearch" class="subnav-input">
                 <input type="search" id="vsearch-text" placeholder="Cari..."></input>
                 <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="https://www.w3.org/2000/svg">
@@ -485,7 +485,7 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = window.location.pathname + '/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'https://testsite269.000webhostapp.com/announcements/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -528,8 +528,8 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
 
 <?php
 // Check if there is a string added after the last slash
-$servername = "databases-auth.000webhost.com";
-$username = "testsite269";
+$servername = "localhost";
+$username = "id21707820_testsite269";
 $password = "hmse-2024A";
 $dbname = "id21707820_web_hmse";
 
@@ -546,7 +546,7 @@ function annRegularList($listquery) {
 
 while($row = mysqli_fetch_array($listquery)) {
   $a_prev_title = $row['announcement_title'];
-  $a_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/index.php/" . $row['ann_url_id_pointer'];
+  $a_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/" . $row['ann_url_id_pointer'];
   $a_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
   $a_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
 echo "<script>listAnnouncementItems('$a_prev_title', '$a_p_date', '$a_prev_content', '$a_url_id_pointer');</script>";
@@ -556,7 +556,7 @@ echo "<script>listAnnouncementItems('$a_prev_title', '$a_p_date', '$a_prev_conte
 
 if(isset($_SERVER['PATH_INFO'])) {
     $pathinfo = $_SERVER['PATH_INFO'];
-    $idpointer = substr($pathinfo, 1);
+    $idpointer = str_replace('/', '', substr($pathinfo, 1));
     if ($idpointer == "") {
 
       annRegularList($conn->execute_query("SELECT announcement_title, announcement_body_content, announcement_date, ann_url_id_pointer FROM announcement"));
@@ -593,7 +593,7 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 while($row = mysqli_fetch_array($searchlistquery)) {
   $a_search_prev_title = $row['announcement_title'];
-  $a_search_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/index.php/" . $row['ann_url_id_pointer'];
+  $a_search_url_id_pointer = "https://testsite269.000webhostapp.com/announcements/" . $row['ann_url_id_pointer'];
   $a_search_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
   $a_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
 echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', '$a_search_prev_content', '$a_search_url_id_pointer');</script>";
@@ -606,6 +606,16 @@ echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', 
       }
     }
 } else {
+  function getAddress() {
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
+    return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+  }
+  
+  if (str_contains(getAddress(), "index.php")) {
+    $noindex = str_replace('/index.php', '', getAddress());
+    echo "<script>window.location.href='$noindex';</script>";
+  }
+  
   annRegularList($conn->execute_query("SELECT announcement_title, announcement_body_content, announcement_date, ann_url_id_pointer FROM announcement"));
 }
 

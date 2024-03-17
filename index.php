@@ -446,19 +446,18 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                       <div class="col-md-4 mb-3">
                         <div class="card">
                           <img
-                            src="img/projects/p1.jpg"
+                            src="img/projects/IMG_7738.JPG"
                             class="card-img-top"
                             alt="project"
                           />
                           <div class="card-body">
-                            <p class="card-text">
-                              Some quick example text to build on the card title
-                              and make up the bulk of the card's content.
+                            <p class="card-text" style="text-align:center;">
+                              (3 Maret 2024)<br><b>Kegiatan Bootcamp HMSE 2024</b>
                             </p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4 mb-3">
+                      <!-- div class="col-md-4 mb-3">
                         <div class="card">
                           <img
                             src="img/projects/p2.jpg"
@@ -517,7 +516,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div -->
                     </div>
                   </div>
                 </section>
