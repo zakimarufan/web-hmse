@@ -485,7 +485,7 @@ src="http://localhost/web-hmse/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = window.location.pathname + '/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'http://localhost/web-hmse/announcements/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 

@@ -499,7 +499,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = window.location.pathname + '/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'http://localhost/web-hmse/schedule/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
