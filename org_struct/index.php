@@ -248,14 +248,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
+      <form action="./ipost.php" method="post">
           <div class="mb-3">
             <label for="name" class="form-label"
               >Nama Lengkap</label
             >
             <input
-              type="email"
+              type="text"
               class="form-control"
+              name="pname"
               id="name"
               aria-describedby="name"
             />
@@ -265,6 +266,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             <input
               type="email"
               class="form-control"
+              name="pemail"
               id="email"
               aria-describedby="email"
             />
@@ -273,6 +275,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             <label for="pesan" class="form-label"> Pesan</label>
             <textarea
               class="form-control"
+              name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>

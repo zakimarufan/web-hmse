@@ -337,40 +337,43 @@ margin-top: 16px;
   </div>
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label"
-            >Nama Lengkap</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="name"
-            aria-describedby="name"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label"> Pesan</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
+    <form action="./ipost.php" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="pname"
+              id="name"
+              aria-describedby="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="pemail"
+              id="email"
+              aria-describedby="email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="pesan" class="form-label"> Pesan</label>
+            <textarea
+              class="form-control"
+              name="pcontent"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
 
-        <button type="submit" class="btn btn-primary">
-          Kirim
-        </button>
-      </form>
+          <button type="submit" class="btn btn-primary">
+            Kirim
+          </button>
+        </form>
     </div>
   </div>
 </div>
