@@ -48,10 +48,13 @@ if ($conn->connect_error) {
 } else {
     //Go back to the previous page immediately
     $ppage = str_replace('/ipost.php', '', getAddress());
-    echo "<script>setPrevAddress($ppage);</script>";
+    echo "<script>window.location.href='$ppage';</script>";
 }
   
   $conn->close();
+
+  $ppage = str_replace('/ipost.php', '', getAddress());
+    echo "<script>setPrevAddress($ppage);</script>";
 
 ?>
 
@@ -119,7 +122,7 @@ if ($conn->connect_error) {
 
 let pAddress = ".";
 
-function setPrevAddress(prevAddress) {
+function setPrevAddress(prevAddress, duration) {
     pAddress = prevAddress;
 }
 
