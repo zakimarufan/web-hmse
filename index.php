@@ -386,25 +386,31 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                         <table>
                         <tr>
                         <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/gear.png" /></td>
+                        <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/gear.png" /></td>
                         <td><p><b>Gear (Semangat Kerja): </b><br>Teknologi yang berkesinambungan, garis bergerak
                             melambangkan keberlanjutan.</p></td>
     </tr>
     <tr>
     <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/lamp.png" /></td> <td><p><b>Lampu (Cahaya): </b><br>Menjadikan sumber efisiensi terhadap perkembangan di zaman
+    <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/lamp.png" /></td> <td><p><b>Lampu (Cahaya): </b><br>Menjadikan sumber efisiensi terhadap perkembangan di zaman
                             era teknologi sekarang.</p></td>
     </tr>
     <tr>
     <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/code.png" /></td><td><p><b>Kode Script (Menandakan suatu progres): </b><br>Setiap awalan pasti ada akhiran.</p></td>
+    <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/code.png" /></td><td><p><b>Kode Script (Menandakan suatu progres): </b><br>Setiap awalan pasti ada akhiran.</p></td>
     </tr>
     <tr>
+    <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/book.png" /></td> <td><p><b>Buku (Sumber pengetahuan): </b><br>Melambangkan pustaka ilmu, merupakan sumber dari
     <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/book.png" /></td> <td><p><b>Buku (Sumber pengetahuan): </b><br>Melambangkan pustaka ilmu, merupakan sumber dari
                             segala ilmu pengetahuan.</p></td>
     </tr>
     <tr>
     <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/computer.png" /></td> <td><p><b>Komputer </b> (Sebagai makna media pembelajaran) <b><br>Tampilan Coding </b> (Melambangkan
+    <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/computer.png" /></td> <td><p><b>Komputer </b> (Sebagai makna media pembelajaran) <b><br>Tampilan Coding </b> (Melambangkan
                             teknologi/komunikasi dengan bahasa mesin dengan segala tabiatnya)</p></td>
     </tr>
     <tr>
+    <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/grey.png" /></td><td><p><b>Filosofi warna: Abu-abu </b><br>(Menyimpan makna positif yaitu melambangkan kemandirian,
     <td style="text-align: center; vertical-align: middle;"><img style="max-width: 128px; max-height: 128px; margin-right:9px" src="img/grey.png" /></td><td><p><b>Filosofi warna: Abu-abu </b><br>(Menyimpan makna positif yaitu melambangkan kemandirian,
                              kestabilan, keseriusan, serta tanggung jawab.)</p></td>
     </tr>
