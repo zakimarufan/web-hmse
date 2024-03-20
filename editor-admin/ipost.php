@@ -41,9 +41,9 @@ if ($conn->connect_error) {
   
   if ($pname != '' && $pemail != '' && $pcontent != '') {
   if ($conn->query($sql) === TRUE) {
-    echo "<body style='background-color:#0a314b;'><br><h1>Your feedback has been submitted successfully. Thank you.</h1><br><p style=\"color: white;\">Click the back button if the page won't go back automatically after few seconds.</p></body>";
+    echo "<body style='background-color:#0a314b;'><br><h1 style=\"text-align:center;\">Your feedback has been submitted successfully. Thank you.</h1><br><p style=\"color: white; text-align:center;\">Click the back button if the page won't go back automatically after few seconds.</p></body>";
   } else {
-    echo "<body style='background-color:#0a314b;'><br><p style=\"color: white;\">Error: " . $sql . "<br>" . $conn->error . "</p></body>";
+    echo "<body style='background-color:#0a314b;'><br><p style=\"color: white; text-align:center;\">Error: " . $sql . "<br>" . $conn->error . "</p></body>";
   }
 } else {
     //Go back to the previous page immediately
