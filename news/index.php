@@ -335,20 +335,18 @@ margin-top: 16px;
 <!-- CONTACT START-->
 <section id="contact">
 <div class="container">
-  <div class="row text-center mb-3">
-    <div class="col">
-      <h2>Contact</h2>
+    <div class="row text-center mb-3">
+      <div class="col">
+        <h2>Contact</h2>
+      </div>
     </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-    <form action="./ipost.php" method="post">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="./ipost.php" method="post">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >Nama Lengkap</label
-            >
             <input
               type="text"
+              placeholder="Nama Lengkap"
               class="form-control"
               name="pname"
               id="name"
@@ -356,9 +354,9 @@ margin-top: 16px;
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input
               type="email"
+              placeholder="Email"
               class="form-control"
               name="pemail"
               id="email"
@@ -366,22 +364,22 @@ margin-top: 16px;
             />
           </div>
           <div class="mb-3">
-            <label for="pesan" class="form-label"> Pesan</label>
             <textarea
+              placeholder="Tulis pesan disini..."
               class="form-control"
               name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
           </div>
-
+          <br />
           <button type="submit" class="btn btn-primary">
             Kirim
           </button>
         </form>
+      </div>
     </div>
   </div>
-</div>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
   <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
@@ -476,6 +474,11 @@ src="http://localhost/web-hmse/simplebar.min.js"
           document.getElementById("vbody").innerHTML = newsContent;
       }
 
+      function emptyNewsList() {
+        document.getElementById("news_listing").innerHTML = 
+        "<p style=\"text-align: center; padding-bottom:10%;\"><span class=\"anchor-title\">Belum ada berita apa pun tentang HMSE untuk saat ini.</span></p>";
+      }
+
       function listNewsItems(anchorTitle, date, previewContent, hreflink, primaryThumbnail) {
         document.getElementById("news_listing").innerHTML +=
         "<div class=\"flex-item\" style=\"text-align: left;\">"
@@ -557,6 +560,7 @@ function newsRegularList($listquery) {
 //Truncate the preview body content text to 255 characters
 //Remove the HTML codes from the preview content
 
+if ($listquery->num_rows > 0) {
 while($row = mysqli_fetch_array($listquery)) {
   $n_prev_title = $row['newsTitle'];
   $n_url_id_pointer = "http://localhost/web-hmse/news/" . $row['news_url_id_pointer'];
@@ -564,6 +568,10 @@ while($row = mysqli_fetch_array($listquery)) {
   $n_prim_thumb = $row['newsMainThumbImg'];
   $n_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255);
 echo "<script>listNewsItems('$n_prev_title', '$n_p_date', '$n_prev_content', '$n_url_id_pointer', '$n_prim_thumb');</script>";
+}
+} else {
+  echo "<script>document.getElementById(\"vsearch\").style.display = \"none\";</script>";
+  echo "<script>emptyNewsList();</script>";
 }
 
 }

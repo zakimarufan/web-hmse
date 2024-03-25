@@ -111,7 +111,7 @@ if (str_contains(getAddress(), "index.php")) {
                         <li class="nav-item">
                           <a
                             class="nav-link"
-                            href="."
+                            href="http://localhost/web-hmse/"
                             >Home</a
                           >
                         </li>

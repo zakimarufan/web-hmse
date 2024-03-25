@@ -250,32 +250,24 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 
 <br>
 
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="card border border-4">
-                        <div class="card-body">
-                          <h5 class="card-title text-center">VISI</h5>
-                          <p class="card-text mb-2">
+                    <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+                    <div class="card border border-4">
+                      <div class="card-body">
+                        <h5 class="card-title text-center">VISI</h5>
+                        <!-- <p class="card-text"></p> -->
+                            <div class="flex-container">
+                            <p class="card-text mb-2">
                             Mengembangkan kepemimpinan dan kerjasama dalam
                             rangka menciptakan perubahan positif dalam dunia
                             Tekhnologi dan Perangkat Lunak
                             <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
                           </p>
-                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="card border border-4">
-                        <div class="card-body">
-                          <h5 class="card-title text-center">MISI</h5>
-                          <!-- <p class="card-text"></p> -->
-                          <ul class="card-title">
-                            <p class="card-title">
+                            </div>
+                            <br>
+                            <h5 class="card-title text-center">MISI</h5>
+                        <!-- <p class="card-text"></p> -->
+                            <div class="flex-container">
+                            <ul class="card-title">
                               1. Mewujudkan tali silaturahmi Mahasiswa/i jurusan
                               Software Engineering <br />
                               2. Mengembang program software engineering yang
@@ -286,13 +278,15 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                               bermanfaat <br />
                               5. Menjalin hubungan yang baik dengan seluruh
                               Organisasi Kemahasiswaan di Indonesia
-                            </p>
                           </ul>
-                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        </div>
+                            <br />
+                            </div>
+                            <br>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                       </div>
                     </div>
                   </div>
+
 
                   <br>
 
@@ -549,11 +543,9 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
       <div class="col-md-6">
         <form action="./ipost.php" method="post">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >Nama Lengkap</label
-            >
             <input
               type="text"
+              placeholder="Nama Lengkap"
               class="form-control"
               name="pname"
               id="name"
@@ -561,9 +553,9 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input
               type="email"
+              placeholder="Email"
               class="form-control"
               name="pemail"
               id="email"
@@ -571,15 +563,15 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
             />
           </div>
           <div class="mb-3">
-            <label for="pesan" class="form-label"> Pesan</label>
             <textarea
+              placeholder="Tulis pesan disini..."
               class="form-control"
               name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
           </div>
-
+          <br />
           <button type="submit" class="btn btn-primary">
             Kirim
           </button>

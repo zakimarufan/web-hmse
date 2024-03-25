@@ -328,7 +328,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
 <!-- CONTACT START-->
 <section id="contact">
-  <div class="container">
+<div class="container">
     <div class="row text-center mb-3">
       <div class="col">
         <h2>Contact</h2>
@@ -336,13 +336,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-      <form action="./ipost.php" method="post">
+        <form action="./ipost.php" method="post">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >Nama Lengkap</label
-            >
             <input
               type="text"
+              placeholder="Nama Lengkap"
               class="form-control"
               name="pname"
               id="name"
@@ -350,9 +348,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input
               type="email"
+              placeholder="Email"
               class="form-control"
               name="pemail"
               id="email"
@@ -360,15 +358,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             />
           </div>
           <div class="mb-3">
-            <label for="pesan" class="form-label"> Pesan</label>
             <textarea
+              placeholder="Tulis pesan disini..."
               class="form-control"
               name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
           </div>
-
+          <br />
           <button type="submit" class="btn btn-primary">
             Kirim
           </button>
@@ -491,7 +489,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 + "<p style=\"color: grey;\"><span class=\"anchor-title\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
                   +  anchorTitle
                + "</a></span>"+date+"<br>Venue: "+ location +"</p>"
-+ "<p class=\"preview-body-content\">" + previewContent + "</div><br>"
++ "<p class=\"preview-body-content\">" + previewContent + "</div><br>";
+      }
+
+      function emptyScheduleList() {
+        document.getElementById("schedule_listing").innerHTML = 
+        "<p style=\"text-align: center; padding-bottom:10%;\"><span class=\"anchor-title\">Belum ada acara apa pun untuk saat ini.</span></p>";
       }
 
         const scrollnav = document.querySelector("#scrollnav");
@@ -564,6 +567,7 @@ function schRegularList($listquery) {
 //Truncate the preview body content text to 255 characters
 //Remove the HTML codes from the preview content
 
+if ($listquery->num_rows > 0) {
       while($row = mysqli_fetch_array($listquery)) {
         $sc_prev_title = $row['schedule_title'];
         $sc_url_id_pointer = "http://localhost/web-hmse/schedule/" . $row['sch_url_id_pointer'];
@@ -580,6 +584,10 @@ function schRegularList($listquery) {
         $sc_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['body_content'])), 0, 255);
       echo "<script>listScheduleItems('$sc_prev_title', '$sc_p_date', '$sc_location', '$sc_prev_content', '$sc_url_id_pointer');</script>";
       }
+    } else {
+      echo "<script>document.getElementById(\"vsearch\").style.display = \"none\";</script>";
+      echo "<script>emptyScheduleList();</script>";
+    }
 
 }
 
