@@ -240,7 +240,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
 <!-- CONTACT START-->
 <section id="contact">
-  <div class="container">
+<div class="container">
     <div class="row text-center mb-3">
       <div class="col">
         <h2>Contact</h2>
@@ -248,13 +248,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-      <form action="./ipost.php" method="post">
+        <form action="./ipost.php" method="post">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >Nama Lengkap</label
-            >
             <input
               type="text"
+              placeholder="Nama Lengkap"
               class="form-control"
               name="pname"
               id="name"
@@ -262,9 +260,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input
               type="email"
+              placeholder="Email"
               class="form-control"
               name="pemail"
               id="email"
@@ -272,15 +270,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             />
           </div>
           <div class="mb-3">
-            <label for="pesan" class="form-label"> Pesan</label>
             <textarea
+              placeholder="Tulis pesan disini..."
               class="form-control"
               name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
           </div>
-
+          <br />
           <button type="submit" class="btn btn-primary">
             Kirim
           </button>
