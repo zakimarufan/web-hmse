@@ -35,8 +35,8 @@ if ($conn->connect_error) {
   date_default_timezone_set('Asia/Jakarta');
   $date = date('Y-m-d H:i:s');
 
-  $sql = "INSERT INTO contact_submissions (contact_id_pointer, sender_name, sender_email, message_body_content, contact_date)
-  VALUES ('$id', '$pname', '$pemail', '$pcontent', '$date')";
+  $sql = "INSERT INTO contact_submissions (contact_id_pointer, sender_name, sender_email, message_body_content, contact_date, is_read)
+  VALUES ('$id', '$pname', '$pemail', '$pcontent', '$date', 'FALSE')";
   
   
   if ($pname != '' && $pemail != '' && $pcontent != '') {
