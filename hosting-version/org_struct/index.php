@@ -1,7 +1,7 @@
 <?php
 
 function getAddress() {
-  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
+  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
   return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 }
 
@@ -27,7 +27,7 @@ if (str_contains(getAddress(), "index.php")) {
 
       -->
 
-    <link rel="icon" type="image/x-icon" href="https://testsite269.000webhostapp.com/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://hmse-unipi.or.id/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -51,22 +51,22 @@ if (str_contains(getAddress(), "index.php")) {
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://testsite269.000webhostapp.com/scrollbar.css"
+      href="http://hmse-unipi.or.id/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="https://testsite269.000webhostapp.com/fade-transition.css"
+    href="http://hmse-unipi.or.id/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="https://testsite269.000webhostapp.com/fade-transition.js"
+      src="http://hmse-unipi.or.id/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="https://testsite269.000webhostapp.com/style.css" />
+    <link rel="stylesheet" href="http://hmse-unipi.or.id/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -94,7 +94,7 @@ if (str_contains(getAddress(), "index.php")) {
                   style="background-color: #0a314b"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href="https://testsite269.000webhostapp.com/">HMSE</a>
+                    <a class="navbar-brand" href="http://hmse-unipi.or.id/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -111,25 +111,25 @@ if (str_contains(getAddress(), "index.php")) {
                         <li class="nav-item">
                           <a
                             class="nav-link"
-                            href="."
+                            href="http://hmse-unipi.or.id/"
                             >Home</a
                           >
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/#about">About</a>
+                          <a class="nav-link" href="http://hmse-unipi.or.id/#about">About</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/#gallery">Gallery</a>
+                          <a class="nav-link" href="http://hmse-unipi.or.id/#gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link"
-                          aria-current="page" href="https://testsite269.000webhostapp.com/schedule/">Schedule</a>
+                          aria-current="page" href="http://hmse-unipi.or.id/schedule/">Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/announcements/">Announcements</a>
+                          <a class="nav-link" href="http://hmse-unipi.or.id/announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/news/">News</a>
+                          <a class="nav-link" href="http://hmse-unipi.or.id/news/">News</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -199,7 +199,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                   <h1>Struktur Organisasi</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
-                    xmlns="https://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1440 316"
                   >
                     <path
@@ -217,7 +217,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                       <div class="col">
                         
                         
-                        <img src="https://testsite269.000webhostapp.com/img/sk_hmse.png" style="max-width: 100%"></img>
+                        <img src="http://hmse-unipi.or.id/img/sk_hmse.png" style="max-width: 100%"></img>
 
 
                       </div>
@@ -226,7 +226,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- ORGANIZATION STRUCTURE END -->
 
 
-      <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
                 </section>
@@ -240,7 +240,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
 <!-- CONTACT START-->
 <section id="contact">
-  <div class="container">
+<div class="container">
     <div class="row text-center mb-3">
       <div class="col">
         <h2>Contact</h2>
@@ -248,36 +248,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <form>
+        <form action="./ipost.php" method="post">
           <div class="mb-3">
-            <label for="name" class="form-label"
-              >Nama Lengkap</label
-            >
             <input
-              type="email"
+              type="text"
+              placeholder="Nama Lengkap"
               class="form-control"
+              name="pname"
               id="name"
               aria-describedby="name"
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input
               type="email"
+              placeholder="Email"
               class="form-control"
+              name="pemail"
               id="email"
               aria-describedby="email"
             />
           </div>
           <div class="mb-3">
-            <label for="pesan" class="form-label"> Pesan</label>
             <textarea
+              placeholder="Tulis pesan disini..."
               class="form-control"
+              name="pcontent"
               id="exampleFormControlTextarea1"
               rows="3"
             ></textarea>
           </div>
-
+          <br />
           <button type="submit" class="btn btn-primary">
             Kirim
           </button>
@@ -286,7 +287,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     </div>
   </div>
 
-  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
     <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
   </svg>
 
@@ -347,7 +348,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="https://testsite269.000webhostapp.com/simplebar.min.js"
+  src="http://hmse-unipi.or.id/simplebar.min.js"
   ></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

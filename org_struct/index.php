@@ -383,7 +383,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
             //this == the link that was clicked
             var href = $(this).attr("href");
             if ((href.startsWith('#')) || (href.startsWith('?'))) {
-              var vstr = this.href.substring(this.href.lastIndexOf('p') + 2);
+              var vstr = this.href.substring(this.href.lastIndexOf('/') + 2);
               if (vstr.length > 0){
                 $("html, body, #scrollnav").animate({ scrollTop: document.getElementById(vstr).offsetTop }, 500);
               } else {

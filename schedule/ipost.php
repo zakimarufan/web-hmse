@@ -1,6 +1,6 @@
 <?php
 
-$pname = $_POST['pname'];
+$pname = str_replace("'", "''", $_POST['pname']);
 $pemail = $_POST['pemail'];
 $pcontent = str_replace("'", "''", $_POST['pcontent']);
 

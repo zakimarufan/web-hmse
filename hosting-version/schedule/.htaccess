@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /web-hmse/schedule/
+RewriteBase /schedule/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.*)$ /web-hmse/schedule/index.php/$1 [L]
+RewriteRule (.*)$ /schedule/index.php/$1 [L]

@@ -16,7 +16,7 @@
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="https://testsite269.000webhostapp.com/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="http://hmse-unipi.or.id/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -40,22 +40,22 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="https://testsite269.000webhostapp.com/scrollbar.css"
+    href="http://hmse-unipi.or.id/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="https://testsite269.000webhostapp.com/fade-transition.css"
+  href="http://hmse-unipi.or.id/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="https://testsite269.000webhostapp.com/fade-transition.js"
+    src="http://hmse-unipi.or.id/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="https://testsite269.000webhostapp.com/style.css" />
+  <link rel="stylesheet" href="http://hmse-unipi.or.id/style.css" />
 </head>
 <body id="home">
   <div id="fade-overlay"  style="display: block;"></div>
@@ -83,7 +83,7 @@
                 style="background-color: #0a314b"
               >
                 <div class="container">
-                  <a class="navbar-brand" href="https://testsite269.000webhostapp.com/">HMSE</a>
+                  <a class="navbar-brand" href="http://hmse-unipi.or.id/">HMSE</a>
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -100,21 +100,21 @@
                       <li class="nav-item">
                         <a
                           class="nav-link"
-                          href="https://testsite269.000webhostapp.com/"
+                          href="http://hmse-unipi.or.id/"
                           >Home</a
                         >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/#about">About</a>
+                        <a class="nav-link" href="http://hmse-unipi.or.id/#about">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/#gallery">Gallery</a>
+                        <a class="nav-link" href="http://hmse-unipi.or.id/#gallery">Gallery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://testsite269.000webhostapp.com/schedule/">Schedule</a>
+                        <a class="nav-link" href="http://hmse-unipi.or.id/schedule/">Schedule</a>
                       </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="https://testsite269.000webhostapp.com/announcements/">Announcements</a>
+                          <a class="nav-link" href="http://hmse-unipi.or.id/announcements/">Announcements</a>
                         </li>
                       <li class="nav-item">
                         <a class="nav-link active"
@@ -271,7 +271,7 @@ margin-top: 16px;
                 <h1 id="permanent-title">Berita</h1>
                 <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                 <svg
-                  xmlns="https://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1440 316"
                 >
                   <path
@@ -282,10 +282,10 @@ margin-top: 16px;
                 </svg>
               </section>
               <!-- JUMBOTRON END -->
-                <a href="https://testsite269.000webhostapp.com/news/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Berita</a>
+                <a href="http://hmse-unipi.or.id/news/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Berita</a>
                 <div id="vsearch" class="subnav-input">
                 <input type="search" id="vsearch-text" placeholder="Cari..."></input>
-                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="https://www.w3.org/2000/svg">
+                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
  <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
 </svg>
 
@@ -320,7 +320,7 @@ margin-top: 16px;
               <!-- NEWS END -->
 
               
-    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
       <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
     </svg>
               </section>
@@ -335,52 +335,53 @@ margin-top: 16px;
 <!-- CONTACT START-->
 <section id="contact">
 <div class="container">
-  <div class="row text-center mb-3">
-    <div class="col">
-      <h2>Contact</h2>
+    <div class="row text-center mb-3">
+      <div class="col">
+        <h2>Contact</h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="./ipost.php" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              placeholder="Nama Lengkap"
+              class="form-control"
+              name="pname"
+              id="name"
+              aria-describedby="name"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              placeholder="Email"
+              class="form-control"
+              name="pemail"
+              id="email"
+              aria-describedby="email"
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              placeholder="Tulis pesan disini..."
+              class="form-control"
+              name="pcontent"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary">
+            Kirim
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label"
-            >Nama Lengkap</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="name"
-            aria-describedby="name"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label"> Pesan</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
-        </div>
 
-        <button type="submit" class="btn btn-primary">
-          Kirim
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
   <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
 </svg>
 
@@ -441,7 +442,7 @@ margin-top: 16px;
 
 <script
 type="text/javascript"
-src="https://testsite269.000webhostapp.com/simplebar.min.js"
+src="http://hmse-unipi.or.id/simplebar.min.js"
 ></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -473,6 +474,11 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
           document.getElementById("vbody").innerHTML = newsContent;
       }
 
+      function emptyNewsList() {
+        document.getElementById("news_listing").innerHTML = 
+        "<p style=\"text-align: center; padding-bottom:10%;\"><span class=\"anchor-title\">Belum ada berita apa pun tentang HMSE untuk saat ini.</span></p>";
+      }
+
       function listNewsItems(anchorTitle, date, previewContent, hreflink, primaryThumbnail) {
         document.getElementById("news_listing").innerHTML +=
         "<div class=\"flex-item\" style=\"text-align: left;\">"
@@ -495,7 +501,7 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = 'https://testsite269.000webhostapp.com/news/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'http://hmse-unipi.or.id/news/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -539,9 +545,9 @@ src="https://testsite269.000webhostapp.com/simplebar.min.js"
 <?php
 // Check if there is a string added after the last slash
 $servername = "localhost";
-$username = "id21707820_testsite269";
-$password = "hmse-2024A";
-$dbname = "id21707820_web_hmse";
+$username = "hmseunip";
+$password = "11wvYasdfeJp13k";
+$dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -554,13 +560,18 @@ function newsRegularList($listquery) {
 //Truncate the preview body content text to 255 characters
 //Remove the HTML codes from the preview content
 
+if ($listquery->num_rows > 0) {
 while($row = mysqli_fetch_array($listquery)) {
   $n_prev_title = $row['newsTitle'];
-  $n_url_id_pointer = "https://testsite269.000webhostapp.com/news/" . $row['news_url_id_pointer'];
+  $n_url_id_pointer = "http://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
   $n_p_date = date('D, j M Y H:i', strtotime($row['newsDate']));
   $n_prim_thumb = $row['newsMainThumbImg'];
   $n_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255);
 echo "<script>listNewsItems('$n_prev_title', '$n_p_date', '$n_prev_content', '$n_url_id_pointer', '$n_prim_thumb');</script>";
+}
+} else {
+  echo "<script>document.getElementById(\"vsearch\").style.display = \"none\";</script>";
+  echo "<script>emptyNewsList();</script>";
 }
 
 }
@@ -604,7 +615,7 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 while($row = mysqli_fetch_array($searchlistquery)) {
   $n_search_prev_title = $row['newsTitle'];
-  $n_search_url_id_pointer = "https://testsite269.000webhostapp.com/news/" . $row['news_url_id_pointer'];
+  $n_search_url_id_pointer = "http://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
   $n_search_prim_thumb = $row['newsMainThumbImg'];
   $n_search_p_date = date('D, j M Y H:i', strtotime($row['newsDate']));
   $n_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255);
@@ -613,13 +624,13 @@ echo "<script>listNewsItems('$n_search_prev_title', '$n_search_p_date', '$n_sear
         }
 
         } else { //Redirect to 404 Not Found
-          echo "<script>window.location.replace('https://testsite269.000webhostapp.com/404/');</script>";
+          echo "<script>window.location.replace('http://hmse-unipi.or.id/404/');</script>";
         }
       }
     }
 } else {
   function getAddress() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
     return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   }
   

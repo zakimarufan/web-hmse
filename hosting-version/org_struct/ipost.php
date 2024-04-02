@@ -1,6 +1,6 @@
 <?php
 
-$pname = str_replace("'", "''", $_POST['pname']);
+$pname = $_POST['pname'];
 $pemail = $_POST['pemail'];
 $pcontent = str_replace("'", "''", $_POST['pcontent']);
 
@@ -20,9 +20,9 @@ function getAddress() {
   }
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web_hmse";
+$username = "hmseunip";
+$password = "11wvYasdfeJp13k";
+$dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -76,7 +76,7 @@ if ($conn->connect_error) {
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="http://hmse-unipi.or.id/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -100,22 +100,22 @@ if ($conn->connect_error) {
   <link
     rel="stylesheet"
     type="text/css"
-    href="http://localhost/web-hmse/scrollbar.css"
+    href="http://hmse-unipi.or.id/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="http://localhost/web-hmse/fade-transition.css"
+  href="http://hmse-unipi.or.id/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="http://localhost/web-hmse/fade-transition.js"
+    src="http://hmse-unipi.or.id/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
+  <link rel="stylesheet" href="http://hmse-unipi.or.id/style.css" />
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>

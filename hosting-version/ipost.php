@@ -1,6 +1,6 @@
 <?php
 
-$pname = str_replace("'", "''", $_POST['pname']);
+$pname = $_POST['pname'];
 $pemail = $_POST['pemail'];
 $pcontent = str_replace("'", "''", $_POST['pcontent']);
 
@@ -20,9 +20,9 @@ function getAddress() {
   }
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web_hmse";
+$username = "hmseunip";
+$password = "11wvYasdfeJp13k";
+$dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
