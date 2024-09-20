@@ -1,6 +1,7 @@
 <html>
 
 <head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <title>Announcements - HMSE</title>
 
@@ -16,11 +17,12 @@
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://hmse-unipi.or.id/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a314b">
 
   <!-- Bootstrap CSS -->
   <link
@@ -40,22 +42,22 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="http://localhost/web-hmse/scrollbar.css"
+    href="https://hmse-unipi.or.id/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="http://localhost/web-hmse/fade-transition.css"
+  href="https://hmse-unipi.or.id/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="http://localhost/web-hmse/fade-transition.js"
+    src="https://hmse-unipi.or.id/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
+  <link rel="stylesheet" href="https://hmse-unipi.or.id/style.css" />
 </head>
 <body id="home">
   <div id="fade-overlay"  style="display: block;"></div>
@@ -80,10 +82,11 @@
               <!-- NAVBAR START -->
               <nav
                 class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
-                style="background-color: #0a314b"
+                id="inav2"
+style="background-color: #0A314B;"
               >
                 <div class="container">
-                  <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
+                  <a class="navbar-brand" href="https://hmse-unipi.or.id/">HMSE</a>
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -97,31 +100,35 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                          <ul class="dropdown-menu" aria-labelledby="AboutDD">
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#aim">Tujuan</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#visionmission">Visi & Misi</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#briefhistory">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#logophilosophy">Filosofi Logo</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/w_programme/">Program Kerja</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/org_struct/">Struktur Organisasi</a></li>
+                          </ul>
+                        </li>
                       <li class="nav-item">
-                        <a
-                          class="nav-link"
-                          href="http://localhost/web-hmse/"
-                          >Home</a
-                        >
+                        <a class="nav-link" href="https://hmse-unipi.or.id/gallery/">Gallery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
+                        <a class="nav-link" href="https://hmse-unipi.or.id/schedule/">Events Schedule</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/web-hmse/schedule/">Schedule</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active"
+                        <a class="nav-link"
                         aria-current="page" href="#">Announcements</a>
                       </li>                      
                       <li class="nav-item">
-                          <a class="nav-link" href="http://localhost/web-hmse/news/">News</a>
+                          <a class="nav-link" href="https://hmse-unipi.or.id/news/">News</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://hmse-unipi.or.id/reports/">Reports</a>
                         </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="https://hmse-unipi.or.id/#contact">Contact</a>
                       </li>
                     </ul>
                   </div>
@@ -135,42 +142,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
 <style>
 
-/* Add WA floating button CSS */
-.floating {
-position: fixed;
-width: 60px;
-height: 60px;
-bottom: 40px;
-right: 40px;
-background-color: #25d366;
-color: #fff;
-border-radius: 50px;
-text-align: center;
-font-size: 30px;
-box-shadow: 2px 2px 3px #999;
-z-index: 99;
-opacity: 100%;
-mix-blend-mode: multiply;
-}
-
-.floatingb {
-position: fixed;
-width: 60px;
-height: 60px;
-bottom: 40px;
-right: 40px;
-background-color: #25d366;
-color: #fff;
-border-radius: 50px;
-text-align: center;
-font-size: 30px;
-z-index: 100;
-opacity: 35%;
-mix-blend-mode: screen;
-}
-
-.fab-icon {
-margin-top: 16px;
+.view-announcements {
+    min-height: 50vh;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
 .anchor-title {
@@ -178,6 +154,15 @@ margin-top: 16px;
   color: black;
 	font-weight: bold;
   margin-right: 1%;
+  text-transform: uppercase;
+}
+
+.anchor-title-mobile {
+	font-size: 18px;
+  color: black;
+	font-weight: bold;
+  margin-right: 1%;
+  text-transform: uppercase;
 }
 
 .content-title {
@@ -185,6 +170,7 @@ margin-top: 16px;
   color: black;
 	font-weight: bold;
   margin-right: 1%;
+  text-transform: uppercase;
 }
 
 .preview-body-content {
@@ -195,6 +181,17 @@ margin-top: 16px;
 
 .body-content{
   text-align: justify;
+}
+
+.nav-flex-container {
+  display: flex;
+  align-items: center;
+  margin-left: 8%;
+  justify-content: center;
+}
+
+.nav-flex-item {
+  text-align: center;
 }
 
 .subnav {
@@ -209,15 +206,15 @@ margin-top: 16px;
 }
 
 .subnav-input {
-  position: absolute;
+    position:relative !important;
   left:0;
   right:0;
-  margin-left: 12%;
-  margin-right: 12%;
   padding: 6px 22px;
       display: inline-block;
   box-shadow: 0px 0px 2px #000;
   border-radius: 500px;
+  transition: 0.3s;
+  width:100% !important;
 }
 
 .subnav-input:focus-within {
@@ -243,6 +240,7 @@ margin-top: 16px;
       right: 16px; /* Adjust the right distance as needed */
       width: 16px; /* Adjust width */
       height: 16px;
+  transition: 0.3s;
 }
 
 .subnav-input svg:hover {
@@ -252,12 +250,35 @@ margin-top: 16px;
 
 </style>
 
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://hmse-unipi.or.id/style-ex.css"
+  />
+
 <!-- render the button and direct it to wa.me -->
-<i class="floating">
+<div id="firefox_safari_filter"></div>
+<i class="floating" id="wfloating">
 <i class="fab fa-whatsapp fab-icon"></i>
 </i>
-<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+<a onclick="window.open('https://wa.me/6285819608700/', '_blank');" class="floatingb" id="wfloatingb" target="_blank">
 </a>
+<script>
+$(function() {
+  $('#wfloatingb').hover(function() {
+    $('#wfloating').css('mix-blend-mode', 'normal');
+    if (!isMobile) { $('#wfloating').css('box-shadow', '0px 0px 11px #25d366'); }
+  }, function() {
+    // on mouseout, reset the background colour
+    if (!isMobile) {
+        $('#wfloating').css('mix-blend-mode', 'multiply');
+    } else {
+        $('#wfloating').css('opacity', '75%');
+    }
+    $('#wfloating').css('box-shadow', '2px 2px 3px rgba(0, 0, 0, .4)');
+  });
+});
+  </script>
 <!-- WA BUTTON END -->
 
               <!-- JUMBOTRON START -->
@@ -265,28 +286,35 @@ margin-top: 16px;
 
                 <h1 id="permanent-title">Pengumuman</h1>
                 <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1440 316"
-                >
-                  <path
-                    fill="#ffffff"
-                    fill-opacity="10"
-                    d="M0,64L48,64C96,64,192,64,288,101.3C384,139,480,213,576,234.7C672,256,768,224,864,181.3C960,139,1056,85,1152,69.3C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                  ></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 1440 160">
+                    <path fill="#ffffff" fill-opacity="10" d="M 0 63.652 L 48 63.652 C 96 63.652 192 63.652 288 76.329 C 384 89.141 480 114.291 576 121.666 C 672 128.905 768 118.029 864 103.518 C 960 89.141 1056 70.789 1152 65.453 C 1248 59.913 1344 67.39 1392 70.891 L 1440 74.527 L 1440 150.656 L 1392 150.656 C 1344 150.656 1248 150.656 1152 150.656 C 1056 150.656 960 150.656 864 150.656 C 768 150.656 672 150.656 576 150.656 C 480 150.656 384 150.656 288 150.656 C 192 150.656 96 150.656 48 150.656 L 0 150.656 L 0 63.652 Z"></path>
+                  </svg>
               </section>
               <!-- JUMBOTRON END -->
-                <a href="http://localhost/web-hmse/announcements/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Pengumuman</a>
-                <div id="vsearch" class="subnav-input">
-                <input type="search" id="vsearch-text" placeholder="Cari..."></input>
-                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
- <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
-</svg>
-
-</div>
+                <a href="https://hmse-unipi.or.id/announcements/" class="subnav" id="backp_button" style="display:none; font-family:Friz-Quadrata !important; top: 50px;">← Kembali ke Pengumuman</a>
+                 <div class="nav-flex-container" id="vnav" style="position: absolute !important; width: 85% !important;">
+                    <div class="nav-flex-container nav-flex-item" id="vnav-mobile" style="margin: 0 !important; flex-basis: 100% !important; flex-direction: row !important;">
+                <div class="nav-flex-item">
+                <a class="subnav" id="firstpage">&lt;&lt;</a>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="prevpage">&lt;</a>
+                </div><div class="nav-flex-item" style="word-break:keep-all !important; flex-basis: 40% !important; margin: 5% !important;">
+                <div id="pagecount">Halaman 1 - 1 dari 1</div>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="nextpage">&gt;</a>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="lastpage">&gt;&gt;</a>
+                </div>
+                </div>
+                <div id="vsearch" class="nav-flex-item subnav-input" style="flex-basis: 100% !important;">
+                <input type="search" id="vsearch-text" placeholder="Cari..." oninput="changeSearchCase();"></input>
+                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="https://www.w3.org/2000/svg">
+                 <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
+                </svg>
+                </div>
+                </div>
               <!-- ANNOUNCEMENTS LIST START-->
-              <section id="announcements">
+              <section id="announcements" class="view-announcements">
                 <div class="container">
 
                   <div class="row text-center mb-3">
@@ -302,7 +330,7 @@ margin-top: 16px;
                     <div class="flex-container" id="announcement_content" style="display:none;">
 
 <h2 class="content-title" style="text-align: left;" id="vtitle"></h2>
-<p style="color: grey; text-align: left; font-size: 10pt;" id="datetime_author_details"></p>
+<p style="color: grey; text-align: left; font-size: 11pt; font-family: Myriad-Pro; font-style: Italic;  margin-bottom: 0;" id="datetime_author_details"></p>
 <br>
 
 <p id="vbody" class="body-content"></p>
@@ -315,11 +343,10 @@ margin-top: 16px;
               <!-- ANNOUNCEMENTS END -->
 
               
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
-      <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-              </section>
-              <!-- CONTACT END -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 1440 162">
+        <path fill="#0a314b" fill-opacity="10" d="M -0.848 50.584 L 47.152 44.263 C 95.152 37.942 191.152 25.3 287.152 16.886 C 383.152 8.313 479.152 4.362 575.152 18.979 C 671.152 33.596 767.152 67.571 863.152 77.961 C 959.152 88.509 1055.152 75.867 1151.152 77.961 C 1247.152 80.213 1343.152 96.805 1391.152 105.377 L 1439.152 113.792 L 1391.152 113.792 C 1343.152 113.792 1247.152 113.792 1151.152 113.792 C 1055.152 113.792 959.152 113.792 863.152 113.792 C 767.152 113.792 671.152 113.792 575.152 113.792 C 479.152 113.792 383.152 113.792 287.152 113.792 C 191.152 113.792 95.152 113.792 47.152 113.792 L -0.848 113.792 L -0.848 50.584 Z"></path>
+      </svg>
+              
 
               <!-- FOOTER START -->
               <footer
@@ -327,69 +354,29 @@ margin-top: 16px;
                 style="background-color: #0a314b"
               >
 
-<!-- CONTACT START-->
-<section id="contact">
-<div class="container">
-    <div class="row text-center mb-3">
-      <div class="col">
-        <h2>Contact</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="./ipost.php" method="post">
-          <div class="mb-3">
-            <input
-              type="text"
-              placeholder="Nama Lengkap"
-              class="form-control"
-              name="pname"
-              id="name"
-              aria-describedby="name"
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              placeholder="Email"
-              class="form-control"
-              name="pemail"
-              id="email"
-              aria-describedby="email"
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              placeholder="Tulis pesan disini..."
-              class="form-control"
-              name="pcontent"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-primary">
-            Kirim
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
   <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
 </svg>
 
 
                 <p>
-                  Created with <i class="bi bi-heart-fill text-danger"></i> by
-                  Team HMSE<br>Follow our Instagram: 
-                  <a
-                    href="https://www.instagram.com/hmse_unipi/"
-                    class="text-white fw-bold"
-                    >Mahasiswa Software Engineering</a
-                  >
-                </p>
+                    Copyright © 2023 - 2024<br>Himpunan Mahasiswa Software Engineering<br><b><a href="https://unipem.ac.id/" style="text-decoration:none; color:inherit">Universitas Insan Pembangunan Indonesia</a></b><br>
+                    <br>
+                    <span style="margin:4px;"><a
+                      onclick="window.open('https://www.instagram.com/hmse_unipi/', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Instagram</a
+                    ></span>
+                    <span style="margin:4px;">
+                    <a
+                      onclick="window.open('mailto:hmseunipi@gmail.com', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Email</a
+                    >
+                    </span>
+                  </p>
               </footer>
               <!-- FOOTER END -->
               <!-- End of body -->
@@ -437,29 +424,119 @@ margin-top: 16px;
 
 <script
 type="text/javascript"
-src="http://localhost/web-hmse/simplebar.min.js"
+src="https://hmse-unipi.or.id/simplebar.min.js"
 ></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
 //PER-PAGE SCRIPT
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var BrowserDetect = {
+        init: function() {
+            this.browser = this.searchString(this.dataBrowser) || "Other";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+        },
+        searchString: function(data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                this.versionSearchString = data[i].subString;
+
+                if (dataString.indexOf(data[i].subString) !== -1) {
+                    return data[i].identity;
+                }
+            }
+        },
+        searchVersion: function(dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index === -1) {
+                return;
+            }
+
+            var rv = dataString.indexOf("rv:");
+            if (this.versionSearchString === "Trident" && rv !== -1) {
+                return parseFloat(dataString.substring(rv + 3));
+            } else {
+                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+            }
+        },
+
+        dataBrowser: [{
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        }, {
+            string: navigator.userAgent,
+            subString: "MSIE",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Trident",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Firefox",
+            identity: "Firefox"
+        }, {
+            string: navigator.userAgent,
+            subString: "Safari",
+            identity: "Safari"
+        }, {
+            string: navigator.userAgent,
+            subString: "Opera",
+            identity: "Opera"
+        }]
+
+    };
+
+    BrowserDetect.init();
 
       $(document).ready(function() {
           alreadydisplayed = true;
           fadein(6, 0.01); //homepage fade in, for other pages use fadein(6, 0.01)
           if (isMobile) {
+              var newParent = document.getElementsByClassName('hmse-home')[0];
+                    var oldParent = document.getElementsByClassName('simplebar-content-wrapper')[0];
+                    
+                    while (oldParent.childNodes.length > 0) {
+                        newParent.appendChild(oldParent.childNodes[0]);
+                    }
+                    
+                    document.getElementsByClassName('simplebar-wrapper')[0].remove();
+                    document.getElementById("horizontal_scrollbar").remove();
+                    document.getElementById("vertical_scrollbar").remove();
             document.getElementById("fade-overlay").remove();
-            //document.getElementById("horizontal_scrollbar").remove();
-            //document.getElementById("vertical_scrollbar").remove();
+            document.getElementById("firefox_safari_filter").remove();
+          document.getElementById("vnav").style.flexDirection = "column-reverse";
+          document.getElementById("vnav-mobile").style.flexBasis = "100%";
+          document.getElementById("vnav").style.position = "relative";
+          document.getElementById("vnav").style.translate = "-5pt 21pt";
+          document.getElementById("pagecount").style.fontFamily = "Friz-Quadrata";
+          document.getElementById("pagecount").style.textTransform = "Uppercase";
+          } else {
+              if ((BrowserDetect.browser === "Safari") || (BrowserDetect.browser === "Firefox")) {
+                  document.getElementById("firefox_safari_filter").classList.add("floating-firefox-safari-filter");
+              } else {
+                  document.getElementById("firefox_safari_filter").remove();
+              }
+          document.getElementById("vnav").style.translate = "0pt -5pt";
+          document.getElementById("pagecount").style.fontFamily = "Myriad-Pro";
+          document.getElementById("pagecount").style.fontWeight = "Bold";
+          document.getElementById("pagecount").style.fontStyle = "Italic";
+          document.getElementById("pagecount").style.fontSize = "13pt";
           }
       });
+      
+      function changeSearchCase() {
+           if (document.getElementById("vsearch-text").value.length > 0) {
+               document.getElementById("vsearch-text").style.textTransform = "none";
+           } else {
+               document.getElementById("vsearch-text").style.textTransform = "uppercase";
+           }
+        }
 
       function openAnnouncementId(annTitle, annAuthor, annDate, annContent) {
           document.getElementById("backp_button").style.display = "initial";
           document.getElementById("permanent-title").style.display = "none";
-          document.getElementById("vsearch").style.display = "none";
+          document.getElementById("vnav").style.display = "none";
           document.getElementById("announcement_listing").style.display = "none";
           document.getElementById("announcement_content").style.display = "initial";
           document.getElementById("toppage").style.paddingTop = "0px";
@@ -475,12 +552,28 @@ src="http://localhost/web-hmse/simplebar.min.js"
       }
 
       function listAnnouncementItems(anchorTitle, date, previewContent, hreflink) {
+          if (isMobile) {
+          var subnav = document.getElementsByClassName('subnav');
+          document.getElementById("announcements").style.paddingTop = "20pt";
+            for (var i = 0; i < subnav.length; ++i) {
+                var item = subnav[i];  
+                item.style.margin = "3pt";
+                item.style.zoom = "60%";
+            }
+               document.getElementById("announcement_listing").innerHTML +=
+        "<div class=\"flex-item\" style=\"text-align: left;\">"
++ "<p style=\"color: grey;\"><span class=\"anchor-title-mobile\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
+                  +  anchorTitle
+               + "</a></span><br>"+date+"</p>"
++ "<p class=\"preview-body-content\">" + previewContent + "</div><br>"
+          } else {
         document.getElementById("announcement_listing").innerHTML +=
         "<div class=\"flex-item\" style=\"text-align: left;\">"
 + "<p style=\"color: grey;\"><span class=\"anchor-title\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
                   +  anchorTitle
-               + "</a></span>"+date+"</p>"
+               + "</a></span>&#32;<span style=\"white-space: nowrap;\">"+date+"</span></p>"
 + "<p class=\"preview-body-content\">" + previewContent + "</div><br>"
+}
       }
 
       const scrollnav = document.querySelector("#scrollnav");
@@ -494,7 +587,7 @@ src="http://localhost/web-hmse/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = 'http://localhost/web-hmse/announcements/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'https://hmse-unipi.or.id/announcements/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -505,7 +598,21 @@ src="http://localhost/web-hmse/simplebar.min.js"
       });
       
 
-      $(document).on("click", "a", function(e) {
+var cntrlIsPressed = false;
+        
+        $(document).keydown(function(event) {
+    if (event.which == "17") {
+        cntrlIsPressed = true;
+    }
+});
+
+$(document).keyup(function() {
+    cntrlIsPressed = false;
+});
+        
+
+        $(document).on("click", "a", function(e) {
+            if ((!cntrlIsPressed) && ($(this).attr('target') != "_blank")) {
           e.preventDefault();
           //this == the link that was clicked
           var href = $(this).attr("href");
@@ -529,6 +636,7 @@ src="http://localhost/web-hmse/simplebar.min.js"
               window.location.href = href;
             }
           }
+            }
       });
 
 </script>
@@ -540,12 +648,27 @@ src="http://localhost/web-hmse/simplebar.min.js"
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "web_hmse";
+$dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
+}
+
+function removeLink($string){
+
+ $pattern = '/https?:\/\/[^\s]+|www\.[^\s]+/i';
+    // Replace the matched URLs with an empty string
+    $string = preg_replace($pattern, '', $string);
+    
+    // This pattern matches HTML anchor tags
+    $pattern = '/<a\b[^>]*>(.*?)<\/a>/i';
+    // Replace the matched anchor tags with their inner text
+    $string = preg_replace($pattern, '$1', $string);
+
+    return $string;
+    
 }
 
 function annRegularList($listquery) {
@@ -556,13 +679,13 @@ function annRegularList($listquery) {
 if ($listquery->num_rows > 0) {
 while($row = mysqli_fetch_array($listquery)) {
   $a_prev_title = $row['announcement_title'];
-  $a_url_id_pointer = "http://localhost/web-hmse/announcements/" . $row['ann_url_id_pointer'];
+  $a_url_id_pointer = "https://hmse-unipi.or.id/announcements/" . $row['ann_url_id_pointer'];
   $a_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
-  $a_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
+  $a_prev_content = removeLink(substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255));
 echo "<script>listAnnouncementItems('$a_prev_title', '$a_p_date', '$a_prev_content', '$a_url_id_pointer');</script>";
 }
 } else {
-  echo "<script>document.getElementById(\"vsearch\").style.display = \"none\";</script>";
+  echo "<script>document.getElementById(\"vnav\").style.display = \"none\";</script>";
   echo "<script>emptyAnnouncementsList();</script>";
 }
 
@@ -607,21 +730,21 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 while($row = mysqli_fetch_array($searchlistquery)) {
   $a_search_prev_title = $row['announcement_title'];
-  $a_search_url_id_pointer = "http://localhost/web-hmse/announcements/" . $row['ann_url_id_pointer'];
+  $a_search_url_id_pointer = "https://hmse-unipi.or.id/announcements/" . $row['ann_url_id_pointer'];
   $a_search_p_date = date('D, j M Y H:i', strtotime($row['announcement_date']));
-  $a_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255);
+  $a_search_prev_content = removeLink(substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['announcement_body_content'])), 0, 255));
 echo "<script>listAnnouncementItems('$a_search_prev_title', '$a_search_p_date', '$a_search_prev_content', '$a_search_url_id_pointer');</script>";
 }
         }
 
         } else { //Redirect to 404 Not Found
-          echo "<script>window.location.replace('http://localhost/web-hmse/404/');</script>";
+          echo "<script>window.location.replace('https://hmse-unipi.or.id/404/');</script>";
         }
       }
     }
 } else {
   function getAddress() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
     return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   }
   

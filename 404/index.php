@@ -1,7 +1,7 @@
 <?php
 
 function getAddress() {
-  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
   return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 }
 
@@ -14,15 +14,17 @@ if (str_contains(getAddress(), "index.php")) {
 
 <html>
   <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>404 Not Found - HMSE</title>
 
-    <!-- Replace 'http://localhost/web-hmse/' with the root domain name before uploading to the web hosting server via FTP -->
+    <!-- Replace 'https://hmse-unipi.or.id/' with the root domain name before uploading to the web hosting server via FTP -->
 
-    <link rel="icon" type="image/x-icon" href="http://localhost/web-hmse/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://hmse-unipi.or.id/img/favicon.png">
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a314b">
 
     <!-- Bootstrap CSS -->
     <link
@@ -42,22 +44,22 @@ if (str_contains(getAddress(), "index.php")) {
     <link
       rel="stylesheet"
       type="text/css"
-      href="http://localhost/web-hmse/scrollbar.css"
+      href="https://hmse-unipi.or.id/scrollbar.css"
     />
 
     <!-- FADE IN/OUT TRANSITION CSS & JS -->
     <link
     rel="stylesheet"
     type="text/css"
-    href="http://localhost/web-hmse/fade-transition.css"
+    href="https://hmse-unipi.or.id/fade-transition.css"
   />
     <script
       type="text/javascript"
-      src="http://localhost/web-hmse/fade-transition.js"
+      src="https://hmse-unipi.or.id/fade-transition.js"
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="http://localhost/web-hmse/style.css" />
+    <link rel="stylesheet" href="https://hmse-unipi.or.id/style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -82,10 +84,11 @@ if (str_contains(getAddress(), "index.php")) {
                 <!-- NAVBAR START -->
                 <nav
                   class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
-                  style="background-color: #0a314b"
+                  id="inav2"
+style="background-color: #0A314B;"
                 >
                   <div class="container">
-                    <a class="navbar-brand" href="http://localhost/web-hmse/">HMSE</a>
+                    <a class="navbar-brand" href="https://hmse-unipi.or.id/">HMSE</a>
                     <button
                       class="navbar-toggler"
                       type="button"
@@ -99,31 +102,35 @@ if (str_contains(getAddress(), "index.php")) {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                          <a
-                            class="nav-link"
-                            href="http://localhost/web-hmse/"
-                            >Home</a
-                          >
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                          <ul class="dropdown-menu" aria-labelledby="AboutDD">
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#aim">Tujuan</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#visionmission">Visi & Misi</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#briefhistory">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#logophilosophy">Filosofi Logo</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/w_programme/">Program Kerja</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/org_struct/">Struktur Organisasi</a></li>
+                          </ul>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="http://localhost/web-hmse/#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="http://localhost/web-hmse/#gallery">Gallery</a>
+                          <a class="nav-link" href="https://hmse-unipi.or.id/gallery/">Gallery</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link"
-                          aria-current="page" href="http://localhost/web-hmse/schedule/">Schedule</a>
+                          aria-current="page" href="https://hmse-unipi.or.id/schedule/">Events Schedule</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="http://localhost/web-hmse/announcements/">Announcements</a>
+                          <a class="nav-link" href="https://hmse-unipi.or.id/announcements/">Announcements</a>
                         </li>                        
                         <li class="nav-item">
-                          <a class="nav-link" href="http://localhost/web-hmse/news/">News</a>
+                          <a class="nav-link" href="https://hmse-unipi.or.id/news/">News</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#contact">Contact</a>
+                          <a class="nav-link" href="https://hmse-unipi.or.id/reports/">Reports</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://hmse-unipi.or.id/#contact">Contact</a>
                         </li>
                       </ul>
                     </div>
@@ -135,53 +142,35 @@ if (str_contains(getAddress(), "index.php")) {
                 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
-<style>
-
-/* Add WA floating button CSS */
-.floating {
- position: fixed;
- width: 60px;
- height: 60px;
- bottom: 40px;
- right: 40px;
- background-color: #25d366;
- color: #fff;
- border-radius: 50px;
- text-align: center;
- font-size: 30px;
- box-shadow: 2px 2px 3px #999;
- z-index: 99;
- opacity: 100%;
- mix-blend-mode: multiply;
-}
-
-.floatingb {
- position: fixed;
- width: 60px;
- height: 60px;
- bottom: 40px;
- right: 40px;
- background-color: #25d366;
- color: #fff;
- border-radius: 50px;
- text-align: center;
- font-size: 30px;
- z-index: 100;
- opacity: 35%;
- mix-blend-mode: screen;
-}
-
-.fab-icon {
- margin-top: 16px;
-}
-</style>
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://hmse-unipi.or.id/style-ex.css"
+  />
 
 <!-- render the button and direct it to wa.me -->
-<i class="floating">
+<div id="firefox_safari_filter"></div>
+<i class="floating" id="wfloating">
 <i class="fab fa-whatsapp fab-icon"></i>
 </i>
-<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+<a onclick="window.open('https://wa.me/6285819608700/', '_blank');" class="floatingb" id="wfloatingb" target="_blank">
 </a>
+<script>
+$(function() {
+  $('#wfloatingb').hover(function() {
+    $('#wfloating').css('mix-blend-mode', 'normal');
+    if (!isMobile) { $('#wfloating').css('box-shadow', '0px 0px 11px #25d366'); }
+  }, function() {
+    // on mouseout, reset the background colour
+    if (!isMobile) {
+        $('#wfloating').css('mix-blend-mode', 'multiply');
+    } else {
+        $('#wfloating').css('opacity', '75%');
+    }
+    $('#wfloating').css('box-shadow', '2px 2px 3px rgba(0, 0, 0, .4)');
+  });
+});
+  </script>
 <!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
@@ -190,7 +179,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                   <h1>404 - Not Found</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="https://www.w3.org/2000/svg"
                     viewBox="0 0 1440 316"
                   >
                     <path
@@ -203,13 +192,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- JUMBOTRON END -->
 
                 <!-- 404 ERROR MESSAGE START-->
-                  <div class="container">
+                  <div class="container view-error">
                     <div class="row text-center mb-3">
                       <div class="col">
                         
                         <h3>Maaf, halaman yang Anda cari tidak dapat ditemukan di server ini.</h3>
                       <br>
-                        <p><a href="http://localhost/web-hmse/">Kembali ke halaman utama</a></p>
+                        <p><a href="https://hmse-unipi.or.id/">Kembali ke halaman utama</a></p>
 
 
                       </div>
@@ -218,80 +207,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- 404 ERROR MESSAGE END -->
 
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
+      <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 316">
         <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
-                </section>
-                <!-- CONTACT END -->
+                
 
-                <!-- FOOTER START -->
-                <footer
-                  class="text-white text-center pb-5"
-                  style="background-color: #0a314b"
-                >
+              <!-- FOOTER START -->
+              <footer
+                class="text-white text-center pb-5"
+                style="background-color: #0a314b"
+              >
 
-<!-- CONTACT START-->
-<section id="contact">
-<div class="container">
-    <div class="row text-center mb-3">
-      <div class="col">
-        <h2>Contact</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="./ipost.php" method="post">
-          <div class="mb-3">
-            <input
-              type="text"
-              placeholder="Nama Lengkap"
-              class="form-control"
-              name="pname"
-              id="name"
-              aria-describedby="name"
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              placeholder="Email"
-              class="form-control"
-              name="pemail"
-              id="email"
-              aria-describedby="email"
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              placeholder="Tulis pesan disini..."
-              class="form-control"
-              name="pcontent"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-primary">
-            Kirim
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
     <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
   </svg>
 
 
                   <p>
-                    Created with <i class="bi bi-heart-fill text-danger"></i> by
-                    Team HMSE<br>Follow our Instagram: 
+                    Copyright © 2023 - 2024<br>Himpunan Mahasiswa Software Engineering<br><b><a href="https://unipem.ac.id/" style="text-decoration:none; color:inherit">Universitas Insan Pembangunan Indonesia</a></b><br>
+                    <br>
+                    <span style="margin:4px;"><a
+                      onclick="window.open('https://www.instagram.com/hmse_unipi/', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Instagram</a
+                    ></span>
+                    <span style="margin:4px;">
                     <a
-                      href="https://www.instagram.com/hmse_unipi/"
-                      class="text-white fw-bold"
-                      >Mahasiswa Software Engineering</a
+                      onclick="window.open('mailto:hmseunipi@gmail.com', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Email</a
                     >
+                    </span>
                   </p>
                 </footer>
                 <!-- FOOTER END -->
@@ -340,22 +288,93 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
   <script
   type="text/javascript"
-  src="http://localhost/web-hmse/simplebar.min.js"
+  src="https://hmse-unipi.or.id/simplebar.min.js"
   ></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
   //PER-PAGE SCRIPT
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  var BrowserDetect = {
+        init: function() {
+            this.browser = this.searchString(this.dataBrowser) || "Other";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+        },
+        searchString: function(data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                this.versionSearchString = data[i].subString;
+
+                if (dataString.indexOf(data[i].subString) !== -1) {
+                    return data[i].identity;
+                }
+            }
+        },
+        searchVersion: function(dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index === -1) {
+                return;
+            }
+
+            var rv = dataString.indexOf("rv:");
+            if (this.versionSearchString === "Trident" && rv !== -1) {
+                return parseFloat(dataString.substring(rv + 3));
+            } else {
+                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+            }
+        },
+
+        dataBrowser: [{
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        }, {
+            string: navigator.userAgent,
+            subString: "MSIE",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Trident",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Firefox",
+            identity: "Firefox"
+        }, {
+            string: navigator.userAgent,
+            subString: "Safari",
+            identity: "Safari"
+        }, {
+            string: navigator.userAgent,
+            subString: "Opera",
+            identity: "Opera"
+        }]
+
+    };
+
+    BrowserDetect.init();
 
         $(document).ready(function() {
             alreadydisplayed = true;
             fadein(6, 0.01); //homepage fade in, for other pages use fadein(6, 0.01)
             if (isMobile) {
+                var newParent = document.getElementsByClassName('hmse-home')[0];
+                    var oldParent = document.getElementsByClassName('simplebar-content-wrapper')[0];
+                    
+                    while (oldParent.childNodes.length > 0) {
+                        newParent.appendChild(oldParent.childNodes[0]);
+                    }
+                    
+                    document.getElementsByClassName('simplebar-wrapper')[0].remove();
+                    document.getElementById("horizontal_scrollbar").remove();
+                    document.getElementById("vertical_scrollbar").remove();
               document.getElementById("fade-overlay").remove();
-              //document.getElementById("horizontal_scrollbar").remove();
-              //document.getElementById("vertical_scrollbar").remove();
+            document.getElementById("firefox_safari_filter").remove();
+            } else {
+                if ((BrowserDetect.browser === "Safari") || (BrowserDetect.browser === "Firefox")) {
+                  document.getElementById("firefox_safari_filter").classList.add("floating-firefox-safari-filter");
+              } else {
+                  document.getElementById("firefox_safari_filter").remove();
+              }
             }
         });
 
@@ -370,7 +389,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
         });
         
 
+var cntrlIsPressed = false;
+        
+        $(document).keydown(function(event) {
+    if (event.which == "17") {
+        cntrlIsPressed = true;
+    }
+});
+
+$(document).keyup(function() {
+    cntrlIsPressed = false;
+});
+        
+
         $(document).on("click", "a", function(e) {
+            if ((!cntrlIsPressed) && ($(this).attr('target') != "_blank")) {
             e.preventDefault();
             //this == the link that was clicked
             var href = $(this).attr("href");
@@ -393,6 +426,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
               } else {
                 window.location.href = href;
               }
+            }
             }
         });
 

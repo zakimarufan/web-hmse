@@ -35,13 +35,28 @@
   box-sizing: inherit !important;
   resize: none !important;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   padding: 0;
   margin: 0;
   -webkit-overflow-scrolling: touch;
+}
+
+
+@media screen and (min-width: 768px) {
+.simplebar-offset {
+  top: 0;
+  bottom: 0;
+  left: -1%;
+  right: 0;
+}
+}
+
+@media screen and (max-width: 767px) {
+.simplebar-offset {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 }
 
 .simplebar-content-wrapper {

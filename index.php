@@ -1,26 +1,13 @@
-<?php
-
-function getAddress() {
-  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
-  return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-}
-
-if (str_contains(getAddress(), "index.php")) {
-  $noindex = str_replace('/index.php', '', getAddress());
-  echo "<script>window.location.href='$noindex';</script>";
-}
-
-?>
-
 <html>
   <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Main Page - HMSE</title>
 
     <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
     <!-- The fade transition effect is exclusive on Desktop only -->
 
     <!-- New features:
-        - Events
+        - Events Schedule
         - Announcements
         - Documentary photos gallery
 
@@ -31,6 +18,7 @@ if (str_contains(getAddress(), "index.php")) {
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a314b">
 
     <!-- Bootstrap CSS -->
     <link
@@ -40,11 +28,23 @@ if (str_contains(getAddress(), "index.php")) {
       crossorigin="anonymous"
     />
 
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://hmse-unipi.or.id/style-ex.css"
+  />
+
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+
+    <!-- HackTimer -->
+    <script
+      type="text/javascript"
+      src="./HackTimer.js"
+    ></script>
 
     <!-- IMPORT CUSTOM SCROLLBAR CSS & JS -->
     <link
@@ -65,7 +65,7 @@ if (str_contains(getAddress(), "index.php")) {
     ></script>
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body id="home">
     <div id="fade-overlay"  style="display: block;"></div>
@@ -75,7 +75,7 @@ if (str_contains(getAddress(), "index.php")) {
           <div class="simplebar-height-auto-observer"></div>
         </div>
         <div class="simplebar-mask">
-          <div class="simplebar-offset" style="right: 0px; bottom: 0px">
+          <div class="simplebar-offset" style="right: 0px !important; bottom: 0px">
             <div
               id="scrollnav"
               class="simplebar-content-wrapper"
@@ -90,7 +90,8 @@ if (str_contains(getAddress(), "index.php")) {
                 <!-- NAVBAR START -->
                 <nav
                   class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
-                  style="background-color: #0a314b"
+                  id="inav2"
+                  style="background-color: #0A314B;"
                 >
                   <div class="container">
                     <a class="navbar-brand" href="#">HMSE</a>
@@ -107,28 +108,31 @@ if (str_contains(getAddress(), "index.php")) {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                          <a
-                            class="nav-link active"
-                            aria-current="page"
-                            href="#"
-                            >Home</a
-                          >
+                        <li class="nav-item dropdown">
+                          <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                          <ul class="dropdown-menu" aria-labelledby="AboutDD">
+                            <li><a class="dropdown-item" href="#aim">Tujuan</a></li>
+                            <li><a class="dropdown-item" href="#visionmission">Visi & Misi</a></li>
+                            <li><a class="dropdown-item" href="#briefhistory">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item" href="#logophilosophy">Filosofi Logo</a></li>
+                            <li><a class="dropdown-item" href="./w_programme/">Program Kerja</a></li>
+                            <li><a class="dropdown-item" href="./org_struct/">Struktur Organisasi</a></li>
+                          </ul>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#about">About</a>
+                          <a class="nav-link" href="./gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#gallery">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="./schedule/">Schedule</a>
+                          <a class="nav-link" href="./schedule/">Events Schedule</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="./announcements/">Announcements</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="./news/">News</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./reports/">Reports</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#contact">Contact</a>
@@ -143,65 +147,125 @@ if (str_contains(getAddress(), "index.php")) {
                 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
-<style>
-
-/* Add WA floating button CSS */
-.floating {
- position: fixed;
- width: 60px;
- height: 60px;
- bottom: 40px;
- right: 40px;
- background-color: #25d366;
- color: #fff;
- border-radius: 50px;
- text-align: center;
- font-size: 30px;
- box-shadow: 2px 2px 3px #999;
- z-index: 99;
- opacity: 100%;
- mix-blend-mode: multiply;
-}
-
-.floatingb {
- position: fixed;
- width: 60px;
- height: 60px;
- bottom: 40px;
- right: 40px;
- background-color: #25d366;
- color: #fff;
- border-radius: 50px;
- text-align: center;
- font-size: 30px;
- z-index: 100;
- opacity: 35%;
- mix-blend-mode: screen;
-}
-
-.fab-icon {
- margin-top: 16px;
-}
-</style>
-
 <!-- render the button and direct it to wa.me -->
-<i class="floating">
+<div id="firefox_safari_filter"></div>
+<i class="floating" id="wfloating">
 <i class="fab fa-whatsapp fab-icon"></i>
 </i>
-<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+<a onclick="window.open('https://wa.me/6285819608700/', '_blank');" class="floatingb" id="wfloatingb" target="_blank">
 </a>
+<style>
+
+.iframer {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 0 transparent;
+     transition: box-shadow 0.6s ease, opacity 0.6s ease;
+     opacity: .6;
+     mix-blend-mode: luminosity;
+}
+
+.iframer:hover {
+    box-shadow: 0px 3px 1.5rem #1C8AD4;
+     transition: box-shadow 0.6s ease, opacity 0.6s ease;
+     opacity: 1;
+     mix-blend-mode: normal;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .titleStyle {
+	    backdrop-filter: blur(12px);
+	    -webkit-backdrop-filter: blur(12px);
+	    mix-blend-mode: overlay;
+        -webkit-mask: linear-gradient(#000 0 0) text;
+        mask: linear-gradient(#000 0 0) text;
+        pointer-events: none;
+    }
+    
+    .titleBack {
+        color: rgba(84, 84, 96, 1);
+	    mix-blend-mode: screen;
+        -webkit-filter: drop-shadow(0px 0px 9px rgba(0, 64, 255, 0.9));
+        filter: drop-shadow(0px 0px 9px rgba(0, 64, 255, 0.9));
+    }
+    
+    .logoEdge {
+	    backdrop-filter: blur(30px);
+	    -webkit-backdrop-filter: blur(30px);
+	    mix-blend-mode: lighten;
+        filter: drop-shadow(0px 0px 9px rgba(0, 64, 255, 0.9));
+    }
+    
+    
+}
+
+@media screen and (max-width: 767px) {
+    
+    .titleStyle {
+        display: none;
+    }
+    
+    .titleBack {
+        color: #94CDFF;
+        -webkit-filter: drop-shadow(0px 0px 9px rgba(0, 0, 0, 0.9));
+        filter: drop-shadow(0px 0px 9px rgba(0, 0, 0, 0.9));
+    }
+    
+    .logoEdge {
+        -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.9));
+    }
+    
+    .display-4 {
+        transform: translateY(7%);
+        font-size:36pt;
+    }
+    
+    .lead {
+        font-size:10pt;
+    }
+    
+}
+
+
+</style>
+<script>
+$(function() {
+  $('#wfloatingb').hover(function() {
+    $('#wfloating').css('mix-blend-mode', 'normal');
+    if (!isMobile) { $('#wfloating').css('box-shadow', '0px 0px 11px #25d366'); }
+  }, function() {
+    // on mouseout, reset the background colour
+    if (!isMobile) {
+        $('#wfloating').css('mix-blend-mode', 'multiply');
+    } else {
+        $('#wfloating').css('opacity', '75%');
+    }
+    $('#wfloating').css('box-shadow', '2px 2px 3px rgba(0, 0, 0, .4)');
+  });
+});
+  </script>
 <!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
-                <section id="home" class="jumbotron text-center">
+                <section id="homew" class="jumbotron text-center" style="background: url('http://hmse-unipi.or.id/img/main-slide/phist1.jpg'), rgba(10, 49, 75, 1); background-repeat: no-repeat; background-attachment: fixed;  background-position: center; background-blend-mode: overlay; background-size: cover;">
                   <img
                     src="img/logo2.png"
                     alt="logo HMSE"
                     width="200"
-                    class="rounded-circle img-thumbnail"
+                    class="rounded-circle img-thumbnail logoEdge"
                   />
-                  <h1 class="display-4">HMSE</h1>
-                  <p class="lead">Himpunan Mahasiswa Software Engineering</p>
+                      <!-- div style="background-color: rgba(255, 255, 255, 0.6);  mix-blend-mode: screen;" -->
+                  <h1 class="display-4 titleBack"
+                    style="padding-top: 11px; font-weight: bold !important;"><b>HMSE</b>
+                    <h1 class="display-4 titleStyle"
+                    style="transform: translateY(-113%); margin-bottom: -66px; font-weight: bold !important;"><b>HMSE</b></h1>
+                    </h1>
+                  <p class="lead titleBack" style=" font-weight: bold !important;"><b>HIMPUNAN MAHASISWA SOFTWARE ENGINEERING</b><br>UNIVERSITAS INSAN PEMBANGUNAN INDONESIA
+                   <p class="lead titleStyle" style="transform: translateY(-127%); margin-bottom: -96px; font-weight: bold !important;"><b>HIMPUNAN MAHASISWA SOFTWARE ENGINEERING</b><br>UNIVERSITAS INSAN PEMBANGUNAN INDONESIA</p>
+                  </p>
+                    <!-- /div -->
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -217,23 +281,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
                 <!-- JUMBOTRON END -->
 
                 <!-- ABOUT START-->
-                <section id="about">
+                <section id="about" style="margin:0; padding:0;"></section>
                   <div class="container">
                     <div class="row text-center mb-3">
                       <div class="col">
-                        <h2>About</h2>
+                        <h2><b>About</b></h2>
                       </div>
                     </div>
                   </div>
 
                   <!-- ABOUT VISI MISI -->
 
-                  <div class="row">
+                  <div>
 
-                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+				<section id="aim" style="margin:0; padding:0;"></section>
+                  <div class="col-sm-6" id="bdiv1" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center">TUJUAN HMSE</h5><br>
+                        <h5 class="card-title text-center"><b>TUJUAN HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p style="text-align: justify; text-justify: inter-word;">Tujuan terbentuknya himpunan mahasiswa software engineering ini untuk membangun sebuah wadah dan untuk mengasah / mengekspos softskill anak anak khususnya untuk ranah software engineering dan umumnya untuk fakultas komputer lainnya, dengan prospek yang membahas tentang perkembangan perangkat lunak, analisisa algoritma dan struktur data serta mengoperasikan pemrograman.
@@ -247,13 +312,11 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                   </div>
 
                 </div>
-
-<br>
-
-                    <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+<section id="visionmission" style="margin:32px; padding:0;"></section>
+                    <div class="col-sm-6" id="bdiv2" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center">VISI</h5>
+                        <h5 class="card-title text-center"><b>VISI</b></h5>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p class="card-text mb-2">
@@ -264,21 +327,21 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                           </p>
                             </div>
                             <br>
-                            <h5 class="card-title text-center">MISI</h5>
+                            <h5 class="card-title text-center"><b>MISI</b></h5>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
-                            <ul class="card-title">
-                              1. Mewujudkan tali silaturahmi Mahasiswa/i jurusan
-                              Software Engineering <br />
-                              2. Mengembang program software engineering yang
-                              inovatif dan bermutu <br />
-                              3. Mendorong anggota lebih kreatif di bidang
-                              Teknologi dan Perangkat Lunak <br />
-                              4. Menjalankan kegiatan kemasyarakatan yang
-                              bermanfaat <br />
-                              5. Menjalin hubungan yang baik dengan seluruh
-                              Organisasi Kemahasiswaan di Indonesia
-                          </ul>
+                            <ol class="card-title">
+                              <li>Mewujudkan tali silaturahmi Mahasiswa/i jurusan
+                              Software Engineering</li>
+                              <li>Mengembang program software engineering yang
+                              inovatif dan bermutu</li>
+                              <li>Mendorong anggota lebih kreatif di bidang
+                              Teknologi dan Perangkat Lunak</li>
+                              <li>Menjalankan kegiatan kemasyarakatan yang
+                              bermanfaat</li>
+                              <li>Menjalin hubungan yang baik dengan seluruh
+                              Organisasi Kemahasiswaan di Indonesia</li>
+                          </ol>
                             <br />
                             </div>
                             <br>
@@ -287,20 +350,18 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                     </div>
                   </div>
 
+                  <div>
 
-                  <br>
-
-                  <div class="row">
-
-                  <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;">
+<section id="briefhistory" style="margin:18px; padding:0;"></section>
+                  <div class="col-sm-6" id="bdiv3" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center">SEJARAH SINGKAT HMSE</h5><br>
+                        <h5 class="card-title text-center"><b>SEJARAH SINGKAT HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p style="text-align: justify; text-justify: inter-word;">
                             HMSE untuk pertama kalinya disahkan dan dilantik sebagai Himpunan Mahasiswa Software Engineering pertama 
-                            di Universitas Insan Pembangunan Indonesia pada tanggal 07 Januari 2024 di Auditorium Saba Karya.<br><br>
+                            di Universitas Insan Pembangunan Indonesia pada tanggal <b>07 Januari 2024</b> di <b>Auditorium Saba Karya.</b><br><br>
                             Himpunan Mahasiswa Software Engineering (HMSE) adalah suatu organisasi di tingkat mahasiswa yang terfokus 
                             pada bidang keilmuan teknologi informasi dan rekayasa perangkat lunak. Organisasi ini bertujuan untuk 
                             meningkatkan pemahaman dan keterampilan mahasiswa dalam dunia software engineering melalui kegiatan pendidikan, 
@@ -318,10 +379,8 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                   </div>
 
                 </div>
-
-<br>
                  
-                  <div class="row">
+                  <div>
 
                     <style>
                       .flex-container {
@@ -342,10 +401,11 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 
                     </style>
 
+				<section id="logophilosophy" style="margin:18px; padding:0;"></section>
                   <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="desktop-mode-switch">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center">FILOSOFI LOGO HMSE</h5><br>
+                        <h5 class="card-title text-center"><b>FILOSOFI LOGO HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <div class="flex-item"><img style="max-width: 128px; max-height: 128px" src="img/gear.png" /><br><b>Gear (Semangat Kerja)</b><br>Teknologi yang berkesinambungan, garis bergerak
@@ -373,7 +433,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                     <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="mobile-mode-switch">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center">FILOSOFI LOGO HMSE</h5><br>
+                        <h5 class="card-title text-center"><b>FILOSOFI LOGO HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             
 
@@ -412,7 +472,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 
                   <br>
 
-                  <h5 class="card-title text-center"><a href="./org_struct/">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></h5><br>
+                  <!--div style="margin-left:2%; margin-right:2%;"><h5 class="card-title text-center"><b><a href="https://hmse-unipi.or.id/org_struct/" style="text-decoration:none;">KLIK DISINI UNTUK MELIHAT STRUKTUR ORGANISASI HMSE</a></b></h5></div><br-->
 
                   <!-- <div class="row justify-content-center fs-5 text-center">
                     
@@ -427,100 +487,10 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                 </section>
                 <!-- ABOUT END -->
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
-                  <path fill="#ffffff" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
-
-                <!-- ACTIVITIES -->
-                <section id="gallery">
-                  <div class="container">
-                    <div class="row text-center mb-3">
-                      <div class="col">
-                        <h2>Our Activities</h2>
-                      </div>
-                    </div>
-                    <div class="row justify-content-center">
-                      <div class="col-md-4 mb-3">
-                        <div class="card">
-                          <img
-                            src="img/projects/IMG_7738.JPG"
-                            class="card-img-top"
-                            alt="project"
-                          />
-                          <div class="card-body">
-                            <p class="card-text" style="text-align:center;">
-                              (3 Maret 2024)<br><b><a href="./news/kegiatan-bootcamp-hmse-2024-sdmkmq22eaifj" style="text-decoration:none; color:inherit;">Kegiatan Bootcamp HMSE 2024</a></b>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- div class="col-md-4 mb-3">
-                        <div class="card">
-                          <img
-                            src="img/projects/p2.jpg"
-                            class="card-img-top"
-                            alt="project"
-                          />
-                          <div class="card-body">
-                            <p class="card-text">
-                              Some quick example text to build on the card title
-                              and make up the bulk of the card's content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="card">
-                          <img
-                            src="img/projects/p3.jpg"
-                            class="card-img-top"
-                            alt="project"
-                          />
-                          <div class="card-body">
-                            <p class="card-text">
-                              Some quick example text to build on the card title
-                              and make up the bulk of the card's content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="card">
-                          <img
-                            src="img/projects/p4.jpg"
-                            class="card-img-top"
-                            alt="project"
-                          />
-                          <div class="card-body">
-                            <p class="card-text">
-                              Some quick example text to build on the card title
-                              and make up the bulk of the card's content.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="card">
-                          <img
-                            src="img/projects/p5.jpg"
-                            class="card-img-top"
-                            alt="project"
-                          />
-                          <div class="card-body">
-                            <p class="card-text">
-                              Some quick example text to build on the card title
-                              and make up the bulk of the card's content.
-                            </p>
-                          </div>
-                        </div>
-                      </div -->
-                    </div>
-                  </div>
-                </section>
-                <!-- ACTIVITIES END -->
+                
               
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
-        <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 1440 162">
+        <path fill="#0a314b" fill-opacity="10" d="M -0.848 50.584 L 47.152 44.263 C 95.152 37.942 191.152 25.3 287.152 16.886 C 383.152 8.313 479.152 4.362 575.152 18.979 C 671.152 33.596 767.152 67.571 863.152 77.961 C 959.152 88.509 1055.152 75.867 1151.152 77.961 C 1247.152 80.213 1343.152 96.805 1391.152 105.377 L 1439.152 113.792 L 1391.152 113.792 C 1343.152 113.792 1247.152 113.792 1151.152 113.792 C 1055.152 113.792 959.152 113.792 863.152 113.792 C 767.152 113.792 671.152 113.792 575.152 113.792 C 479.152 113.792 383.152 113.792 287.152 113.792 C 191.152 113.792 95.152 113.792 47.152 113.792 L -0.848 113.792 L -0.848 50.584 Z"></path>
       </svg>
                 </section>
                 <!-- CONTACT END -->
@@ -576,6 +546,18 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
             Kirim
           </button>
         </form>
+        <h4 style="margin-top: 4rem; margin-bottom: 2rem;"><b>Lokasi Sekret Kami</b></h4>
+        <div id="sekret-desktop" align="center">
+        <iframe class="iframer" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.298160985168!2d106.5684167!3d-6.224361099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTMnMjcuNyJTIDEwNsKwMzQnMDYuMyJF!5e0!3m2!1sen!2sid!4v1726817622425!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="sekret-mobile" align="center">
+            <a
+                      onclick="window.open('mailto:hmseunipi@gmail.com', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Buka di Google Maps <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ffffff" fill="none" style="width:16px;"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"></path><polyline points="40.32 8.6 55.4 8.6 55.4 24.18"></polyline><line x1="19.32" y1="45.72" x2="54.61" y2="8.91"></line></g></svg></a
+                    >
+        </div
       </div>
     </div>
   </div>
@@ -586,13 +568,22 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
 
 
                   <p>
-                    Created with <i class="bi bi-heart-fill text-danger"></i> by
-                    Team HMSE<br>Follow our Instagram: 
+                    Copyright © 2023 - 2024<br>Himpunan Mahasiswa Software Engineering<br><b><a href="https://unipem.ac.id/" style="text-decoration:none; color:inherit">Universitas Insan Pembangunan Indonesia</a></b><br>
+                    <br>
+                    <span style="margin:4px;"><a
+                      onclick="window.open('https://www.instagram.com/hmse_unipi/', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Instagram</a
+                    ></span>
+                    <span style="margin:4px;">
                     <a
-                      href="https://www.instagram.com/hmse_unipi/"
-                      class="text-white fw-bold"
-                      >Mahasiswa Software Engineering</a
+                      onclick="window.open('mailto:hmseunipi@gmail.com', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Email</a
                     >
+                    </span>
                   </p>
                 </footer>
                 <!-- FOOTER END -->
@@ -644,41 +635,212 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
   src="./simplebar.min.js"
   ></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
   //PER-PAGE SCRIPT
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  var BrowserDetect = {
+        init: function() {
+            this.browser = this.searchString(this.dataBrowser) || "Other";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+        },
+        searchString: function(data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                this.versionSearchString = data[i].subString;
+
+                if (dataString.indexOf(data[i].subString) !== -1) {
+                    return data[i].identity;
+                }
+            }
+        },
+        searchVersion: function(dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index === -1) {
+                return;
+            }
+
+            var rv = dataString.indexOf("rv:");
+            if (this.versionSearchString === "Trident" && rv !== -1) {
+                return parseFloat(dataString.substring(rv + 3));
+            } else {
+                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+            }
+        },
+
+        dataBrowser: [{
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        }, {
+            string: navigator.userAgent,
+            subString: "MSIE",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Trident",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Firefox",
+            identity: "Firefox"
+        }, {
+            string: navigator.userAgent,
+            subString: "Safari",
+            identity: "Safari"
+        }, {
+            string: navigator.userAgent,
+            subString: "Opera",
+            identity: "Opera"
+        }]
+
+    };
+
+    BrowserDetect.init();
 
         $(document).ready(function() {
             alreadydisplayed = true;
             if (window.location.hash) { //fast fade in
               fadein(6, 0.01);
             } else { //slow fade in
-                fadein(9, 0.003);
+                //fadein(9, 0.003);
+              document.getElementById("fade-overlay").style.transition = "opacity 3s linear";
+              document.getElementById("fade-overlay").style.opacity = "0";
             }
             if (isMobile) {
+                var newParent = document.getElementsByClassName('hmse-home')[0];
+                    var oldParent = document.getElementsByClassName('simplebar-content-wrapper')[0];
+                    
+                    while (oldParent.childNodes.length > 0) {
+                        newParent.appendChild(oldParent.childNodes[0]);
+                    }
+                    
+                    document.getElementsByClassName('simplebar-wrapper')[0].remove();
+                    document.getElementById("horizontal_scrollbar").remove();
+                    document.getElementById("vertical_scrollbar").remove();
               document.getElementById("fade-overlay").remove();
               document.getElementById("desktop-mode-switch").remove();
-              //document.getElementById("horizontal_scrollbar").remove();
-              //document.getElementById("vertical_scrollbar").remove();
+            document.getElementById("firefox_safari_filter").remove();
+            document.getElementById("sekret-desktop").remove();
             } else {
+              if ((BrowserDetect.browser === "Safari") || (BrowserDetect.browser === "Firefox")) {
+                  document.getElementById("firefox_safari_filter").classList.add("floating-firefox-safari-filter");
+              } else {
+                  document.getElementById("firefox_safari_filter").remove();
+              }
               document.getElementById("mobile-mode-switch").remove();
+            document.getElementById("sekret-mobile").remove();
             }
         });
-
         
+        const slideimages = [];
+        
+        function addToSlideShowImage(imagepath){
+            slideimages.push(imagepath);
+        }
 
+function isScrolledIntoViewHalf(elem){
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+    
+    var docViewMid = (docViewTop + docViewBottom) / 2;
+    var elemMid = (elemTop + elemBottom) / 2;
+
+    return (elemMid <= docViewBottom);
+}
+
+let userAgent = navigator.userAgent;
+if(userAgent.match(/firefox|fxios/i))
+{
+    
+    document.addEventListener("scroll", (event) => {
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv1"))){
+                              $('#bdiv1').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv2"))){
+                              $('#bdiv2').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv3"))){
+                              $('#bdiv3').addClass('show');
+                            }
+            if (isMobile) {
+   if(isScrolledIntoViewHalf(document.getElementById("mobile-mode-switch"))){
+                              $('#mobile-mode-switch').addClass('show');
+                            }
+                
+            } else {
+   if(isScrolledIntoViewHalf(document.getElementById("desktop-mode-switch"))){
+                              $('#desktop-mode-switch').addClass('show');
+                            }
+            }
+});
+    
+} else {
+
+            if (isMobile) {
+        
+        document.addEventListener("scroll", (event) => {
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv1"))){
+                              $('#bdiv1').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv2"))){
+                              $('#bdiv2').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv3"))){
+                              $('#bdiv3').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("mobile-mode-switch"))){
+                              $('#mobile-mode-switch').addClass('show');
+                            }
+        });
+                
+            } else {
         const scrollnav = document.querySelector("#scrollnav");
+        
+        scrollnav.addEventListener("scroll", (event) => {
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv1"))){
+                              $('#bdiv1').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv2"))){
+                              $('#bdiv2').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("bdiv3"))){
+                              $('#bdiv3').addClass('show');
+                            }
+   if(isScrolledIntoViewHalf(document.getElementById("desktop-mode-switch"))){
+                              $('#desktop-mode-switch').addClass('show');
+                            }
+        });
+}
+
+}
 
         $(window).focus(function() {
             if (!alreadydisplayed) {
             fadein(6, 0.01);
             }
         });
+
+var cntrlIsPressed = false;
+        
+        $(document).keydown(function(event) {
+    if (event.which == "17") {
+        cntrlIsPressed = true;
+    }
+});
+
+$(document).keyup(function() {
+    cntrlIsPressed = false;
+});
         
 
         $(document).on("click", "a", function(e) {
+            if ((!cntrlIsPressed) && ($(this).attr('target') != "_blank")) {
             e.preventDefault();
             //this == the link that was clicked
             var href = $(this).attr("href");
@@ -691,6 +853,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
               }
             } else{
               if (!isMobile) {
+              document.getElementById("fade-overlay").style.removeProperty("transition");
               fadeout(6);
                 var timer = setInterval(function () {
                     if (!isfadingout) {
@@ -702,8 +865,104 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                 window.location.href = href;
               }
             }
+            }
         });
+        
+      //fade multiplication level
+      let multp = 1;
+      let imagefading = false;
+  
+  async function changeSlideImage(nextimage, fadeduration) {
+      
+      const redp = 10;
+      const greenp = 49;
+      const bluep = 75;
+      
+      //get current image
+            var vartoreplace = document.getElementById("homew").style.background;
+            var varSubStringImg = vartoreplace.split("\"")[1];
+      
+      //fade out from current image
+       var timery = setInterval(function () {
+        if (multp <= 0){
+            clearInterval(timery);
+            imagefading = true;
+        }
+            document.getElementById("homew").style.background = "url('"+varSubStringImg+"'), rgba(" + Math.floor(redp*multp) + ", "+ Math.floor(greenp*multp) +", "+ Math.floor(bluep*multp) +", 1)";
+document.getElementById("homew").style.backgroundRepeat = "no-repeat"; 
+document.getElementById("homew").style.backgroundAttachment = "fixed";  
+document.getElementById("homew").style.backgroundPosition = "center"; 
+document.getElementById("homew").style.backgroundBlendMode = "overlay";
+document.getElementById("homew").style.backgroundSize = "cover";
+        multp -= 0.01;
+    }, (fadeduration/2));
+    
+    await new Promise(resolve => setTimeout(resolve, 2000)); // 3 sec
+    
+    //fade in to next image
+    var timerq = setInterval(function () {
+        if (multp >= 1){
+            clearInterval(timerq);
+            imagefading = false;
+        }
+            document.getElementById("homew").style.background = "url('https://hmse-unipi.or.id/img/main-slide/"+nextimage+"'), rgba(" + (redp*multp) + ", "+ (greenp*multp) +", "+ (bluep*multp) +", 1)";
+document.getElementById("homew").style.backgroundRepeat = "no-repeat"; 
+document.getElementById("homew").style.backgroundAttachment = "fixed";  
+document.getElementById("homew").style.backgroundPosition = "center"; 
+document.getElementById("homew").style.backgroundBlendMode = "overlay";
+document.getElementById("homew").style.backgroundSize = "cover";
+        multp += 0.01;
+    }, (fadeduration/2));
+  }
+        
+  let slideIndex = 0;
+        
+async function startSlides() {
+  
+  
+  await new Promise(resolve => setTimeout(resolve, 9000)); // 3 sec
+    changeSlideImage(slideimages[slideIndex], 25);
+
+  slideIndex += 1;
+  
+  if (slideIndex > slideimages.length - 1) {slideIndex = 0}
+  
+  setTimeout(startSlides, 100); // Change image every 2 seconds
+}
 
 </script>
 
 </html>
+
+<?php
+// Check if there is a string added after the last slash
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hmseunip_main";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+function getAddress() {
+  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+  return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+}
+
+if (str_contains(getAddress(), "index.php")) {
+  $noindex = str_replace('/index.php', '', getAddress());
+  echo "<script>window.location.href='$noindex';</script>";
+}
+
+$path  = '/home/root/public_html/img/main-slide';
+$files = scandir($path);
+for ($i = 2; $i < count($files); $i++) {
+    echo "<script>addToSlideShowImage('".$files[$i]."');</script>";
+}
+    echo "<script>startSlides();</script>";
+
+
+?>

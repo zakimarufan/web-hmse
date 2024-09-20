@@ -22,7 +22,7 @@ function getAddress() {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "web_hmse";
+$dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /web-hmse/announcements/
+RewriteBase /announcements/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.*)$ /web-hmse/announcements/index.php/$1 [L]
+RewriteRule (.*)$ /announcements/index.php/$1 [L]
