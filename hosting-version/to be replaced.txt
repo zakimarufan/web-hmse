@@ -1,3 +1,0 @@
-'localhost/web-hmse' -> 'your site domain'
-'http://' -> 'https://' (if the domain is HTTPS)
-The database details (hostname, username, password, db_name)

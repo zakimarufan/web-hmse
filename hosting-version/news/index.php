@@ -2,6 +2,7 @@
 
 <head>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>News - HMSE</title>
 
 
@@ -16,11 +17,12 @@
 
     -->
 
-  <link rel="icon" type="image/x-icon" href="http://hmse-unipi.or.id/img/favicon.png">
+  <link rel="icon" type="image/x-icon" href="https://hmse-unipi.or.id/img/favicon.png">
 
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a314b">
 
   <!-- Bootstrap CSS -->
   <link
@@ -40,22 +42,22 @@
   <link
     rel="stylesheet"
     type="text/css"
-    href="http://hmse-unipi.or.id/scrollbar.css"
+    href="https://hmse-unipi.or.id/scrollbar.css"
   />
 
   <!-- FADE IN/OUT TRANSITION CSS & JS -->
   <link
   rel="stylesheet"
   type="text/css"
-  href="http://hmse-unipi.or.id/fade-transition.css"
+  href="https://hmse-unipi.or.id/fade-transition.css"
 />
   <script
     type="text/javascript"
-    src="http://hmse-unipi.or.id/fade-transition.js"
+    src="https://hmse-unipi.or.id/fade-transition.js"
   ></script>
 
   <!-- My CSS -->
-  <link rel="stylesheet" href="http://hmse-unipi.or.id/style.css" />
+  <link rel="stylesheet" href="https://hmse-unipi.or.id/style.css" />
 </head>
 <body id="home">
   <div id="fade-overlay"  style="display: block;"></div>
@@ -80,10 +82,11 @@
               <!-- NAVBAR START -->
               <nav
                 class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
-                style="background-color: #0a314b"
+                id="inav2"
+style="background-color: #0A314B;"
               >
                 <div class="container">
-                  <a class="navbar-brand" href="http://hmse-unipi.or.id/">HMSE</a>
+                  <a class="navbar-brand" href="https://hmse-unipi.or.id/">HMSE</a>
                   <button
                     class="navbar-toggler"
                     type="button"
@@ -97,31 +100,35 @@
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                      <li class="nav-item">
-                        <a
-                          class="nav-link"
-                          href="http://hmse-unipi.or.id/"
-                          >Home</a
-                        >
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="http://hmse-unipi.or.id/#about">About</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="http://hmse-unipi.or.id/#gallery">Gallery</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="http://hmse-unipi.or.id/schedule/">Schedule</a>
-                      </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="http://hmse-unipi.or.id/announcements/">Announcements</a>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                          <ul class="dropdown-menu" aria-labelledby="AboutDD">
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#aim">Tujuan</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#visionmission">Visi & Misi</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#briefhistory">Sejarah Singkat</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#logophilosophy">Filosofi Logo</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/w_programme/">Program Kerja</a></li>
+                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/org_struct/">Struktur Organisasi</a></li>
+                          </ul>
                         </li>
                       <li class="nav-item">
-                        <a class="nav-link active"
-                        aria-current="page" href="#">News</a>
+                        <a class="nav-link" id="gallerynav" href="https://hmse-unipi.or.id/gallery/">Gallery</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="https://hmse-unipi.or.id/schedule/">Events Schedule</a>
+                      </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://hmse-unipi.or.id/announcements/">Announcements</a>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="newsnav"
+                        aria-current="page" href="#">News</a>
+                      </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://hmse-unipi.or.id/reports/">Reports</a>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="https://hmse-unipi.or.id/#contact">Contact</a>
                       </li>
                     </ul>
                   </div>
@@ -135,46 +142,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 
 <style>
 
-/* Add WA floating button CSS */
-.floating {
-position: fixed;
-width: 60px;
-height: 60px;
-bottom: 40px;
-right: 40px;
-background-color: #25d366;
-color: #fff;
-border-radius: 50px;
-text-align: center;
-font-size: 30px;
-box-shadow: 2px 2px 3px #999;
-z-index: 99;
-opacity: 100%;
-mix-blend-mode: multiply;
+.view-news {
+    min-height: 50vh;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
-.floatingb {
-position: fixed;
-width: 60px;
-height: 60px;
-bottom: 40px;
-right: 40px;
-background-color: #25d366;
-color: #fff;
-border-radius: 50px;
-text-align: center;
-font-size: 30px;
-z-index: 100;
-opacity: 35%;
-mix-blend-mode: screen;
-}
 
-.fab-icon {
-margin-top: 16px;
-}
 
 .anchor-title {
 	font-size: 29px;
+  color: #0a314b;
+	font-weight: bold;
+  margin-right: 1%;
+  mix-blend-mode:plus-lighter;
+}
+
+.anchor-title-mobile {
+	font-size: 18px;
   color: black;
 	font-weight: bold;
   margin-right: 1%;
@@ -202,10 +188,20 @@ margin-top: 16px;
   text-align: justify;
 }
 
+.nav-flex-container {
+  display: flex;
+  align-items: center;
+  margin-left: 8%;
+  justify-content: center;
+}
+
+.nav-flex-item {
+  text-align: center;
+}
+
 .subnav {
   position: relative;
   text-transform: uppercase;
-  margin-left: 6%;
   text-decoration: none;
   background-color: #0A314B;
   padding: 10px 26px;
@@ -214,15 +210,15 @@ margin-top: 16px;
 }
 
 .subnav-input {
-  position: absolute;
+    position:relative !important;
   left:0;
   right:0;
-  margin-left: 12%;
-  margin-right: 12%;
   padding: 6px 22px;
       display: inline-block;
   box-shadow: 0px 0px 2px #000;
   border-radius: 500px;
+  transition: 0.3s;
+  width:100% !important;
 }
 
 .subnav-input:focus-within {
@@ -235,9 +231,6 @@ margin-top: 16px;
   border-width: 0;
   padding-right: 30px;
   width: 100%;
-}
-
-.subnav-input input {
   outline: none;
 }
 
@@ -248,21 +241,76 @@ margin-top: 16px;
       right: 16px; /* Adjust the right distance as needed */
       width: 16px; /* Adjust width */
       height: 16px;
+  transition: 0.3s;
 }
 
 .subnav-input svg:hover {
   cursor: pointer;
   fill: #135D8F;
 }
+.newsitem {
+    display:block;
+                                box-shadow: 0px 3px 9px rgba(0, 0, 0, .4);
+                                border-radius: 8px;
+                                padding-top: 6px;
+                                padding-left: 12px;
+                                padding-right: 12px;
+                                padding-bottom: 12px;
+                                margin-bottom: 28px;
+                                background-color: transparent;
+                                isolation: isolate;
+  transition: 0.3s;
+}
+
+.newsitem.newshover{
+                                background-color: #0a314b;
+                                transform:scale(1.05);
+                                box-shadow: 0px 3px 9px #135D8F;
+  transition: 0.3s all;
+                                
+}
+
+.newsitemobile {
+    
+}
+
+@media screen and (min-width: 768px) {
+.pbcm {
+    left: -8px;
+}
+}
 
 </style>
 
+<link
+    rel="stylesheet"
+    type="text/css"
+    href="https://hmse-unipi.or.id/style-ex.css"
+  />
+
 <!-- render the button and direct it to wa.me -->
-<i class="floating">
+<div id="firefox_safari_filter"></div>
+<i class="floating" id="wfloating">
 <i class="fab fa-whatsapp fab-icon"></i>
 </i>
-<a href="https://wa.me/6285819608700" class="floatingb" target="_blank">
+<a onclick="window.open('https://wa.me/6285819608700/', '_blank');" class="floatingb" id="wfloatingb" target="_blank">
 </a>
+<script>
+$(function() {
+  $('#wfloatingb').hover(function() {
+    $('#wfloating').css('mix-blend-mode', 'normal');
+    if (!isMobile) { $('#wfloating').css('box-shadow', '0px 0px 11px #25d366'); }
+  }, function() {
+    // on mouseout, reset the background colour
+    if (!isMobile) {
+        $('#wfloating').css('mix-blend-mode', 'multiply');
+    } else {
+        $('#wfloating').css('opacity', '75%');
+    }
+    $('#wfloating').css('box-shadow', '2px 2px 3px rgba(0, 0, 0, .4)');
+  });
+});
+  </script>
 <!-- WA BUTTON END -->
 
               <!-- JUMBOTRON START -->
@@ -270,31 +318,38 @@ margin-top: 16px;
 
                 <h1 id="permanent-title">Berita</h1>
                 <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1440 316"
-                >
-                  <path
-                    fill="#ffffff"
-                    fill-opacity="10"
-                    d="M0,64L48,64C96,64,192,64,288,101.3C384,139,480,213,576,234.7C672,256,768,224,864,181.3C960,139,1056,85,1152,69.3C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                  ></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 1440 160">
+                    <path fill="#ffffff" fill-opacity="10" d="M 0 63.652 L 48 63.652 C 96 63.652 192 63.652 288 76.329 C 384 89.141 480 114.291 576 121.666 C 672 128.905 768 118.029 864 103.518 C 960 89.141 1056 70.789 1152 65.453 C 1248 59.913 1344 67.39 1392 70.891 L 1440 74.527 L 1440 150.656 L 1392 150.656 C 1344 150.656 1248 150.656 1152 150.656 C 1056 150.656 960 150.656 864 150.656 C 768 150.656 672 150.656 576 150.656 C 480 150.656 384 150.656 288 150.656 C 192 150.656 96 150.656 48 150.656 L 0 150.656 L 0 63.652 Z"></path>
+                  </svg>
               </section>
               <!-- JUMBOTRON END -->
-                <a href="http://hmse-unipi.or.id/news/" class="subnav" id="backp_button" style="display:none;">← Kembali ke Berita</a>
-                <div id="vsearch" class="subnav-input">
-                <input type="search" id="vsearch-text" placeholder="Cari..."></input>
-                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
- <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
-</svg>
-
-</div>
+                <a href="https://hmse-unipi.or.id/news/" class="subnav" id="backp_button" style="display:none; font-family:Friz-Quadrata !important; top: 50px">← Kembali ke Berita</a>
+                <div class="nav-flex-container" id="vnav" style="position: absolute !important; width: 85% !important;">
+                    <div class="nav-flex-container nav-flex-item" id="vnav-mobile" style="margin: 0 !important; flex-basis: 100% !important; flex-direction: row !important;">
+                <div class="nav-flex-item">
+                <a class="subnav" id="firstpage">&lt;&lt;</a>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="prevpage">&lt;</a>
+                </div><div class="nav-flex-item" style="word-break:keep-all !important; flex-basis: 40% !important; margin: 5% !important;">
+                <div id="pagecount">Halaman 1 - 1 dari 1</div>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="nextpage">&gt;</a>
+                </div><div class="nav-flex-item">
+                <a class="subnav" id="lastpage">&gt;&gt;</a>
+                </div>
+                </div>
+                <div id="vsearch" class="nav-flex-item subnav-input" style="flex-basis: 100% !important;">
+                <input type="search" id="vsearch-text" placeholder="Cari..." oninput="changeSearchCase();"></input>
+                <svg onClick="searchtext()" width="1200pt" height="1200pt" version="1.1" viewBox="0 0 1200 1200" xmlns="https://www.w3.org/2000/svg">
+                 <path d="m1022.5 952.5-260-260c40-52.5 62.5-120 62.5-192.5 0-180-145-325-325-325s-325 145-325 325 145 325 325 325c72.5 0 137.5-22.5 192.5-62.5l260 260c10 10 22.5 15 35 15s25-5 35-15c20-20 20-50 0-70zm-522.5-227.5c-125 0-225-100-225-225s100-225 225-225 225 100 225 225-100 225-225 225z"/>
+                </svg>
+                </div>
+                </div>
               <!-- NEWS LIST START-->
-              <section id="news">
+              <section id="news" class="view-news">
                 <div class="container">
 
-                  <div class="row text-center mb-3">
+                  <div class="row text-center mb-3 pbcm" style="position: relative; margin-top:12px;">
                     <div class="col">
                       
                     <div class="flex-container" id="news_listing">
@@ -307,7 +362,7 @@ margin-top: 16px;
                     <div class="flex-container" id="news_content" style="display:none;">
 
 <h2 class="content-title" style="text-align: left;" id="vtitle"></h2>
-<p style="color: grey; text-align: left; font-size: 10pt;" id="datetime_author_details"></p>
+<p style="color: grey; text-align: left; font-size: 11pt; font-family: Myriad-Pro; font-style: Italic;  margin-bottom: 0;" id="datetime_author_details"></p>
 <br>
 
 <p id="vbody" class="body-content"></p>
@@ -320,11 +375,9 @@ margin-top: 16px;
               <!-- NEWS END -->
 
               
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 316">
-      <path fill="#0a314b" fill-opacity="10" d="M0,160L48,144C96,128,192,96,288,74.7C384,53,480,43,576,80C672,117,768,203,864,229.3C960,256,1056,224,1152,229.3C1248,235,1344,277,1392,298.7L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-              </section>
-              <!-- CONTACT END -->
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 1440 162">
+        <path fill="#0a314b" fill-opacity="10" d="M -0.848 50.584 L 47.152 44.263 C 95.152 37.942 191.152 25.3 287.152 16.886 C 383.152 8.313 479.152 4.362 575.152 18.979 C 671.152 33.596 767.152 67.571 863.152 77.961 C 959.152 88.509 1055.152 75.867 1151.152 77.961 C 1247.152 80.213 1343.152 96.805 1391.152 105.377 L 1439.152 113.792 L 1391.152 113.792 C 1343.152 113.792 1247.152 113.792 1151.152 113.792 C 1055.152 113.792 959.152 113.792 863.152 113.792 C 767.152 113.792 671.152 113.792 575.152 113.792 C 479.152 113.792 383.152 113.792 287.152 113.792 C 191.152 113.792 95.152 113.792 47.152 113.792 L -0.848 113.792 L -0.848 50.584 Z"></path>
+      </svg>
 
               <!-- FOOTER START -->
               <footer
@@ -332,69 +385,29 @@ margin-top: 16px;
                 style="background-color: #0a314b"
               >
 
-<!-- CONTACT START-->
-<section id="contact">
-<div class="container">
-    <div class="row text-center mb-3">
-      <div class="col">
-        <h2>Contact</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form action="./ipost.php" method="post">
-          <div class="mb-3">
-            <input
-              type="text"
-              placeholder="Nama Lengkap"
-              class="form-control"
-              name="pname"
-              id="name"
-              aria-describedby="name"
-            />
-          </div>
-          <div class="mb-3">
-            <input
-              type="email"
-              placeholder="Email"
-              class="form-control"
-              name="pemail"
-              id="email"
-              aria-describedby="email"
-            />
-          </div>
-          <div class="mb-3">
-            <textarea
-              placeholder="Tulis pesan disini..."
-              class="form-control"
-              name="pcontent"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-          <br />
-          <button type="submit" class="btn btn-primary">
-            Kirim
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 157">
+<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
   <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
 </svg>
 
 
                 <p>
-                  Created with <i class="bi bi-heart-fill text-danger"></i> by
-                  Team HMSE<br>Follow our Instagram: 
-                  <a
-                    href="https://www.instagram.com/hmse_unipi/"
-                    class="text-white fw-bold"
-                    >Mahasiswa Software Engineering</a
-                  >
-                </p>
+                   Copyright © 2023 - 2024<br>Himpunan Mahasiswa Software Engineering<br><b><a href="https://unipem.ac.id/" style="text-decoration:none; color:inherit">Universitas Insan Pembangunan Indonesia</a></b><br>
+                    <br>
+                    <span style="margin:4px;"><a
+                      onclick="window.open('https://www.instagram.com/hmse_unipi/', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Instagram</a
+                    ></span>
+                    <span style="margin:4px;">
+                    <a
+                      onclick="window.open('mailto:hmseunipi@gmail.com', '_blank');"
+                      style="cursor: pointer; text-decoration: none;"
+                      class="text-white fw-bold" target="_blank"
+                      >Email</a
+                    >
+                    </span>
+                  </p>
               </footer>
               <!-- FOOTER END -->
               <!-- End of body -->
@@ -442,36 +455,137 @@ margin-top: 16px;
 
 <script
 type="text/javascript"
-src="http://hmse-unipi.or.id/simplebar.min.js"
+src="https://hmse-unipi.or.id/simplebar.min.js"
 ></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
 //PER-PAGE SCRIPT
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var BrowserDetect = {
+        init: function() {
+            this.browser = this.searchString(this.dataBrowser) || "Other";
+            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
+        },
+        searchString: function(data) {
+            for (var i = 0; i < data.length; i++) {
+                var dataString = data[i].string;
+                this.versionSearchString = data[i].subString;
+
+                if (dataString.indexOf(data[i].subString) !== -1) {
+                    return data[i].identity;
+                }
+            }
+        },
+        searchVersion: function(dataString) {
+            var index = dataString.indexOf(this.versionSearchString);
+            if (index === -1) {
+                return;
+            }
+
+            var rv = dataString.indexOf("rv:");
+            if (this.versionSearchString === "Trident" && rv !== -1) {
+                return parseFloat(dataString.substring(rv + 3));
+            } else {
+                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+            }
+        },
+
+        dataBrowser: [{
+            string: navigator.userAgent,
+            subString: "Chrome",
+            identity: "Chrome"
+        }, {
+            string: navigator.userAgent,
+            subString: "MSIE",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Trident",
+            identity: "Explorer"
+        }, {
+            string: navigator.userAgent,
+            subString: "Firefox",
+            identity: "Firefox"
+        }, {
+            string: navigator.userAgent,
+            subString: "Safari",
+            identity: "Safari"
+        }, {
+            string: navigator.userAgent,
+            subString: "Opera",
+            identity: "Opera"
+        }]
+
+    };
+
+    BrowserDetect.init();
+
 
       $(document).ready(function() {
           alreadydisplayed = true;
           fadein(6, 0.01); //homepage fade in, for other pages use fadein(6, 0.01)
           if (isMobile) {
+              var newParent = document.getElementsByClassName('hmse-home')[0];
+                    var oldParent = document.getElementsByClassName('simplebar-content-wrapper')[0];
+                    
+                    while (oldParent.childNodes.length > 0) {
+                        newParent.appendChild(oldParent.childNodes[0]);
+                    }
+                    
+                    document.getElementsByClassName('simplebar-wrapper')[0].remove();
+                    document.getElementById("horizontal_scrollbar").remove();
+                    document.getElementById("vertical_scrollbar").remove();
             document.getElementById("fade-overlay").remove();
-            //document.getElementById("horizontal_scrollbar").remove();
-            //document.getElementById("vertical_scrollbar").remove();
+            document.getElementById("firefox_safari_filter").remove();
+          document.getElementById("vnav").style.flexDirection = "column-reverse";
+          document.getElementById("vnav-mobile").style.flexBasis = "100%";
+          document.getElementById("vnav").style.position = "relative";
+          document.getElementById("vnav").style.translate = "-5pt 21pt";
+          document.getElementById("pagecount").style.fontFamily = "Friz-Quadrata";
+          document.getElementById("pagecount").style.textTransform = "Uppercase";
+          } else {
+              if ((BrowserDetect.browser === "Safari") || (BrowserDetect.browser === "Firefox")) {
+                  document.getElementById("firefox_safari_filter").classList.add("floating-firefox-safari-filter");
+              } else {
+                  document.getElementById("firefox_safari_filter").remove();
+              }
+          document.getElementById("vnav").style.translate = "0pt -5pt";
+          document.getElementById("pagecount").style.fontFamily = "Myriad-Pro";
+          document.getElementById("pagecount").style.fontWeight = "Bold";
+          document.getElementById("pagecount").style.fontStyle = "Italic";
+          document.getElementById("pagecount").style.fontSize = "13pt";
           }
       });
+      
+      
+      function changeSearchCase() {
+           if (document.getElementById("vsearch-text").value.length > 0) {
+               document.getElementById("vsearch-text").style.textTransform = "none";
+           } else {
+               document.getElementById("vsearch-text").style.textTransform = "uppercase";
+           }
+        }
 
-      function openNewsId(newsTitle, newsAuthor, newsDate, newsContent) {
+      function openNewsId(newsHeadline, newsAuthor, newsDate, newsContent, isFromGallery) {
           document.getElementById("backp_button").style.display = "initial";
           document.getElementById("permanent-title").style.display = "none";
-          document.getElementById("vsearch").style.display = "none";
+          document.getElementById("vnav").style.display = "none";
           document.getElementById("news_listing").style.display = "none";
           document.getElementById("news_content").style.display = "initial";
           document.getElementById("toppage").style.paddingTop = "0px";
-          document.getElementById("vtitle").innerHTML = newsTitle;
-          document.title = newsTitle + " - HMSE";
+          document.getElementById("vtitle").innerHTML = newsHeadline;
+          document.title = newsHeadline + " - HMSE";
           document.getElementById("datetime_author_details").innerHTML = "Date created: " + newsDate + "<br>Author: " + newsAuthor;
           document.getElementById("vbody").innerHTML = newsContent;
+          if (isFromGallery == "from-gallery=true") {
+            document.getElementById("backp_button").innerHTML =  "← Kembali ke Galeri";
+            document.getElementById("backp_button").href = "https://hmse-unipi.or.id/gallery/";
+            document.getElementById("gallerynav").setAttribute('aria-current', 'page');
+            document.getElementById("gallerynav").href = "#";
+            document.getElementById("newsnav").classList.remove('active');
+            document.getElementById("newsnav").removeAttribute('aria-current');
+            document.getElementById("newsnav").href = "https://hmse-unipi.or.id/news/";
+          }
       }
 
       function emptyNewsList() {
@@ -479,15 +593,33 @@ src="http://hmse-unipi.or.id/simplebar.min.js"
         "<p style=\"text-align: center; padding-bottom:10%;\"><span class=\"anchor-title\">Belum ada berita apa pun tentang HMSE untuk saat ini.</span></p>";
       }
 
-      function listNewsItems(anchorTitle, date, previewContent, hreflink, primaryThumbnail) {
-        document.getElementById("news_listing").innerHTML +=
-        "<div class=\"flex-item\" style=\"text-align: left;\">"
-+ "<p style=\"color: grey;\"><span class=\"anchor-title\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
+      function listNewsItems(anchorTitle, date, previewContent, hreflink, primaryThumbnail, indexid) {
+        if (isMobile) { //specific listing appearance for mobile
+          var subnav = document.getElementsByClassName('subnav');
+          document.getElementById("news").style.paddingTop = "20pt";
+            for (var i = 0; i < subnav.length; ++i) {
+                var item = subnav[i];  
+                item.style.margin = "3pt";
+                item.style.zoom = "60%";
+            }
+          document.getElementById("news_listing").innerHTML +=
+        "<div class=\"flex-item newsitemobile\" style=\"text-align: left;\">"
++ "<p style=\"font-size: 9pt; color: grey;\"><span class=\"anchor-title-mobile\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
                   +  anchorTitle
-               + "</a></span>"+date+"</p>"
-               +"<table style=\" table-layout:fixed; resize: both; overflow: auto; margin-bottom:35px; \"><tr><th style=\"min-width: 18%; width:18%; white-space: nowrap; vertical-align: top;\"><img style=\"width:97%; border-radius: 5px; margin-right:9px;\" src=\""
+               + "</a></span><br>"+date+"</p>"
+               +"<table style=\" table-layout:fixed; resize: both; overflow: auto; margin-bottom:35px; \"><tr><th style=\"min-width: 35%; width:35%; white-space: nowrap; vertical-align: top;\"><img style=\"width:97%; border-radius: 5px; margin-right:9px;\" src=\""
                + primaryThumbnail + "\"></img></th>"
-+ "<th style=\"font-weight: normal; vertical-align: top; word-break: normal;\"><p class=\"preview-body-content\">" + previewContent + "</div><br></th></tr></table>"
++ "<th style=\"font-weight: normal; font-size: 9pt; vertical-align: top; word-break: normal;\"><p class=\"preview-body-content\">" + previewContent + "</div><br></th></tr></table>"
+        } else {
+        document.getElementById("news_listing").innerHTML +=
+        "<div class=\"flex-item newsitem\" id=\"" + indexid + "_item\" style=\"text-align: left;\">"
++ "<p><span class=\"anchor-title\">" + "<a href=\"" + hreflink + "\" style=\"text-decoration: none; color:inherit;\" onmouseover=\"document.getElementById('" + indexid + "_item\').classList.add('newshover')\" onmouseleave=\"document.getElementById('" + indexid + "_item\').classList.remove('newshover')\">"
+                  +  anchorTitle
+               + "</a></span><span style=\"color: grey; mix-blend-mode:color-dodge; white-space: nowrap; \">"+date+"</span></p>"
+               +"<table style=\" table-layout:fixed; resize: both; overflow: auto;\"><tr><th style=\"min-width: 23%; width:23%; white-space: nowrap; vertical-align: top;\"><img style=\"width:97%; border-radius: 5px; margin-right:9px; mix-blend-mode:color-dodge;\" src=\""
+               + primaryThumbnail + "\"></img></th>"
++ "<th style=\"font-weight: normal; vertical-align: top; word-break: normal; mix-blend-mode:plus-lighter;\"><p class=\"preview-body-content\">" + previewContent + "<br></th></tr></table></div>"
+        }      
       }
 
       const scrollnav = document.querySelector("#scrollnav");
@@ -501,7 +633,7 @@ src="http://hmse-unipi.or.id/simplebar.min.js"
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = 'http://hmse-unipi.or.id/news/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'https://hmse-unipi.or.id/news/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -512,7 +644,21 @@ src="http://hmse-unipi.or.id/simplebar.min.js"
       });
       
 
-      $(document).on("click", "a", function(e) {
+var cntrlIsPressed = false;
+        
+        $(document).keydown(function(event) {
+    if (event.which == "17") {
+        cntrlIsPressed = true;
+    }
+});
+
+$(document).keyup(function() {
+    cntrlIsPressed = false;
+});
+        
+
+        $(document).on("click", "a", function(e) {
+            if ((!cntrlIsPressed) && ($(this).attr('target') != "_blank")) {
           e.preventDefault();
           //this == the link that was clicked
           var href = $(this).attr("href");
@@ -536,6 +682,7 @@ src="http://hmse-unipi.or.id/simplebar.min.js"
               window.location.href = href;
             }
           }
+            }
       });
 
 </script>
@@ -545,8 +692,8 @@ src="http://hmse-unipi.or.id/simplebar.min.js"
 <?php
 // Check if there is a string added after the last slash
 $servername = "localhost";
-$username = "hmseunip";
-$password = "11wvYasdfeJp13k";
+$username = "root";
+$password = "";
 $dbname = "hmseunip_main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -555,22 +702,39 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+function removeLink($string){
+
+ $pattern = '/https?:\/\/[^\s]+|www\.[^\s]+/i';
+    // Replace the matched URLs with an empty string
+    $string = preg_replace($pattern, '', $string);
+    
+    // This pattern matches HTML anchor tags
+    $pattern = '/<a\b[^>]*>(.*?)<\/a>/i';
+    // Replace the matched anchor tags with their inner text
+    $string = preg_replace($pattern, '$1', $string);
+
+    return $string;
+    
+}
+
 function newsRegularList($listquery) {
-//list the news
+//list the news regularly
 //Truncate the preview body content text to 255 characters
 //Remove the HTML codes from the preview content
+//Sort by the newest date using the MySQL query
 
 if ($listquery->num_rows > 0) {
 while($row = mysqli_fetch_array($listquery)) {
-  $n_prev_title = $row['newsTitle'];
-  $n_url_id_pointer = "http://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
+  $n_prev_title = $row['newsHeadline'];
+  $n_url_id_pointer = "https://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
   $n_p_date = date('D, j M Y H:i', strtotime($row['newsDate']));
   $n_prim_thumb = $row['newsMainThumbImg'];
-  $n_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255);
-echo "<script>listNewsItems('$n_prev_title', '$n_p_date', '$n_prev_content', '$n_url_id_pointer', '$n_prim_thumb');</script>";
+  $n_prev_content = removeLink(substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255));
+  $indexid = rand(100000, 999999);
+echo "<script>listNewsItems('$n_prev_title', '$n_p_date', '$n_prev_content', '$n_url_id_pointer', '$n_prim_thumb', '$indexid');</script>";
 }
 } else {
-  echo "<script>document.getElementById(\"vsearch\").style.display = \"none\";</script>";
+  echo "<script>document.getElementById(\"vnav\").style.display = \"none\";</script>";
   echo "<script>emptyNewsList();</script>";
 }
 
@@ -578,24 +742,32 @@ echo "<script>listNewsItems('$n_prev_title', '$n_p_date', '$n_prev_content', '$n
 
 if(isset($_SERVER['PATH_INFO'])) {
     $pathinfo = $_SERVER['PATH_INFO'];
-    $idpointer = str_replace('/', '', substr($pathinfo, 1));
+    $idpointerp = str_replace('/', '', substr($pathinfo, 1));
+    $idpointer = $idpointerp;
+    $isfromgalleryarg = 'from-gallery=false';
+    if (str_contains($idpointerp, '&')) {
+        $idpointer = explode('&', $idpointerp)[0];
+        $isfromgalleryarg = explode('&', $idpointerp)[1];
+    }
     if ($idpointer == "") {
 
-      newsRegularList($conn->execute_query("SELECT newsTitle, newsBodyContent, newsDate, news_url_id_pointer, newsMainThumbImg FROM news"));
-
-      
+      newsRegularList($conn->execute_query("SELECT newsHeadline, newsBodyContent, newsDate, news_url_id_pointer, newsMainThumbImg FROM news ORDER BY ordered_at DESC"));
       
     } else {
 
-      $result = $conn->execute_query("SELECT newsTitle, newsBodyContent, newsDate, newsAuthor FROM news WHERE news_url_id_pointer = ? LIMIT 1",  [$idpointer]);
+      $result = $conn->execute_query("SELECT newsHeadline, newsBodyContent, newsDate, newsAuthor FROM news WHERE news_url_id_pointer = ? LIMIT 1",  [$idpointer]);
 
       if ($result->num_rows == 1) { //Check if the article exists
         while($row = mysqli_fetch_array($result)) {
-          $n_title = $row['newsTitle'];
+          $n_title = $row['newsHeadline'];
           $n_author = $row['newsAuthor'];
           $n_date = date('D, j M Y H:i', strtotime($row['newsDate']));
           $n_content = preg_replace("/\r\n|\r|\n|\n\r/", '<br>', $row['newsBodyContent']);
-        echo "<script>openNewsId('$n_title', '$n_author', '$n_date', '$n_content');</script>";
+         if ($isfromgalleryarg == "from-gallery=true") {
+            echo "<script>openNewsId('$n_title', '$n_author', '$n_date', '$n_content', '$isfromgalleryarg');</script>";
+          } else {
+            echo "<script>openNewsId('$n_title', '$n_author', '$n_date', '$n_content', 'from-gallery=false');</script>";
+          }
         }
       } else {
         if (str_starts_with($idpointer, 'search')) { //searching for certain news
@@ -607,30 +779,31 @@ if(isset($_SERVER['PATH_INFO'])) {
 
           foreach (explode('&', $uriquery) as $chunk) {
             $n_search_display = preg_replace('/[\s\+]/', ' ', explode("=", $chunk)[1]);
-            $searchlistquery = $conn->execute_query("SELECT * FROM news WHERE newsTitle like '%$n_search_display%' OR newsBodyContent like '%$n_search_display%' OR newsDate like '%$n_search_display%' OR newsAuthor like '%$n_search_display%' OR news_url_id_pointer like '%$n_search_display%'");
+            $searchlistquery = $conn->execute_query("SELECT * FROM news WHERE newsHeadline like '%$n_search_display%' OR newsBodyContent like '%$n_search_display%' OR newsDate like '%$n_search_display%' OR newsAuthor like '%$n_search_display%' OR news_url_id_pointer like '%$n_search_display%'");
             $search_result_count = $searchlistquery->num_rows;
             echo "<script>document.title = \"Search results for '$n_search_display' - HMSE\";</script>";
             echo "<script>document.getElementById(\"permanent-title\").innerHTML = \"Hasil pencarian untuk '$n_search_display'<br>($search_result_count hasil ditemukan)\"</script>";
             //continue the searching function (show the search result)
 
 while($row = mysqli_fetch_array($searchlistquery)) {
-  $n_search_prev_title = $row['newsTitle'];
-  $n_search_url_id_pointer = "http://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
+  $n_search_prev_title = $row['newsHeadline'];
+  $n_search_url_id_pointer = "https://hmse-unipi.or.id/news/" . $row['news_url_id_pointer'];
   $n_search_prim_thumb = $row['newsMainThumbImg'];
   $n_search_p_date = date('D, j M Y H:i', strtotime($row['newsDate']));
-  $n_search_prev_content = substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255);
-echo "<script>listNewsItems('$n_search_prev_title', '$n_search_p_date', '$n_search_prev_content', '$n_search_url_id_pointer', '$n_search_prim_thumb');</script>";
+  $n_search_prev_content = removeLink(substr(preg_replace("/\r\n|\r|\n|\n\r/", ' ', strip_tags($row['newsBodyContent'])), 0, 255));
+  $indexid = rand(100000, 999999);
+echo "<script>listNewsItems('$n_search_prev_title', '$n_search_p_date', '$n_search_prev_content', '$n_search_url_id_pointer', '$n_search_prim_thumb', '$indexid');</script>";
 }
         }
 
         } else { //Redirect to 404 Not Found
-          echo "<script>window.location.replace('http://hmse-unipi.or.id/404/');</script>";
+          echo "<script>window.location.replace('https://hmse-unipi.or.id/404/');</script>";
         }
       }
     }
 } else {
   function getAddress() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
     return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
   }
   
@@ -639,7 +812,7 @@ echo "<script>listNewsItems('$n_search_prev_title', '$n_search_p_date', '$n_sear
     echo "<script>window.location.href='$noindex';</script>";
   }
   
-  newsRegularList($conn->execute_query("SELECT newsTitle, newsBodyContent, newsDate, news_url_id_pointer, newsMainThumbImg FROM news"));
+  newsRegularList($conn->execute_query("SELECT newsHeadline, newsBodyContent, newsDate, news_url_id_pointer, newsMainThumbImg FROM news ORDER BY newsDate DESC"));
 }
 
 ?>
