@@ -1,0 +1,16 @@
+html {
+  scroll-behavior: smooth !important;
+}
+
+#fade-overlay {
+    position: fixed;
+    top: -350%;
+    left: -350%;
+    width: 800%;
+    height: 800%;
+    background-color: black;
+    mix-blend-mode: normal;
+    opacity: 1;
+    pointer-events: none; 
+    z-index: 2147483647;
+  }

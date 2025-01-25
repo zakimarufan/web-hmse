@@ -1,0 +1,30 @@
+Options -Indexes
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{THE_REQUEST} /index\.php [NC]
+# RewriteRule ^(.*?)index\.php$ $1 [L,R=302,NC,NE]
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
+
+ErrorDocument 400 /400/
+ErrorDocument 401 /401/
+ErrorDocument 403 /403/
+ErrorDocument 404 /404/
+ErrorDocument 405 /405/
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+
+</IfModule>
+<IfModule lsapi_module>
+
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
