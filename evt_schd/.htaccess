@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /schedule/
+RewriteBase /evt_schd/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (.*)$ /schedule/index.php/$1 [L]
+RewriteRule (.*)$ /evt_schd/index.php/$1 [L]

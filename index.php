@@ -68,8 +68,10 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body id="home">
-    <div id="fade-overlay"  style="display: block;"></div>
-    <div id="desktop-photo-viewer" style="display: block; pointer-events: none; width: 100%; height: 100%; position: fixed; opacity: 0; background-color: rgba(0,0,0,.85); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); transition: opacity 0.65s linear; z-index: 1500;">
+    <div id="pre-overlay"></div>
+    <div id="fade-overlay" style="display: block;"></div>
+    <div id="front-overlay"></div>
+    <div id="desktop-photo-viewer" style="display: block; pointer-events: none; width: 100%; height: 100%; position: fixed; opacity: 0; backdrop-filter: blur(4px) brightness(0.25); -webkit-backdrop-filter: blur(4px) brightness(0.25); transition: opacity 0.65s linear; z-index: 1500;">
   <button class="item-4" style="left: 10px; top: 10px; position: absolute;" onclick="exitViewPhoto();"></button>
   <img id="viewsekret" src="https://hmse-unipi.or.id/img/SEKRET/WhatsApp Image 2024-09-22 at 22.02.14.jpeg" style="max-width: 88%; max-height: 88%; display: block; position: relative; margin-left: auto; margin-right: auto; top: 6%;">
   <button id="prevsl" class="slideshowbutton" style="position: absolute; display: block; top: 40%; left: 120px; width: 50px; height: 100px; border: none; background-color: rgba(0,0,0,.65);" disabled="disabled" onclick="document.getElementById('pic1').checked = true; document.getElementById('nexsl').disabled = false; document.getElementById('prevsl').disabled = true; document.getElementById('viewsekret').src = document.getElementById('pic1').value;"><svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>forward-step</title> <path d="M22 5.25c-0.414 0-0.75 0.336-0.75 0.75v0 8.398l-10.77-8.975c-0.129-0.108-0.297-0.174-0.481-0.174-0.414 0-0.75 0.336-0.75 0.75 0 0 0 0.001 0 0.001v-0 20c0 0 0 0 0 0.001 0 0.299 0.175 0.556 0.427 0.677l0.005 0.002c0.093 0.044 0.203 0.070 0.318 0.070h0c0 0 0.001 0 0.001 0 0.183 0 0.351-0.066 0.48-0.175l-0.001 0.001 10.77-8.975v8.398c0 0.414 0.336 0.75 0.75 0.75s0.75-0.336 0.75-0.75v0-20c-0-0.414-0.336-0.75-0.75-0.75v0zM10.75 24.398v-16.797l10.078 8.398z"></path> </g></svg></button>
@@ -134,11 +136,8 @@
                         <li class="nav-item dropdown">
                           <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                           <ul class="dropdown-menu-s" aria-labelledby="AboutDD">
-                              <div class="dropdown-background dropdown-opacity-controller" style="backdrop-filter: brightness(0.5); -webkit-backdrop-filter: brightness(0.5);"></div>
-                              <div class="dropdown-background dropdown-opacity-controller dropdown-background-colour"></div>
-                              <div class="dropdown-background" style="backdrop-filter: invert(); -webkit-backdrop-filter: invert();"></div>
-                              <div class="dropdown-background dropdown-opacity-controller" style="backdrop-filter: brightness(2); -webkit-backdrop-filter: brightness(2);"></div>
-                              <div class="dropdown-background" style="backdrop-filter: invert(); -webkit-backdrop-filter: invert();"></div>
+                              <div class="dropdown-background dropdown-opacity-controller dropdown-background-colour" style="backdrop-filter: brightness(0.5); -webkit-backdrop-filter: brightness(0.5);"></div>
+                              <div class="dropdown-background dropdown-opacity-controller" style="backdrop-filter: invert() brightness(2) invert(); -webkit-backdrop-filter: invert() brightness(2) invert();"></div>
                             <li><a class="dropdown-item" href="#aim">Tujuan</a></li>
                             <li><a class="dropdown-item" href="#visionmission">Visi & Misi</a></li>
                             <li><a class="dropdown-item" href="#briefhistory">Sejarah Singkat</a></li>
@@ -151,7 +150,7 @@
                           <a class="nav-link" href="./gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="./schedule/">Events Schedule</a>
+                          <a class="nav-link" href="./evt_schd/">Events Schedule</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="./announcements/">Announcements</a>
@@ -171,7 +170,7 @@
                 </nav>
                 <!-- NAVBAR END -->
                 
-    <div class="solid-bg"></div>
+    <div class="solid-bg" id="homew" style="background: url('http://hmse-unipi.or.id/img/main-slide/phist1.jpg'), rgba(10, 49, 75, 1); background-repeat: no-repeat; background-attachment: fixed;  background-position: center; background-blend-mode: overlay; background-size: cover;"></div>
 
 
 
@@ -188,12 +187,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
 </a>
 <style>
 
+h5 {
+	font-family: Myriad-Pro;
+    font-style: italic;
+	font-size: 1.37rem;
+}
+
 .item-4 {
   width: 24px;
   height: 24px;
   position: relative;
   border-radius: 50%;
-  background-color: #FFF;
+  background-color: #36658d44;
   opacity: 0.8;
   border: none;
   transition: 0.3s ease-out;
@@ -203,7 +208,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
     position: absolute;
     width: 80%;
     height: 2px;
-    background-color: #36658d;
+    background-color: #fff;
     left: 50%;
     top: 50%;
   }
@@ -295,33 +300,36 @@ input:checked + label {
      filter: none;
 }
 
+.jumbotron {
+    background: transparent !important;
+}
+
 @media screen and (min-width: 768px) {
+    
+    .titleStyle {
+        pointer-events: none;
+    }
+    
+    @supports (-webkit-mask: linear-gradient(#000 0 0) text) {
     
     .titleStyle {
         -webkit-mask: linear-gradient(#000 0 0) text;
         mask: linear-gradient(#000 0 0) text;
-        pointer-events: none;
-	    mix-blend-mode: color-dodge;
+	   color: transparent;
+	    backdrop-filter: blur(24px) brightness(3) saturate(0.17) contrast(4) saturate(0.8);
+	    -webkit-backdrop-filter: blur(24px) brightness(3) saturate(0.17) contrast(4) saturate(0.8);
     }
     
-    @supports(-webkit-tap-highlight-color: black) {
-        
-    .titleStyle {
-	   color: #afafaf;
-	    backdrop-filter: blur(12px);
-	    -webkit-backdrop-filter: blur(12px);
-    }
     }
     
-    
-     @supports not (-webkit-tap-highlight-color: black) {
+    @supports not (-webkit-mask: linear-gradient(#000 0 0) text) {
     
     .titleStyle {
 	   color: #d7d7d7;
+	    mix-blend-mode: color-dodge;
     }
     
     }
-    
     
     .titleBack {
         color: #000;
@@ -331,13 +339,32 @@ input:checked + label {
     }
     
     .logoEdge {
-	    backdrop-filter: blur(30px);
-        -webkit-backdrop-filter: blur(30px);
-        filter: brightness(0.86);
+        position: relative;
+        box-shadow: 0px 0px 44px #3392ff;
+        background-color: transparent;
+        margin: .3rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .logoBack {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(24px) brightness(1.56) contrast(2.5) hue-rotate(315deg);
+        -webkit-backdrop-filter: blur(24px) brightness(1.56) contrast(2.5) hue-rotate(315deg);
+        border-radius: 50%;
+    }
+    
+    .logoInner {
         mix-blend-mode: plus-lighter;
-        box-shadow: 0px 0px 22px #07f;
-        background-color: #cbcbcb;
-        padding: .3rem
+        filter: brightness(0.75) contrast(1.4);
+        -webkit-filter: brightness(0.75) contrast(1.4);
+        outline: 0.45rem solid #cbcbcb;
+        border-radius: 50%;
+        outline-offset: -3px;
     }
     
     
@@ -347,6 +374,10 @@ input:checked + label {
 
 body, html {
     overflow-x: hidden !important;
+}
+
+body {
+    background: transparent !important;
 }
     
     .titleStyle {
@@ -360,12 +391,29 @@ body, html {
         position: relative;
     }
     
+    
     .logoEdge {
         box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
-        background-color: #d1eaff;
-        padding: .3rem
+        margin: .3rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
         z-index: 2;
         position: relative;
+    }
+    
+    .logoBack {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    
+    .logoInner {
+        outline: 0.45rem solid #cbcbcb;
+        border-radius: 50%;
+        outline-offset: -3px;
     }
     
     .display-4 {
@@ -406,14 +454,17 @@ $(function() {
 <!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
-                <section id="homew" class="jumbotron text-center" style="background: url('http://hmse-unipi.or.id/img/main-slide/phist1.jpg'), rgba(10, 49, 75, 1); background-repeat: no-repeat; background-attachment: fixed;  background-position: center; background-blend-mode: overlay; background-size: cover;">
-                  <div id="slidetinter" style="position: absolute; background-color: rgba(10, 49, 75, 1); opacity: 0.5; top: 0; width:100%; height:72em;"></div>
+                <section class="jumbotron text-center">
+                  <div id="slidetinter" style="position: fixed; z-index: -1; background-color: rgba(10, 49, 75, 1); opacity: 0.5; top: 0; width:100%; height:100%;"></div>
+                 <div class="rounded-circle logoEdge">
+                     <div class="logoBack"></div>
                  <img
                     src="img/logo2.png"
                     alt="logo HMSE"
                     width="200"
-                    class="rounded-circle logoEdge"
+                    class="logoInner"
                   />
+                  </div>
                       <!-- div style="background-color: rgba(255, 255, 255, 0.6);  mix-blend-mode: screen;" -->
                   <h1 class="display-4 titleBack"
                     style="padding-top: 11px; font-weight: bold !important;"><b>HMSE</b>
@@ -457,7 +508,7 @@ $(function() {
                   <div class="col-sm-6" id="bdiv1" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center"><b>TUJUAN HMSE</b></h5><br>
+                        <h5 class="card-title text-center"><b>Tujuan HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p style="text-align: justify; text-justify: inter-word;">Tujuan terbentuknya himpunan mahasiswa software engineering ini untuk membangun sebuah wadah dan untuk mengasah / mengekspos softskill anak anak khususnya untuk ranah software engineering dan umumnya untuk fakultas komputer lainnya, dengan prospek yang membahas tentang perkembangan perangkat lunak, analisisa algoritma dan struktur data serta mengoperasikan pemrograman.
@@ -476,7 +527,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                     <div class="col-sm-6" id="bdiv2" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center"><b>VISI</b></h5>
+                        <h5 class="card-title text-center"><b>Visi</b></h5>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p class="card-text mb-2">
@@ -487,7 +538,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                           </p>
                             </div>
                             <br>
-                            <h5 class="card-title text-center"><b>MISI</b></h5>
+                            <h5 class="card-title text-center"><b>Misi</b></h5>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <ol class="card-title">
@@ -517,7 +568,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                   <div class="col-sm-6" id="bdiv3" style="margin-left:auto;margin-right:auto;min-width:75%;">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center"><b>SEJARAH SINGKAT HMSE</b></h5><br>
+                        <h5 class="card-title text-center"><b>Sejarah Singkat HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <p style="text-align: justify; text-justify: inter-word;">
@@ -567,7 +618,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                   <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%;" id="desktop-mode-switch">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center"><b>FILOSOFI LOGO HMSE</b></h5><br>
+                        <h5 class="card-title text-center"><b>Filosofi Logo HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             <div class="flex-container">
                             <div class="flex-item"><img style="max-width: 128px; max-height: 128px" src="img/gear.png" /><br><b>Gear (Semangat Kerja)</b><br>Teknologi yang berkesinambungan, garis bergerak
@@ -595,7 +646,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
                     <div class="col-sm-6" style="margin-left:auto;margin-right:auto;min-width:75%; overflow: hidden !important;" id="mobile-mode-switch">
                     <div class="card border border-4">
                       <div class="card-body">
-                        <h5 class="card-title text-center"><b>FILOSOFI LOGO HMSE</b></h5><br>
+                        <h5 class="card-title text-center"><b>Filosofi Logo HMSE</b></h5><br>
                         <!-- <p class="card-text"></p> -->
                             
 
@@ -887,8 +938,8 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
               fadein(6, 0.01);
             } else { //slow fade in
                 //fadein(9, 0.003);
-              document.getElementById("fade-overlay").style.transition = "opacity 3s linear";
-              document.getElementById("fade-overlay").style.opacity = "0";
+              document.getElementById("fade-overlay").style.transition = "background-color 3s ease-out";
+              document.getElementById("fade-overlay").style.backgroundColor = "#000";
             }
             if (isMobile) {
                 var newParent = document.getElementsByClassName('hmse-home')[0];
@@ -925,6 +976,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
         function viewPhoto() {
             if (!isMobile) {
                         
+                        disableScrolling = true;
                         document.getElementById("desktop-photo-viewer").style.pointerEvents = "auto";
                         document.getElementById("desktop-photo-viewer").style.opacity = 1;
                         
@@ -946,6 +998,7 @@ Diera sekarang dan masa kedepannya sumber daya manusia yang memahami bidang tekn
             if (!isMobile) {
             document.getElementById("desktop-photo-viewer").style.pointerEvents = "none";
                         document.getElementById("desktop-photo-viewer").style.opacity = 0;
+                        disableScrolling = false;
             } else {
                 document.getElementsByClassName("navbar")[0].style.transition = "transform 0.6s linear";
             document.getElementById("mobile-photo-viewer").style.pointerEvents = "none";
@@ -1200,6 +1253,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
+$conn->execute_query("DELETE FROM schedule WHERE evt_venue_datetime_end <= NOW();");
 
 function getAddress() {
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";

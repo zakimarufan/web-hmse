@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /org_struct/
+Disallow: /admin-se/
+Disallow: /admin-se/*

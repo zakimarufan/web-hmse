@@ -94,15 +94,17 @@ html {
     z-index: -15;
     background-color: #0a314b;
     width: 100%;
-    height: 100%;
+    height: 120%;
+    top: -8em;
 }
 
-* {
+html {
     font-family: Futura, 'Apple Color Emoji';
 }
 
 body {
-    font-family: Futura;
+    font-family: Futura, 'Apple Color Emoji';
+    background-color: transparent;
   }
 
 section, .view-error {
@@ -116,7 +118,7 @@ section, .view-error {
 }
 
 footer {
-    border: 1px solid #0a314b;
+    outline: 1px solid #0a314b;
     position: relative;
     z-index: 2;
 }
@@ -130,6 +132,17 @@ nav, .nav-link, .dropdown-item {
     font-family: Friz-Quadrata, 'Apple Color Emoji' !important;
     text-transform: uppercase;
   }
+
+.nav-link {
+    color: #fff !important;
+    opacity: 0.55;
+    transition: opacity 100ms ease;
+}
+
+.nav-item:hover .nav-link {
+    opacity: 1;
+    transition: opacity 100ms ease;
+}
   
 input, textarea {
     font-family: Friz-Quadrata, 'Apple Color Emoji' !important;
@@ -156,19 +169,26 @@ figure figcaption {
   #bdiv1 {
     transform: translateX(-50px);
     opacity: 0;
+    filter: blur(19px);
     transition: all .75s ease;
   }
   
   #bdiv2{
     transform: translateX(50px);
     opacity: 0;
+    filter: blur(19px);
     transition: all .75s ease;
   }
   
    #bdiv3 {
     transform: rotateY(45deg);
     opacity: 0;
+    filter: blur(19px);
     transition: all 1.42s ease;
+  }
+  
+    #desktop-mode-switch {
+    filter: blur(19px);
   }
   
   #desktop-mode-switch, #mobile-mode-switch {
@@ -179,17 +199,23 @@ figure figcaption {
   
   #bdiv1.show, #bdiv2.show{
     transform: translateX(0px);
+    filter: blur(0px);
     opacity: 1;
   }
   
   #bdiv3.show {
     transform: rotateY(0deg);
+    filter: blur(0px);
     opacity: 1;
   }
   
   #desktop-mode-switch.show, #mobile-mode-switch.show {
     transform: scale(1);
     opacity: 1;
+  }
+  
+    #desktop-mode-switch.show {
+    filter: blur(0px);
   }
   
   .single-line-input {
@@ -229,9 +255,8 @@ figure figcaption {
     left: 0;
     right: 0;
     bottom: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    filter: saturate(.4) brightness(2);
+    backdrop-filter: brightness(2) blur(10px) saturate(.5);
+    -webkit-backdrop-filter: brightness(2) blur(10px) saturate(.5);
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;
     z-index: 1030;
     }
@@ -249,11 +274,13 @@ figure figcaption {
     width: 100%;
     height: 56px;
     position: fixed;
+    transform-origin: bottom;
+    transform: scaleY(4);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #214f6e;
+    background: linear-gradient(to top, #214f6e 25%, #0098ff 0%); /*background-color: #214f6e;*/
     mix-blend-mode: multiply !important;
     z-index: 1031;
     }
@@ -342,7 +369,8 @@ figure figcaption {
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
         opacity: 0;
-        transition: opacity 300ms linear;
+        filter: blur(19px);
+        transition: opacity 300ms linear, filter 300ms linear;
     }
     
     .dropdown-background {
@@ -360,7 +388,8 @@ figure figcaption {
     
     .dropdown-opacity-controller {
         opacity: 0;
-        transition: opacity 300ms linear;
+        filter: blur(19px);
+        transition: opacity 300ms linear, filter 300ms linear;
     }
     
       .navbar-nav li:hover > ul.dropdown-menu-s {
@@ -373,24 +402,28 @@ figure figcaption {
     
       .navbar-nav li:hover > ul.dropdown-menu-s::before {
         opacity: 1;
-        transition: opacity 500ms ease-out;
+        filter: blur(0px);
+        transition: opacity 500ms ease-out, filter 500ms ease-out;
     }
     
       .navbar-nav li:hover .dropdown-opacity-controller {
         opacity:1;
-        transition: opacity 500ms ease-out;
+        filter: blur(0px);
+        transition: opacity 500ms ease-out, filter 500ms ease-out;
     }
 
     .dropdown-item {
         color: rgba(255, 255, 255, .6);
         /*mix-blend-mode: plus-lighter;*/
         opacity: 0;
+        filter: blur(0px);
         transition: all 400ms ease-out;
     }
     
       .navbar-nav li:hover .dropdown-item {
         opacity:0.9;
-        transition: opacity 500ms ease-out, backdrop-filter 250ms, -webkit-backdrop-filter 250ms;
+        filter: blur(0px);
+        transition: opacity 500ms ease-out, filter 500ms ease-out, backdrop-filter 250ms, -webkit-backdrop-filter 250ms;
     }
 
     .dropdown-item:hover {
@@ -519,6 +552,7 @@ figure figcaption {
         border-color:#061e2e;
         width: 90vw;
         border-radius: 8px;
+		z-index: 1;
     }
 
     .dropdown-item {
@@ -659,25 +693,9 @@ figure figcaption {
 }
 
 
-@media (hover:none) and (max-width:767px), (hover:on-demand) and (max-width:767px) {
+@media (hover:none), (hover:on-demand), (max-width:767px) {
 
-* {
-  filter: none !important;
-  -webkit-filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  mix-blend-mode: normal !important;
-}
-
-*::before {
-  filter: none !important;
-  -webkit-filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  mix-blend-mode: normal !important;
-}
-
-*::after {
+*, *:hover, *:focus, *:active, *::before, *::after, *::first-letter, *::first-line {
   filter: none !important;
   -webkit-filter: none !important;
   backdrop-filter: none !important;

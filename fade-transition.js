@@ -9,18 +9,17 @@ function fadeout(timelength) {
     isfadingout = true;
     const element = document.getElementById('fade-overlay');
     element.style.removeProperty("transition");
-    var op = 0.1;  // initial opacity
-    element.style.opacity = 0;
-    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+    var op = 0;  // initial opacity
+    element.style.backgroundColor = "rgb(0, 0, 0)";
     var timer = setInterval(function () {
-        if (op >= 1){
+        if (op >= 255){
             clearInterval(timer);
             isfadingout = false;
             alreadydisplayed = false;
         }
-        element.style.opacity = op;
+        element.style.backgroundColor = "rgb("+op+", "+op+", "+op+")";
         //element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += 0.01;
+        op += 2;
     }, timelength);
 }
 
@@ -28,11 +27,11 @@ function gobackwithfade(timelength) {
     const element = document.getElementById('fade-overlay');
     const scrollelement = document.getElementById('fade-overlay');
     isfadingout = true;
-    var op = 0.1;  // initial opacity
-    element.style.opacity = 0;
+    var op = 0;  // initial opacity
+    element.style.backgroundColor = "rgb(0, 0, 0)";
     //element.style.filter = 'alpha(opacity=' + op * 100 + ")";
     var timer = setInterval(function () {
-        if (op >= 1){
+        if (op >= 255){
             clearInterval(timer);
             isfadingout = false;
             backlocked = false;
@@ -40,9 +39,9 @@ function gobackwithfade(timelength) {
             //window.location.href = document.referrer;
             history.back();
         }
-        element.style.opacity = op;
+        element.style.backgroundColor = "rgb("+op+", "+op+", "+op+")";
         //element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += 0.01;
+        op += 2;
     }, timelength);
 }
 
@@ -65,8 +64,8 @@ function sleep(ms) {
                 }
             }, timelength);*/
             
-              element.style.transition = "opacity " + (timelength / 5.8) + "s linear";
-              element.style.opacity = "0";
+              element.style.transition = "background-color " + (timelength / 5.8) + "s linear";
+              element.style.backgroundColor = "0";
             alreadydisplayed = true;
         }
 

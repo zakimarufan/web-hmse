@@ -2,15 +2,69 @@ html {
   scroll-behavior: smooth !important;
 }
 
+#pre-overlay {
+    display: block;
+    position: fixed;
+    top: -350%;
+    left: -350%;
+    width: 800%;
+    height: 800%;
+    background-color: white;
+    mix-blend-mode: difference;
+    opacity: 1;
+    pointer-events: none; 
+    z-index: 2147483648;
+  }
+
 #fade-overlay {
     position: fixed;
     top: -350%;
     left: -350%;
     width: 800%;
     height: 800%;
-    background-color: black;
-    mix-blend-mode: normal;
+    background-color: rgb(255,255,255);
+    mix-blend-mode: plus-lighter;
     opacity: 1;
     pointer-events: none; 
-    z-index: 2147483647;
+    z-index: 2147483649;
   }
+
+#front-overlay {
+    display: block;
+    position: fixed;
+    top: -350%;
+    left: -350%;
+    width: 800%;
+    height: 800%;
+    background-color: white;
+    mix-blend-mode: difference;
+    opacity: 1;
+    pointer-events: none; 
+    z-index: 2147483650;
+  }
+  
+ #horizontal_scrollbar, #vertical_scrollbar {
+	 mix-blend-mode: multiply;
+	 transition: mix-blend-mode 0.9s linear;
+ }
+ 
+ #horizontal_scrollbar:hover, #vertical_scrollbar:hover {
+	 mix-blend-mode: color-dodge;
+	 transition: mix-blend-mode 0.9s linear;
+ }
+
+
+@media (hover:none), (hover:on-demand) {
+
+#fade-overlay {
+    background-color: #0a314b;
+  }
+
+#pre-overlay {
+    display: none;
+  }
+
+#front-overlay {
+    display: none;
+  }
+}

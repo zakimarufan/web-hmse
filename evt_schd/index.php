@@ -1,155 +1,16 @@
-  <html>
-  <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>Events Schedule - HMSE</title>
+<?php
 
-    <!-- Always fit the page horizontally so that the horizontal scrollbar won't show anymore -->
-    <!-- The fade transition effect is exclusive on Desktop only -->
+function getAddress() {
+  $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
+  return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+}
 
-    <!-- Events Schedule elements:
-        - Title
-        - Location
-        - Date and Time
-        - Body contents
+$pgtitle = "Events Schedule - HMSE";
 
-      -->
+include '/home/hmseunip/public_html/templates/header.php';
 
-    <link rel="icon" type="image/x-icon" href="https://hmse-unipi.or.id/img/favicon.png">
+?>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a314b">
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
-
-    <!-- IMPORT CUSTOM SCROLLBAR CSS & JS -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://hmse-unipi.or.id/scrollbar.css"
-    />
-
-    <!-- FADE IN/OUT TRANSITION CSS & JS -->
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://hmse-unipi.or.id/fade-transition.css"
-  />
-    <script
-      type="text/javascript"
-      src="https://hmse-unipi.or.id/fade-transition.js"
-    ></script>
-
-    <!-- My CSS -->
-    <link rel="stylesheet" href="https://hmse-unipi.or.id/style.css" />
-  </head>
-  <body id="home">
-    <div id="fade-overlay"  style="display: block;"></div>
-    <div class="hmse-home simplebar-scrollable-y" data-simplebar="init">
-      <div class="simplebar-wrapper" style="margin: 0px">
-        <div class="simplebar-height-auto-observer-wrapper">
-          <div class="simplebar-height-auto-observer"></div>
-        </div>
-        <div class="simplebar-mask">
-          <div class="simplebar-offset" style="right: 0px; bottom: 0px">
-            <div
-              id="scrollnav"
-              class="simplebar-content-wrapper"
-              tabindex="0"
-              role="region"
-              aria-label="scrollable content"
-              style="height: 100vh; overflow: scroll"
-            >
-              <div class="simplebar-content" style="padding: 0px">
-                <!-- Start of body -->
-
-                <!-- NAVBAR START -->
-                <nav
-                class="navbar navbar-expand-lg navbar-dark shadow-sm"
-                id="inav2"
-              >
-                <div class="container nav-isolator">
-                    <a class="navbar-brand brand-hmse" href="https://hmse-unipi.or.id">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="78" height="17">
-	<defs>
-		<clipPath id="svgBrand">
-  <text fill="#fff" y="19" x="5">HMSE</text>
-  </clipPath>
-	</defs>
-</svg></a>
-                    <button
-                      class="navbar-toggler"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#navbarNav"
-                      aria-controls="navbarNav"
-                      aria-expanded="false"
-                      aria-label="Toggle navigation"
-                    >
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav ms-auto">
-                        <li class="nav-item dropdown">
-                          <a class="nav-link" id="AboutDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                          <ul class="dropdown-menu-s" aria-labelledby="AboutDD">
-                              <div class="dropdown-background dropdown-opacity-controller" style="backdrop-filter: brightness(0.5); -webkit-backdrop-filter: brightness(0.5);"></div>
-                              <div class="dropdown-background dropdown-opacity-controller dropdown-background-colour"></div>
-                              <div class="dropdown-background" style="backdrop-filter: invert(); -webkit-backdrop-filter: invert();"></div>
-                              <div class="dropdown-background dropdown-opacity-controller" style="backdrop-filter: brightness(2); -webkit-backdrop-filter: brightness(2);"></div>
-                              <div class="dropdown-background" style="backdrop-filter: invert(); -webkit-backdrop-filter: invert();"></div>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#aim">Tujuan</a></li>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#visionmission">Visi & Misi</a></li>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#briefhistory">Sejarah Singkat</a></li>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/#logophilosophy">Filosofi Logo</a></li>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/w_programme/">Program Kerja</a></li>
-                            <li><a class="dropdown-item" href="https://hmse-unipi.or.id/org_struct/">Struktur Organisasi</a></li>
-                          </ul>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="https://hmse-unipi.or.id/gallery/">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link"
-                          aria-current="page" href="#">Events Schedule</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="https://hmse-unipi.or.id/announcements/">Announcements</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="https://hmse-unipi.or.id/news/">News</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="https://hmse-unipi.or.id/reports/">Reports</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="https://hmse-unipi.or.id/#contact">Contact</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </nav>
-                <!-- NAVBAR END -->
-
-                
-    <div class="solid-bg"></div>
-
-                <!-- WA BUTTON START -->
-                <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
 <style>
 
@@ -296,50 +157,14 @@ footer{
 
 </style>
 
-<link
-    rel="stylesheet"
-    type="text/css"
-    href="https://hmse-unipi.or.id/style-ex.css"
-  />
-
-<!-- render the button and direct it to wa.me -->
-<div id="firefox_safari_filter"></div>
-<i class="floating" id="wfloating">
-<i class="fab fa-whatsapp fab-icon"></i>
-</i>
-<a onclick="window.open('https://wa.me/6285819608700/', '_blank');" class="floatingb" id="wfloatingb" target="_blank">
-</a>
-<script>
-$(function() {
-  $('#wfloatingb').hover(function() {
-    $('#wfloating').css('mix-blend-mode', 'normal');
-    if (!isMobile) { 
-    $('#wfloating').css('transform', 'scale(1.07)');
-    $('#wfloatingb').css('transform', 'scale(1.07)');
-    $('#wfloating').css('box-shadow', '0px 0px 11px #25d366');
-    }
-  }, function() {
-    // on mouseout, reset the background colour
-    if (!isMobile) {
-        $('#wfloating').css('mix-blend-mode', 'multiply');
-    $('#wfloating').css('transform', 'scale(1)');
-    $('#wfloatingb').css('transform', 'scale(1)');
-    } else {
-        $('#wfloating').css('opacity', '75%');
-    }
-    $('#wfloating').css('box-shadow', '2px 2px 3px rgba(0, 0, 0, .4)');
-  });
-});
-  </script>
-<!-- WA BUTTON END -->
 
                 <!-- JUMBOTRON START -->
                 <section id="toppage" class="jumbotron text-center">
 
                   <h1 id="permanent-title">Jadwal Acara</h1>
                   <!-- <p class="lead">Fakultas Ilmu Komputer Universitas Indonesia</p> -->
-                  <div style="transform: scaleY(1.02);">
-                <svg xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                  <div style="transform: scaleY(1.02); overflow-x: hidden;">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 100%; min-width:1440px; height: auto;" viewBox="0 10 1440 120">
                     <path fill="#ffffff" fill-opacity="10" d="M 0 63.652 L 48 63.652 C 96 63.652 192 63.652 288 76.329 C 384 89.141 480 114.291 576 121.666 C 672 128.905 768 118.029 864 103.518 C 960 89.141 1056 70.789 1152 65.453 C 1248 59.913 1344 67.39 1392 70.891 L 1440 74.527 L 1440 150.656 L 1392 150.656 C 1344 150.656 1248 150.656 1152 150.656 C 1056 150.656 960 150.656 864 150.656 C 768 150.656 672 150.656 576 150.656 C 480 150.656 384 150.656 288 150.656 C 192 150.656 96 150.656 48 150.656 L 0 150.656 L 0 63.652 Z"></path>
                   </svg>
                   </div>
@@ -352,7 +177,7 @@ $(function() {
     position: absolute;
     z-index: -1;
 "></div>
-                <a href="https://hmse-unipi.or.id/schedule/" class="subnav btnk" id="backp_button" style="display:none; font-family:Friz-Quadrata !important; top: 50px;">← Kembali ke Jadwal Acara</a>
+                <a href="https://hmse-unipi.or.id/evt_schd/" class="subnav btnk" id="backp_button" style="display:none; font-family:Friz-Quadrata !important; top: 50px;">← Kembali ke Jadwal Acara</a>
                  <div class="nav-flex-container" id="vnav" style="position: absolute !important; width: 85% !important; display: none;">
                     <div class="nav-flex-container nav-flex-item" id="vnav-mobile" style="margin: 0 !important; flex-basis: 100% !important; flex-direction: row !important;">
                 <div class="nav-flex-item">
@@ -381,13 +206,13 @@ $(function() {
                       <div class="col">
                         
                         
-                      <div class="flex-container" id="schedule_listing">
+                      <div class="flex-container" id="evt_listing">
 
 
 
 </div>
 
-<div class="flex-container" id="schedule_content" style="display:none;">
+<div class="flex-container" id="evt_content" style="display:none;">
 
 <h2 class="content-title" style="text-align: left;" id="vtitle"></h2>
 <!-- If the Google Maps link value isn't null, the location is clickable --> 
@@ -405,153 +230,8 @@ $(function() {
                 </section>
                 <!-- SCHEDULE END -->
 
-<div style="transform: scaleY(1.02); background-color: white;">
-       <svg id="footersvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -47 1440 162">
-        <path fill="#0a314b" fill-opacity="10" d="M -0.848 50.584 L 47.152 44.263 C 95.152 37.942 191.152 25.3 287.152 16.886 C 383.152 8.313 479.152 4.362 575.152 18.979 C 671.152 33.596 767.152 67.571 863.152 77.961 C 959.152 88.509 1055.152 75.867 1151.152 77.961 C 1247.152 80.213 1343.152 96.805 1391.152 105.377 L 1439.152 113.792 L 1391.152 113.792 C 1343.152 113.792 1247.152 113.792 1151.152 113.792 C 1055.152 113.792 959.152 113.792 863.152 113.792 C 767.152 113.792 671.152 113.792 575.152 113.792 C 479.152 113.792 383.152 113.792 287.152 113.792 C 191.152 113.792 95.152 113.792 47.152 113.792 L -0.848 113.792 L -0.848 50.584 Z"></path>
-      </svg>
-</div>
 
-              <!-- FOOTER START -->
-              <footer
-                class="text-white text-center pb-5"
-                style="background-color: #0a314b"
-              >
-                
-
-  <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1440 157">
-    <path fill="#0a314b" fill-opacity="1" d="M0,96L48,80C96,64,192,32,288,48C384,64,480,128,576,154.7C672,181,768,171,864,144C960,117,1056,75,1152,58.7C1248,43,1344,53,1392,58.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
-  </svg>
-
-
-                  <p>
-                    <b>Copyright © 2024<br>Himpunan Mahasiswa Software Engineering<br><a href="https://unipem.ac.id/" style="text-decoration:none; color:inherit">Universitas Insan Pembangunan Indonesia</a></b><br>
-                    <br>
-                    <span style="margin:4px;"><a
-                      href="https://www.instagram.com/hmse_unipi/" target="_blank"
-                      style="cursor: pointer; text-decoration: none; font-family: Myriad-Pro; font-style: italic;"
-                      class="text-white fw-bold" target="_blank"
-                      >Instagram</a
-                    ></span>
-                    <span style="margin:4px;">
-                    <a
-                      href="mailto:hmseunipi@gmail.com" target="_blank"
-                      style="cursor: pointer; text-decoration: none; font-family: Myriad-Pro; font-style: italic;"
-                      class="text-white fw-bold" target="_blank"
-                      >Email</a
-                    >
-                    </span>
-                  </p>
-                </footer>
-                <!-- FOOTER END -->
-                <!-- End of body -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="simplebar-placeholder"
-          style="width: 250px; height: 922px"
-        ></div>
-      </div>
-      <div
-        id="horizontal_scrollbar"
-        class="simplebar-track simplebar-horizontal"
-        style="visibility: hidden"
-      >
-        <div
-          class="simplebar-scrollbar"
-          style="width: 0px; display: none"
-        ></div>
-      </div>
-      <div
-        id="vertical_scrollbar"
-        class="simplebar-track simplebar-vertical"
-        style="visibility: visible"
-      >
-        <div
-          class="simplebar-scrollbar"
-          style="
-            height: 173px;
-            transform: translate3d(0px, 152px, 0px);
-            display: block;
-          "
-        ></div>
-      </div>
-    </div>
-  </body>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
-  ></script>
-
-  <script
-  type="text/javascript"
-  src="https://hmse-unipi.or.id/simplebar.min.js"
-  ></script>
-
-<script>
-
-  //PER-PAGE SCRIPT
-  var BrowserDetect = {
-        init: function() {
-            this.browser = this.searchString(this.dataBrowser) || "Other";
-            this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "Unknown";
-        },
-        searchString: function(data) {
-            for (var i = 0; i < data.length; i++) {
-                var dataString = data[i].string;
-                this.versionSearchString = data[i].subString;
-
-                if (dataString.indexOf(data[i].subString) !== -1) {
-                    return data[i].identity;
-                }
-            }
-        },
-        searchVersion: function(dataString) {
-            var index = dataString.indexOf(this.versionSearchString);
-            if (index === -1) {
-                return;
-            }
-
-            var rv = dataString.indexOf("rv:");
-            if (this.versionSearchString === "Trident" && rv !== -1) {
-                return parseFloat(dataString.substring(rv + 3));
-            } else {
-                return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
-            }
-        },
-
-        dataBrowser: [{
-            string: navigator.userAgent,
-            subString: "Chrome",
-            identity: "Chrome"
-        }, {
-            string: navigator.userAgent,
-            subString: "MSIE",
-            identity: "Explorer"
-        }, {
-            string: navigator.userAgent,
-            subString: "Trident",
-            identity: "Explorer"
-        }, {
-            string: navigator.userAgent,
-            subString: "Firefox",
-            identity: "Firefox"
-        }, {
-            string: navigator.userAgent,
-            subString: "Safari",
-            identity: "Safari"
-        }, {
-            string: navigator.userAgent,
-            subString: "Opera",
-            identity: "Opera"
-        }]
-
-    };
-
-    BrowserDetect.init();
+              <?php include '/home/hmseunip/public_html/templates/footerp.php'; ?>
 
         $(document).ready(function() {
             alreadydisplayed = true;
@@ -603,8 +283,8 @@ $(function() {
           document.getElementById("backp_button").style.display = "initial";
           document.getElementById("permanent-title").style.display = "none";
           document.getElementById("vnav").style.display = "none";
-          document.getElementById("schedule_listing").style.display = "none";
-          document.getElementById("schedule_content").style.display = "initial";
+          document.getElementById("evt_listing").style.display = "none";
+          document.getElementById("evt_content").style.display = "initial";
           document.getElementById("toppage").style.paddingTop = "0px";
           document.getElementById("vtitle").innerHTML = schTitle;
           document.title = schTitle + " - HMSE";
@@ -620,8 +300,8 @@ $(function() {
           document.getElementById("backp_button").style.display = "initial";
           document.getElementById("permanent-title").style.display = "none";
           document.getElementById("vnav").style.display = "none";
-          document.getElementById("schedule_listing").style.display = "none";
-          document.getElementById("schedule_content").style.display = "initial";
+          document.getElementById("evt_listing").style.display = "none";
+          document.getElementById("evt_content").style.display = "initial";
           document.getElementById("toppage").style.paddingTop = "0px";
           document.getElementById("vtitle").innerHTML = schTitle;
           document.title = schTitle + " - HMSE";
@@ -648,14 +328,14 @@ $(function() {
                 item.style.margin = "3pt";
                 item.style.zoom = "60%";
             }
-          document.getElementById("schedule_listing").innerHTML +=
+          document.getElementById("evt_listing").innerHTML +=
         "<div class=\"flex-item\" style=\"text-align: left;\">"
 + "<p style=\"color: grey;\"><span class=\"anchor-title-mobile\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
                   +  anchorTitle
                + "</a></span><br>"+date+"<br>Venue: "+ location +"</p>"
 + "<p class=\"preview-body-content\">" + custDesc + "</div><br>";
         } else {
-        document.getElementById("schedule_listing").innerHTML +=
+        document.getElementById("evt_listing").innerHTML +=
         "<div class=\"flex-item\" style=\"text-align: left;\">"
 + "<p style=\"color: grey;\"><span class=\"anchor-title anchor-title-listed\"><a style=\"text-decoration: none; color: inherit;\" href=\"" + hreflink + "\">"
                   +  anchorTitle
@@ -666,7 +346,7 @@ $(function() {
       }
 
       function emptyScheduleList() {
-        document.getElementById("schedule_listing").innerHTML = 
+        document.getElementById("evt_listing").innerHTML = 
         "<p style=\"text-align: center; padding-bottom:10%;\"><span class=\"anchor-title\">Belum ada acara apa pun untuk saat ini.</span></p>";
       }
 
@@ -681,7 +361,7 @@ $(function() {
       function searchtext() {
         let searchvalue = document.getElementById("vsearch-text").value;
         if (searchvalue !== '') {
-          window.location.href = 'https://hmse-unipi.or.id/schedule/search?q=' + searchvalue.split(' ').join('+');
+          window.location.href = 'https://hmse-unipi.or.id/evt_schd/search?q=' + searchvalue.split(' ').join('+');
     }
       }
 
@@ -752,6 +432,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+$conn->execute_query("DELETE FROM schedule WHERE evt_venue_datetime_end <= NOW();");
+
 function removeLink($string){
 
  $pattern = '/https?:\/\/[^\s]+|www\.[^\s]+/i';
@@ -774,15 +456,15 @@ function schRegularList($listquery) {
 
 if ($listquery->num_rows > 0) {
       while($row = mysqli_fetch_array($listquery)) {
-        $sc_prev_title = $row['schedule_title'];
-        $sc_url_id_pointer = "https://hmse-unipi.or.id/schedule/" . $row['sch_url_id_pointer'];
-        $sc_location = $row['schedule_venue_location'];
-        $sc_p_startdate = date('D, j M Y', strtotime($row['schedule_venue_datetime_start']));
-        $sc_p_enddate = date('D, j M Y', strtotime($row['schedule_venue_datetime_end']));
-        $sc_p_starttime = date('H:i', strtotime($row['schedule_venue_datetime_start']));
-        $sc_p_endtime = date('H:i', strtotime($row['schedule_venue_datetime_end']));
+        $sc_prev_title = $row['evt_title'];
+        $sc_url_id_pointer = "https://hmse-unipi.or.id/evt_schd/" . $row['event_slug'];
+        $sc_location = $row['evt_venue_location'];
+        $sc_p_startdate = date('D, j M Y', strtotime($row['evt_venue_datetime_start']));
+        $sc_p_enddate = date('D, j M Y', strtotime($row['evt_venue_datetime_end']));
+        $sc_p_starttime = date('H:i', strtotime($row['evt_venue_datetime_start']));
+        $sc_p_endtime = date('H:i', strtotime($row['evt_venue_datetime_end']));
         $event_cust_desc = $row['event_custom_description'];
-        if (strtotime($row['schedule_venue_datetime_end']) > 0) {
+        if (strtotime($row['evt_venue_datetime_end']) > 0) {
             if ($sc_p_startdate == $sc_p_enddate) {
                 $sc_p_date = $sc_p_startdate . " ". $sc_p_starttime . " - " . $sc_p_endtime;
             } else {
@@ -806,22 +488,22 @@ if(isset($_SERVER['PATH_INFO'])) {
     $idpointer = str_replace('/', '', substr($pathinfo, 1));
     if ($idpointer == "") { 
       
-      schRegularList($conn->execute_query("SELECT schedule_title, body_content, schedule_venue_location, schedule_venue_datetime_start, schedule_venue_datetime_end, sch_url_id_pointer, event_custom_description FROM schedule ORDER BY schedule_venue_datetime_start"));
+      schRegularList($conn->execute_query("SELECT evt_title, body_content, evt_venue_location, evt_venue_datetime_start, evt_venue_datetime_end, event_slug, event_custom_description FROM schedule ORDER BY evt_venue_datetime_start"));
       
     } else { //showing specific (article-like)
 
-      $result = $conn->execute_query("SELECT schedule_title, body_content, schedule_venue_datetime_start, schedule_venue_datetime_end, schedule_venue_location, schedule_venue_gmaps_link FROM schedule WHERE sch_url_id_pointer = ? LIMIT 1",  [$idpointer]);
+      $result = $conn->execute_query("SELECT evt_title, body_content, evt_venue_datetime_start, evt_venue_datetime_end, evt_venue_location, evt_venue_gmaps_link FROM schedule WHERE event_slug = ? LIMIT 1",  [$idpointer]);
 
       if ($result->num_rows == 1) { //Check if the article exists
         while($row = mysqli_fetch_array($result)) {
-          $sc_title = $row['schedule_title'];
-          $sc_location = $row['schedule_venue_location'];
-          $sc_gmaps_link = $row['schedule_venue_gmaps_link'];
-          $sc_p_startdate = date('D, j M Y', strtotime($row['schedule_venue_datetime_start']));
-        $sc_p_enddate = date('D, j M Y', strtotime($row['schedule_venue_datetime_end']));
-        $sc_p_starttime = date('H:i', strtotime($row['schedule_venue_datetime_start']));
-        $sc_p_endtime = date('H:i', strtotime($row['schedule_venue_datetime_end']));
-        if (strtotime($row['schedule_venue_datetime_end']) > 0) {
+          $sc_title = $row['evt_title'];
+          $sc_location = $row['evt_venue_location'];
+          $sc_gmaps_link = $row['evt_venue_gmaps_link'];
+          $sc_p_startdate = date('D, j M Y', strtotime($row['evt_venue_datetime_start']));
+        $sc_p_enddate = date('D, j M Y', strtotime($row['evt_venue_datetime_end']));
+        $sc_p_starttime = date('H:i', strtotime($row['evt_venue_datetime_start']));
+        $sc_p_endtime = date('H:i', strtotime($row['evt_venue_datetime_end']));
+        if (strtotime($row['evt_venue_datetime_end']) > 0) {
             if ($sc_p_startdate == $sc_p_enddate) {
                 $sc_p_date = $sc_p_startdate . " ". $sc_p_starttime . " - " . $sc_p_endtime;
             } else {
@@ -847,22 +529,22 @@ if(isset($_SERVER['PATH_INFO'])) {
 
           foreach (explode('&', $uriquery) as $chunk) {
             $sc_search_display = preg_replace('/[\s\+]/', ' ', explode("=", $chunk)[1]);
-            $searchlistquery = $conn->execute_query("SELECT * FROM schedule WHERE schedule_title like '%$sc_search_display%' OR body_content like '%$sc_search_display%' OR schedule_venue_datetime_start like '%$sc_search_display%' OR schedule_venue_datetime_end like '%$sc_search_display%' OR schedule_venue_location like '%$sc_search_display%' OR sch_url_id_pointer like '%$sc_search_display%' OR event_custom_description like '%$sc_search_display%'");
+            $searchlistquery = $conn->execute_query("SELECT * FROM schedule WHERE evt_title like '%$sc_search_display%' OR body_content like '%$sc_search_display%' OR evt_venue_datetime_start like '%$sc_search_display%' OR evt_venue_datetime_end like '%$sc_search_display%' OR evt_venue_location like '%$sc_search_display%' OR event_slug like '%$sc_search_display%' OR event_custom_description like '%$sc_search_display%'");
             $search_result_count = $searchlistquery->num_rows;
             echo "<script>document.title = \"Search results for '$sc_search_display' - HMSE\";</script>";
             echo "<script>document.getElementById(\"permanent-title\").innerHTML = \"Hasil pencarian untuk '$sc_search_display'<br>($search_result_count hasil ditemukan)\"</script>";
             //continue the searching function (show the search result)
 
 while($row = mysqli_fetch_array($searchlistquery)) {
-  $sc_search_prev_title = $row['schedule_title'];
-  $sc_search_url_id_pointer = "https://hmse-unipi.or.id/schedule/" . $row['sch_url_id_pointer'];
-  $sc_search_location = $row['schedule_venue_location'];
-  $sc_s_p_startdate = date('D, j M Y', strtotime($row['schedule_venue_datetime_start']));
-  $sc_s_p_enddate = date('D, j M Y', strtotime($row['schedule_venue_datetime_end']));
-  $sc_s_p_starttime = date('H:i', strtotime($row['schedule_venue_datetime_start']));
-  $sc_s_p_endtime = date('H:i', strtotime($row['schedule_venue_datetime_end']));
+  $sc_search_prev_title = $row['evt_title'];
+  $sc_search_url_id_pointer = "https://hmse-unipi.or.id/evt_schd/" . $row['event_slug'];
+  $sc_search_location = $row['evt_venue_location'];
+  $sc_s_p_startdate = date('D, j M Y', strtotime($row['evt_venue_datetime_start']));
+  $sc_s_p_enddate = date('D, j M Y', strtotime($row['evt_venue_datetime_end']));
+  $sc_s_p_starttime = date('H:i', strtotime($row['evt_venue_datetime_start']));
+  $sc_s_p_endtime = date('H:i', strtotime($row['evt_venue_datetime_end']));
     $event_search_cust_desc = $row['event_custom_description'];
-        if (strtotime($row['schedule_venue_datetime_end']) > 0) {
+        if (strtotime($row['evt_venue_datetime_end']) > 0) {
             if ($sc_s_p_startdate == $sc_s_p_enddate) {
                 $sc_search_p_date = $sc_s_p_startdate . " ". $sc_s_p_starttime . " - " . $sc_s_p_endtime;
             } else {
@@ -882,17 +564,13 @@ while($row = mysqli_fetch_array($searchlistquery)) {
       }
     }
 } else {
-  function getAddress() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "https://";
-    return $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-  }
   
   if (str_contains(getAddress(), "index.php")) {
     $noindex = str_replace('/index.php', '', getAddress());
     echo "<script>window.location.href='$noindex';</script>";
   }
 
-  schRegularList($conn->execute_query("SELECT schedule_title, body_content, schedule_venue_location, schedule_venue_datetime_start, schedule_venue_datetime_end, sch_url_id_pointer, event_custom_description FROM schedule ORDER BY schedule_venue_datetime_start"));
+  schRegularList($conn->execute_query("SELECT evt_title, body_content, evt_venue_location, evt_venue_datetime_start, evt_venue_datetime_end, event_slug, event_custom_description FROM schedule ORDER BY evt_venue_datetime_start"));
 }
 
 ?>
